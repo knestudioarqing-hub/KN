@@ -18,7 +18,7 @@ const translations: Translations = {
       cta: 'Book a Call'
     },
     hero: {
-      pill: 'New slots available for Q4',
+      pill: 'Exclusive for business owners and infoproduct creators',
       title1: 'Turn Visits into',
       title2: 'Recurring Customers',
       subtitle: 'We design high-performance landing pages and websites. Boost your brand with validated conversion strategies and world-class design.',
@@ -132,7 +132,7 @@ const translations: Translations = {
       cta: 'Agendar Chamada'
     },
     hero: {
-      pill: 'Novas vagas disponíveis para Q4',
+      pill: 'Exclusivo para donos de negocios e infoprodutores',
       title1: 'Transforme Visitas em',
       title2: 'Clientes Recorrentes',
       subtitle: 'Projetamos landing pages e sites de alto desempenho. Potencialize sua marca com estratégias de conversão validadas e design de classe mundial.',
