@@ -52,9 +52,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   };
 
   const cycleLanguage = () => {
-    if (language === 'es') setLanguage('en');
-    else if (language === 'en') setLanguage('pt');
-    else setLanguage('es');
+    if (language === 'pt') setLanguage('en');
+    else setLanguage('pt');
   };
 
   return (

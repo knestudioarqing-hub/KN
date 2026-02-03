@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-type Language = 'es' | 'en' | 'pt';
+type Language = 'en' | 'pt';
 
 type Translations = {
   [key in Language]: {
@@ -9,120 +9,6 @@ type Translations = {
 };
 
 const translations: Translations = {
-  es: {
-    nav: {
-      services: 'Servicios',
-      testimonials: 'Depoimentos',
-      process: 'Proceso',
-      contact: 'Contacto',
-      cta: 'Agendar Llamada'
-    },
-    hero: {
-      pill: 'Nuevos slots disponibles para Q4',
-      title1: 'Convierte Visitas en',
-      title2: 'Clientes Recurrentes',
-      subtitle: 'Diseñamos landing pages y sitios web de alto rendimiento. Potencia tu marca con estrategias de conversión validadas y diseño de clase mundial.',
-      ctaPrimary: 'Empezar Proyecto Gratis',
-      ctaSecondary: 'Ver Demo Reel',
-      trusted: 'Con la confianza de +200 empresas innovadoras'
-    },
-    dashboard: {
-      header_dashboard: 'Panel',
-      header_sales: 'Reporte Ventas',
-      header_products: 'Productos',
-      search: 'Buscar aquí...',
-      top_products: 'Productos Top',
-      view_all: 'Ver Todo',
-      table_name: 'Nombre',
-      table_pop: 'Popularidad',
-      table_sales: 'Ventas',
-      item_name: 'Landing Page Pro',
-      visitors: 'Visitas',
-      vs_last: 'vs mes anterior'
-    },
-    services: {
-      title: 'Soluciones Digitales que',
-      titleHighlight: 'Impulsan tu Crecimiento',
-      subtitle: 'No solo diseñamos webs bonitas. Construimos activos digitales enfocados en rentabilidad, velocidad y experiencia de usuario.',
-      more: 'Más información',
-      items: [
-        {
-          title: "Landing Pages de Alto Impacto",
-          description: "Optimizadas para la conversión. Transformamos tráfico frío en clientes cualificados mediante copywriting persuasivo y diseño estratégico.",
-          tags: ["CRO", "Copywriting", "A/B Testing"]
-        },
-        {
-          title: "Sitios Web Corporativos",
-          description: "Eleva tu autoridad digital. Construimos sitios web escalables, rápidos y seguros que reflejan la excelencia de tu marca.",
-          tags: ["Next.js", "Escalabilidad", "SEO"]
-        },
-        {
-          title: "Sistemas de Diseño & UI/UX",
-          description: "Coherencia visual en todos los puntos de contacto. Creamos interfaces intuitivas que enamoran a los usuarios y refuerzan tu identidad.",
-          tags: ["Figma", "Branding", "User Flow"]
-        }
-      ]
-    },
-    process: {
-      label: 'Metodología',
-      title: 'De la Idea a la',
-      titleHighlight: 'Conversión',
-      subtitle: 'Un proceso iterativo y transparente diseñado para maximizar resultados y minimizar fricción.',
-      steps: [
-        {
-          title: 'Estrategia & Discovery',
-          description: 'Analizamos tu modelo de negocio, audiencia y competidores. No escribimos una sola línea de código sin tener un plan claro para la conversión.',
-          points: ['Auditoría de UX actual', 'Definición de KPIs', 'User Personas']
-        },
-        {
-          title: 'Diseño UI/UX de Alto Nivel',
-          description: 'Creamos wireframes y prototipos de alta fidelidad. Cada píxel está pensado para guiar al usuario hacia la acción deseada.',
-          points: ['Diseño Visual Premium', 'Prototipado Interactivo', 'Copywriting Persuasivo']
-        },
-        {
-          title: 'Desarrollo & Optimización',
-          description: 'Transformamos el diseño en código limpio y rápido. Usamos las últimas tecnologías para asegurar un rendimiento perfecto en cualquier dispositivo.',
-          points: ['Next.js / React', 'Velocidad de carga < 1s', 'SEO Técnico']
-        },
-        {
-          title: 'Lanzamiento & Crecimiento',
-          description: 'Desplegamos tu proyecto y configuramos las herramientas de medición. Pero el trabajo no termina ahí; iteramos basándonos en datos reales.',
-          points: ['Configuración de Analytics', 'Soporte Post-Lanzamiento', 'A/B Testing']
-        }
-      ],
-      featuresTitle: 'Ecosistema Completo',
-      features: [
-        { title: 'CRM y seguimiento' },
-        { title: 'Landing pages de alta conversión' },
-        { title: 'Control total sobre la landing page' },
-        { title: 'Automatización y flujos de calificación' }
-      ]
-    },
-    testimonials: {
-      title: 'Lo que dicen nuestros',
-      titleHighlight: 'Partners & Clientes',
-      subtitle: 'Resultados reales para empresas que buscan liderar su sector.',
-      items: [
-        {
-          role: "CEO @ TechFlow",
-          content: "La transformación de nuestra web fue radical. Pasamos de una tasa de conversión del 1.2% al 4.5% en solo dos meses. El diseño no solo es bonito, realmente vende."
-        },
-        {
-          role: "Marketing Dir @ Luxify",
-          content: "Entendieron perfectamente nuestra estética premium. El equipo logró capturar la esencia de la marca y plasmarla en una experiencia digital fluida y rápida."
-        },
-        {
-          role: "Founder @ StartScale",
-          content: "Velocidad y precisión. Necesitábamos lanzar en 3 semanas y cumplieron con creces. El código es limpio, escalable y la web vuela en móviles."
-        }
-      ]
-    },
-    stats: {
-      projects: { label: 'Proyectos Exitosos', desc: 'Landing pages y sistemas web' },
-      countries: { label: 'Países Atendidos', desc: 'Presencia global remota' },
-      rating: { label: 'Satisfacción Cliente', desc: 'Basado en reseñas verificadas' }
-    }
-  },
   en: {
     nav: {
       services: 'Services',
@@ -362,7 +248,7 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('es');
+  const [language, setLanguage] = useState<Language>('pt');
 
   const t = (path: string) => {
     const keys = path.split('.');
