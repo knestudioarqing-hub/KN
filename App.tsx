@@ -5,6 +5,7 @@ import Services from './components/Services';
 import Process from './components/Process';
 import Testimonials from './components/Testimonials';
 import Stats from './components/Stats';
+import Footer from './components/Footer';
 import { LanguageProvider } from './LanguageContext';
 
 const AppContent: React.FC = () => {
@@ -25,15 +26,16 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-black text-gray-900 dark:text-white overflow-x-hidden transition-colors duration-300">
+    <div className="min-h-screen bg-gray-50 dark:bg-black text-gray-900 dark:text-white overflow-x-hidden transition-colors duration-300 flex flex-col">
       <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <main>
+      <main className="flex-grow">
         <Hero />
         <Services />
         <Process />
         <Testimonials />
         <Stats />
       </main>
+      <Footer />
     </div>
   );
 };

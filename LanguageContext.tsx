@@ -121,6 +121,9 @@ const translations: Translations = {
       projects: { label: 'Successful Projects', desc: 'Landing pages & web systems' },
       countries: { label: 'Countries Served', desc: 'Global remote presence' },
       rating: { label: 'Client Satisfaction', desc: 'Based on verified reviews' }
+    },
+    footer: {
+      copyright: '© 2024 - 2026. All rights reserved to KN Growth'
     }
   },
   pt: {
@@ -235,6 +238,9 @@ const translations: Translations = {
       projects: { label: 'Projetos de Sucesso', desc: 'Landing pages e sistemas web' },
       countries: { label: 'Países Atendidos', desc: 'Presença global remota' },
       rating: { label: 'Satisfação do Cliente', desc: 'Baseado em avaliações verificadas' }
+    },
+    footer: {
+      copyright: '© 2024 - 2026. Todos direitos reservados a KN Growth'
     }
   }
 };
