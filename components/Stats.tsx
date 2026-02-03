@@ -86,7 +86,7 @@ const Stats: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-20 bg-white dark:bg-black border-t border-gray-200 dark:border-white/5 overflow-hidden transition-colors duration-500">
+    <section ref={sectionRef} className="relative py-16 sm:py-20 bg-white dark:bg-black border-t border-gray-200 dark:border-white/5 overflow-hidden transition-colors duration-500">
       
       {/* Background Grid & Glow - Enhanced */}
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
@@ -111,17 +111,17 @@ const Stats: React.FC = () => {
 
               {/* The Number */}
               <div className="relative mb-2">
-                <span className="text-6xl sm:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-gray-900 to-gray-500 dark:from-white dark:to-white/40 tracking-tight transition-colors">
+                <span className="text-5xl sm:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-gray-900 to-gray-500 dark:from-white dark:to-white/40 tracking-tight transition-colors">
                   {stat.value}{stat.suffix}
                 </span>
                 {/* Subtle text shadow/glow behind the number */}
-                <span className="absolute left-0 top-0 text-6xl sm:text-7xl font-bold text-brand-orange/10 blur-xl select-none pointer-events-none -z-10">
+                <span className="absolute left-0 top-0 text-5xl sm:text-6xl lg:text-7xl font-bold text-brand-orange/10 blur-xl select-none pointer-events-none -z-10">
                    {stat.value}{stat.suffix}
                 </span>
               </div>
 
               {/* Description */}
-              <p className="text-gray-600 dark:text-gray-500 font-medium transition-colors">
+              <p className="text-gray-600 dark:text-gray-500 font-medium transition-colors text-sm sm:text-base">
                 {stat.description}
               </p>
 
