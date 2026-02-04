@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import { LanguageProvider } from './LanguageContext';
 
 const AppContent: React.FC = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
     // Apply theme class to html element
