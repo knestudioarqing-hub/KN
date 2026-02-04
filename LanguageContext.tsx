@@ -34,7 +34,7 @@ const translations: Translations = {
       top_products: 'Top Products',
       view_all: 'View All',
       table_name: 'Name',
-      table_sales: 'Revenue',
+      table_sales: 'Growth',
       products_list: [
         'Architecture Studio LP',
         'Medical Clinic Pro',
@@ -169,7 +169,7 @@ const translations: Translations = {
       top_products: 'Produtos Top',
       view_all: 'Ver Tudo',
       table_name: 'Nome',
-      table_sales: 'Receita',
+      table_sales: 'Crescimento',
       products_list: [
         'Landing de Arquitetura',
         'Landing Clínica Médica',

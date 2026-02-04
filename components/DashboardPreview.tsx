@@ -6,6 +6,9 @@ const DashboardPreview: React.FC = () => {
   const { t } = useLanguage();
 
   const products = t('dashboard.products_list') || [];
+  
+  // Porcentajes de escala simulados para la demostración (ajustados < 100%)
+  const growthPercentages = [94, 78, 56, 32];
 
   return (
     <div className="relative rounded-t-xl sm:rounded-t-3xl border border-gray-200 dark:border-white/10 bg-[#0A0A0A] dark:bg-[#0A0A0A]/80 backdrop-blur-xl shadow-2xl overflow-hidden animate-float" style={{ animationDuration: '8s' }}>
@@ -73,8 +76,8 @@ const DashboardPreview: React.FC = () => {
                                 </div>
                                 <span className="truncate">{name}</span>
                             </div>
-                            <div className="col-span-3 text-right text-white font-mono">
-                                ${(8500 - (index * 1200)).toLocaleString()}
+                            <div className="col-span-3 text-right text-emerald-400 font-mono font-bold shadow-emerald-400/20 drop-shadow-sm">
+                                +{growthPercentages[index] || 50}%
                             </div>
                         </div>
                     ))}
