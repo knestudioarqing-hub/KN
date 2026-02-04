@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode, useCallback, useMemo } from 'react';
 
-type Language = 'en' | 'pt';
+type Language = 'en' | 'pt' | 'es';
 
 type Translations = {
   [key in Language]: {
@@ -277,6 +277,141 @@ const translations: Translations = {
     },
     footer: {
       copyright: '© 2024 - 2026. Todos direitos reservados a KN Growth'
+    }
+  },
+  es: {
+    nav: {
+      services: 'Servicios',
+      testimonials: 'Testimonios',
+      process: 'Proceso',
+      contact: 'Contacto',
+      cta: 'Quiero generar resultados'
+    },
+    hero: {
+      pill: 'Exclusivo para servicios B2B e infoproductores',
+      title1: 'No existe nada que genere más',
+      title2: 'autoridad que el RESULTADO',
+      subtitle: 'Por eso, diseñamos landing pages y sitios web de alta conversión para negocios B2B e infoproductores, escalando sus operaciones de ventas a través de diseño y estrategia de clase mundial.',
+      ctaPrimary: 'Quiero generar resultados',
+      ctaSecondary: 'Ver Demo Reel',
+      trusted: 'Con la confianza de +50 empresas'
+    },
+    dashboard: {
+      header_dashboard: 'Panel',
+      header_sales: 'Reporte de Ventas',
+      header_products: 'Productos',
+      search: 'Buscar aquí...',
+      top_products: 'Productos Top',
+      view_all: 'Ver Todo',
+      table_name: 'Nombre',
+      table_sales: 'Crecimiento',
+      products_list: [
+        'Landing de Arquitectura',
+        'Landing Clínica Médica',
+        'E-commerce High-End',
+        'SaaS Dashboard UI'
+      ],
+      visitors: 'Métricas de Crecimiento',
+      vs_last: 'vs mes anterior'
+    },
+    services: {
+      title: 'Soluciones Digitales que',
+      titleHighlight: 'Impulsan tu Crecimiento',
+      subtitle: 'No solo diseñamos sitios bonitos. Construimos activos digitales enfocados en la rentabilidad, velocidad y experiencia del usuario.',
+      more: 'Saber más',
+      items: [
+        {
+          title: "Landing Pages de Alto Impacto",
+          description: "Optimizadas para conversión. Transformamos tráfico frío en clientes calificados a través de copywriting persuasivo y diseño estratégico.",
+          tags: ["CRO", "Copywriting", "A/B Testing"]
+        },
+        {
+          title: "Sitios Corporativos",
+          description: "Eleva tu autoridad digital. Construimos sitios escalables, rápidos y seguros que reflejan la excelencia de tu marca.",
+          tags: ["Next.js", "Escalabilidad", "SEO"]
+        },
+        {
+          title: "Sistemas de Diseño & UI/UX",
+          description: "Coherencia visual en todos los puntos de contacto. Creamos interfaces intuitivas que encantan a los usuarios y refuerzan tu identidad.",
+          tags: ["Figma", "Branding", "User Flow"]
+        }
+      ]
+    },
+    process: {
+      label: 'Metodología',
+      title: 'De la Idea a la',
+      titleHighlight: 'Conversión',
+      subtitle: 'Un proceso iterativo y transparente diseñado para maximizar resultados y minimizar la fricción.',
+      steps: [
+        {
+          title: 'Estrategia & Discovery',
+          description: 'Analizamos tu modelo de negocio, audiencia y competidores. No escribimos una sola línea de código sin un plan claro para la conversión.',
+          points: ['Auditoría de UX actual', 'Definición de KPIs', 'User Personas']
+        },
+        {
+          title: 'Diseño UI/UX de Alto Nivel',
+          description: 'Creamos wireframes y prototipos de alta fidelidad. Cada píxel está pensado para guiar al usuario hacia la acción deseada.',
+          points: ['Diseño Visual Premium', 'Prototipado Interactivo', 'Copywriting Persuasivo']
+        },
+        {
+          title: 'Desarrollo & Optimización',
+          description: 'Transformamos el diseño en código limpio y rápido. Usamos las últimas tecnologías para garantizar un rendimiento perfecto en cualquier dispositivo.',
+          points: ['Next.js / React', 'Velocidad de carga < 1s', 'SEO Técnico']
+        },
+        {
+          title: 'Lanzamiento & Crecimiento',
+          description: 'Desplegamos tu proyecto y configuramos las herramientas de medición. Pero el trabajo no termina ahí; iteramos basándonos en datos reales.',
+          points: ['Configuración de Analytics', 'Soporte Post-Lanzamiento', 'A/B Testing']
+        }
+      ],
+      featuresTitle: 'Ecosistema Completo',
+      features: [
+        { 
+          title: 'CRM y Seguimiento', 
+          description: 'Rastrea cada interacción y nunca pierdas una oportunidad de venta.' 
+        },
+        { 
+          title: 'LPs de Alta Conversión', 
+          description: 'Páginas diseñadas científicamente para convertir visitantes en compradores.' 
+        },
+        { 
+          title: 'Control vía CMS', 
+          description: 'Actualiza textos e imágenes instantáneamente sin tocar código.' 
+        },
+        { 
+          title: 'Automatización Inteligente', 
+          description: 'Conecta tus herramientas favoritas y automatiza flujos sin esfuerzo.' 
+        }
+      ],
+      cta: "Construye tu Ecosistema"
+    },
+    testimonials: {
+      title: 'Lo que dicen nuestros',
+      titleHighlight: 'Socios & Clientes',
+      subtitle: 'Resultados reales para empresas que buscan liderar su sector.',
+      items: [
+        {
+          role: "CEO @ TechFlow",
+          content: "La transformación de nuestro sitio fue radical. Pasamos de una tasa de conversión de 1.2% a 4.5% en solo dos meses. El diseño no es solo bonito, realmente vende."
+        },
+        {
+          role: "Marketing Dir @ Luxify",
+          content: "Entendieron perfectamente nuestra estética premium. El equipo logró capturar la esencia de la marca y traducirla en una experiencia digital fluida y rápida."
+        },
+        {
+          role: "Founder @ StartScale",
+          content: "Velocidad y precisión. Necesitábamos lanzar en 3 semanas y superaron las expectativas. El código es limpio, escalable y el sitio vuela en dispositivos móviles."
+        }
+      ]
+    },
+    stats: {
+      projects: { label: 'Proyectos Exitosos', desc: 'Landing pages y sistemas web' },
+      countries: { label: 'Países Atendidos', desc: 'Presencia global remota' },
+      rating: { label: 'Satisfacción del Cliente', desc: 'Basado en reseñas verificadas' },
+      cta: "Sé nuestro próximo Caso de Éxito"
+    },
+    footer: {
+      copyright: '© 2024 - 2026. Todos los derechos reservados a KN Growth'
     }
   }
 };
