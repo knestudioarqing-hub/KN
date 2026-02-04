@@ -5,8 +5,11 @@ const Footer: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-white dark:bg-[#101010] py-12 border-t border-gray-200 dark:border-white/5 overflow-hidden transition-colors duration-500">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
+    <footer className="relative bg-white dark:bg-black py-16 sm:py-24 overflow-hidden transition-colors duration-500">
+      {/* Background Noise overlay to match Stats section */}
+      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-8 sm:mb-12 font-medium tracking-wide transition-colors">
           {t('footer.copyright')}
         </p>

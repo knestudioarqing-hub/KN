@@ -25,7 +25,6 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
     { name: t('nav.services'), href: '#servicios' },
     { name: t('nav.testimonials'), href: '#depoimentos' },
     { name: t('nav.process'), href: '#proceso' },
-    { name: t('nav.contact'), href: '#' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -65,10 +64,10 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between relative">
           {/* Logo */}
           <div 
-            className="flex-shrink-0 flex items-center gap-2 cursor-pointer"
+            className="flex-shrink-0 flex items-center gap-2 cursor-pointer relative z-10"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <span className="font-semibold text-xl tracking-tight text-gray-900 dark:text-white transition-colors">
@@ -76,8 +75,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
             </span>
           </div>
 
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Links - Absolutely Centered */}
+          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -91,7 +90,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           </div>
 
           {/* Right Actions */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-4 relative z-10">
             {/* Language Toggle */}
             <button
               onClick={cycleLanguage}

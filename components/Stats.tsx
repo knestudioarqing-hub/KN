@@ -86,16 +86,13 @@ const Stats: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-16 sm:py-20 bg-white dark:bg-black border-t border-gray-200 dark:border-white/5 overflow-hidden transition-colors duration-500">
+    <section ref={sectionRef} className="relative pt-16 pb-8 sm:pt-20 sm:pb-12 bg-white dark:bg-black border-t border-gray-200 dark:border-white/5 overflow-hidden transition-colors duration-500">
       
       {/* Background Grid & Glow - Enhanced */}
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
       
       {/* Top Horizon Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-brand-orange/50 to-transparent shadow-[0_0_30px_rgba(255,85,0,0.5)]"></div>
-      
-      {/* Bottom Corner Glow */}
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-brand-orange/10 blur-[100px] rounded-full pointer-events-none translate-y-1/2 translate-x-1/4"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-white/10">

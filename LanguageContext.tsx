@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useCallback, useMemo } from 'react';
 
 type Language = 'en' | 'pt';
 
@@ -18,11 +18,11 @@ const translations: Translations = {
       cta: 'Book a Call'
     },
     hero: {
-      pill: 'Exclusive for B2C services',
-      title1: 'Turn Visits into',
-      title2: 'Recurring Customers',
-      subtitle: 'We design high-performance landing pages and websites. Boost your brand with validated conversion strategies and world-class design.',
-      ctaPrimary: 'Start Free Project',
+      pill: 'Exclusive for B2B services and infoproductors',
+      title1: 'Nothing generates more authority',
+      title2: 'than RESULTS',
+      subtitle: 'We design high-conversion landing pages and websites for B2B businesses and infoproductors, scaling their sales operations through world-class design and strategy.',
+      ctaPrimary: 'Schedule a free consultation',
       ctaSecondary: 'Watch Demo Reel',
       trusted: 'Trusted by 200+ innovative companies'
     },
@@ -34,10 +34,14 @@ const translations: Translations = {
       top_products: 'Top Products',
       view_all: 'View All',
       table_name: 'Name',
-      table_pop: 'Popularity',
-      table_sales: 'Sales',
-      item_name: 'Landing Page Pro',
-      visitors: 'Visitor Insights',
+      table_sales: 'Revenue',
+      products_list: [
+        'Architecture Studio LP',
+        'Medical Clinic Pro',
+        'E-commerce Storefront',
+        'SaaS Dashboard UI'
+      ],
+      visitors: 'Growth Metrics',
       vs_last: 'vs last month'
     },
     services: {
@@ -135,11 +139,11 @@ const translations: Translations = {
       cta: 'Agendar Chamada'
     },
     hero: {
-      pill: 'Exclusivo para serviços B2C',
-      title1: 'Transforme Visitas em',
-      title2: 'Clientes Recorrentes',
-      subtitle: 'Projetamos landing pages e sites de alto desempenho. Potencialize sua marca com estratégias de conversão validadas e design de classe mundial.',
-      ctaPrimary: 'Começar Projeto Grátis',
+      pill: 'Exclusivo para serviços B2B e infoprodutores',
+      title1: 'Não existe nada que gere mais',
+      title2: 'autoridade do que o RESULTADO',
+      subtitle: 'Projetamos landing pages e sites de alta conversão para negócios B2B e infoprodutores, escalando suas operações de vendas por meio de design e estratégia de padrão mundial.',
+      ctaPrimary: 'Agendar consulta gratuita',
       ctaSecondary: 'Ver Demo Reel',
       trusted: 'Com a confiança de +200 empresas inovadoras'
     },
@@ -151,10 +155,14 @@ const translations: Translations = {
       top_products: 'Produtos Top',
       view_all: 'Ver Tudo',
       table_name: 'Nome',
-      table_pop: 'Popularidade',
-      table_sales: 'Vendas',
-      item_name: 'Landing Page Pro',
-      visitors: 'Insights Visitantes',
+      table_sales: 'Receita',
+      products_list: [
+        'Landing de Arquitetura',
+        'Landing Clínica Médica',
+        'E-commerce High-End',
+        'SaaS Dashboard'
+      ],
+      visitors: 'Métricas de Crescimento',
       vs_last: 'vs mês anterior'
     },
     services: {
@@ -188,7 +196,7 @@ const translations: Translations = {
       steps: [
         {
           title: 'Estratégia & Discovery',
-          description: 'Analisamos seu modelo de negócio, audiência e concorrentes. Não escrevemos uma única linha de código sem um plano claro para conversão.',
+          description: 'Analisamos seu modelo de negócio, audiência e concorrentes. Não escrevemos una única linha de código sem um plano claro para conversão.',
           points: ['Auditoria de UX atual', 'Definição de KPIs', 'User Personas']
         },
         {
@@ -226,11 +234,11 @@ const translations: Translations = {
         },
         {
           role: "Marketing Dir @ Luxify",
-          content: "Entenderam perfeitamente nossa estética premium. A equipe conseguiu capturar a essência da marca e traduzi-la em uma experiência digital fluida e rápida."
+          content: "Entenderam perfeitamente nossa estética premium. A equipe conseguiu capturar a essência da marca e traduzi-la em uma experiencia digital fluida e rápida."
         },
         {
           role: "Founder @ StartScale",
-          content: "Velocidad e precisão. Precisávamos lançar em 3 semanas e superaram as expectativas. O código é limpo, escalável e o site voa em dispositivos móveis."
+          content: "Velocidade e precisão. Precisávamos lançar em 3 semanas e superaram as expectativas. O código é limpo, escalável e o site voa em dispositivos móveis."
         }
       ]
     },
@@ -256,22 +264,28 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>('pt');
 
-  const t = (path: string) => {
+  const t = useCallback((path: string) => {
     const keys = path.split('.');
     let current: any = translations[language];
     
     for (const key of keys) {
-      if (current[key] === undefined) {
+      if (!current || current[key] === undefined) {
         console.warn(`Translation missing for key: ${path} in language: ${language}`);
         return path;
       }
       current = current[key];
     }
     return current;
-  };
+  }, [language]);
+
+  const contextValue = useMemo(() => ({
+    language,
+    setLanguage,
+    t
+  }), [language, setLanguage, t]);
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={contextValue}>
       {children}
     </LanguageContext.Provider>
   );

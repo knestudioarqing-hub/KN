@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import DashboardPreview from './DashboardPreview';
+import VideoModal from './VideoModal';
 import { useLanguage } from '../LanguageContext';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="relative pt-28 pb-0 sm:pt-40 sm:pb-0 overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-500">
@@ -43,7 +45,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 transition-colors duration-300 px-2">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 transition-colors duration-300 px-2">
           {t('hero.title1')} <br className="hidden md:block" />
           <span className="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-500 dark:from-white dark:to-white/60">
             {t('hero.title2')}
@@ -56,29 +58,20 @@ const Hero: React.FC = () => {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 sm:mb-16 px-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 sm:mb-20 px-4">
           <button className="w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-brand-orange hover:bg-orange-600 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_0_40px_-10px_rgba(255,85,0,0.4)] hover:shadow-[0_0_60px_-15px_rgba(255,85,0,0.6)] hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base">
             {t('hero.ctaPrimary')}
           </button>
           
-          <button className="w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-white dark:bg-white/5 hover:bg-gray-50 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 text-gray-800 dark:text-white rounded-full font-semibold transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2 group shadow-sm dark:shadow-none text-sm sm:text-base">
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-white dark:bg-white/5 hover:bg-gray-50 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 text-gray-800 dark:text-white rounded-full font-semibold transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2 group shadow-sm dark:shadow-none text-sm sm:text-base"
+          >
             <div className="w-6 h-6 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center group-hover:scale-110 transition-transform">
               <Play size={10} fill="currentColor" className="ml-0.5" />
             </div>
-            {t('hero.ctaSecondary')}
+            <span>{t('hero.ctaSecondary')}</span>
           </button>
-        </div>
-
-        {/* Trusted By Logos */}
-        <div className="mb-16 sm:mb-20 px-4">
-          <p className="text-xs sm:text-sm text-gray-500 font-medium mb-6 uppercase tracking-wider">{t('hero.trusted')}</p>
-          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-6 sm:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-             {/* Styled to work in both modes - scaled down on mobile */}
-             <div className="flex items-center gap-2 font-bold text-lg sm:text-xl text-gray-800 dark:text-white"><div className="w-4 h-4 sm:w-5 sm:h-5 bg-gray-800 dark:bg-white rounded-sm"></div>FeatherDev</div>
-             <div className="flex items-center gap-2 font-bold text-lg sm:text-xl text-gray-800 dark:text-white"><div className="w-4 h-4 sm:w-5 sm:h-5 bg-gray-800 dark:bg-white rounded-full"></div>Boltshift</div>
-             <div className="flex items-center gap-2 font-bold text-lg sm:text-xl text-gray-800 dark:text-white"><div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-gray-800 dark:border-white rounded-sm"></div>GlobalBank</div>
-             <div className="flex items-center gap-2 font-bold text-lg sm:text-xl text-gray-800 dark:text-white"><div className="w-4 h-4 sm:w-5 sm:h-5 bg-gray-800 dark:bg-white transform rotate-45"></div>Lightbox</div>
-          </div>
         </div>
 
         {/* Dashboard Preview Section (The bottom visual anchor) */}
@@ -93,6 +86,9 @@ const Hero: React.FC = () => {
 
       {/* Final Section Gradient to ensure perfect blend with next section */}
       <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-40 bg-gradient-to-t from-gray-50 to-transparent dark:from-black dark:to-transparent z-20 pointer-events-none transition-colors duration-500"></div>
+
+      {/* Video Pop-up Modal */}
+      <VideoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
