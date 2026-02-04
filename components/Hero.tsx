@@ -24,11 +24,17 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* The Massive Orange Glow (The "Horizon") */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[200%] sm:w-[150%] h-[400px] sm:h-[600px] bg-brand-orange/10 dark:bg-brand-orange/20 blur-[80px] sm:blur-[120px] rounded-[100%] pointer-events-none z-0 translate-y-1/3 transition-colors duration-500"></div>
+      {/* The Massive Orange Glow (The "Horizon") 
+          Mobile adjustments: Increased height to h-[350px] to provide a soft backlight against the pure black, 
+          breaking the "shocking" contrast while keeping text readable.
+      */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] sm:w-[150%] h-[350px] sm:h-[600px] bg-brand-orange/20 dark:bg-brand-orange/20 blur-[60px] sm:blur-[120px] rounded-[100%] pointer-events-none z-0 translate-y-1/3 transition-colors duration-500"></div>
       
-      {/* Another focused glow for the text area */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[300px] sm:w-[800px] h-[300px] sm:h-[400px] bg-brand-orange/5 blur-[60px] sm:blur-[80px] rounded-full pointer-events-none z-0"></div>
+      {/* Another focused glow for the text area 
+          Mobile adjustments: Increased size (w-[300px]) for diffusion, but lowered opacity (opacity-30) 
+          and intensity (bg-brand-orange/10) to be "barely there" and soft.
+      */}
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[300px] sm:w-[800px] h-[300px] sm:h-[400px] bg-brand-orange/10 sm:bg-brand-orange/5 blur-[60px] sm:blur-[80px] rounded-full pointer-events-none z-0 opacity-30 sm:opacity-100"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
