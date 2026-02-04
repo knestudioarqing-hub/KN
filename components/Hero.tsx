@@ -52,20 +52,20 @@ const Hero: React.FC = () => {
           </span>
         </h1>
 
-        {/* Subheadline */}
-        <p className="max-w-2xl mx-auto text-base sm:text-xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 leading-relaxed transition-colors duration-300 px-4">
+        {/* Subheadline - Font size reduced to text-sm on mobile + tracking-tight */}
+        <p className="max-w-2xl mx-auto text-sm sm:text-xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 leading-relaxed tracking-tight sm:tracking-normal transition-colors duration-300 px-4">
           {t('hero.subtitle')}
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 sm:mb-20 px-4">
-          <button className="w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-brand-orange hover:bg-orange-600 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_0_40px_-10px_rgba(255,85,0,0.4)] hover:shadow-[0_0_60px_-15px_rgba(255,85,0,0.6)] hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base">
+          <button className="font-poppins w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-brand-orange hover:bg-orange-600 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_0_40px_-10px_rgba(255,85,0,0.4)] hover:shadow-[0_0_60px_-15px_rgba(255,85,0,0.6)] hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base">
             {t('hero.ctaPrimary')}
           </button>
           
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-white dark:bg-white/5 hover:bg-gray-50 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 text-gray-800 dark:text-white rounded-full font-semibold transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2 group shadow-sm dark:shadow-none text-sm sm:text-base"
+            className="font-poppins w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-white dark:bg-white/5 hover:bg-gray-50 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 text-gray-800 dark:text-white rounded-full font-semibold transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2 group shadow-sm dark:shadow-none text-sm sm:text-base"
           >
             <div className="w-6 h-6 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center group-hover:scale-110 transition-transform">
               <Play size={10} fill="currentColor" className="ml-0.5" />

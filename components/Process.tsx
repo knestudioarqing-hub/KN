@@ -1,5 +1,12 @@
 import React from 'react';
-import { Search, PenTool, Code2, Rocket, CheckCircle, Users, Layout, Settings, Zap } from 'lucide-react';
+import { 
+  Search, PenTool, Code2, Rocket, CheckCircle, 
+  Users, Layout, Settings, Zap, 
+  Mail, Calendar, MessageSquare, Phone, 
+  Image, MousePointer, Monitor, Smartphone,
+  Edit, Save, FileText, Lock, Eye,
+  GitBranch, Filter, Bell
+} from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 
 const Process: React.FC = () => {
@@ -11,9 +18,33 @@ const Process: React.FC = () => {
     icon: [Search, PenTool, Code2, Rocket][index]
   }));
 
+  // Configuration for the "Ecosystem" cards with specific background icons for the visual effect
+  const ecosystemConfig = [
+    {
+      mainIcon: Users,
+      bgIcons: [Mail, Calendar, MessageSquare, Phone, Users, CheckCircle],
+      color: "from-blue-500 to-indigo-500"
+    },
+    {
+      mainIcon: Layout,
+      bgIcons: [Image, Code2, MousePointer, Monitor, Smartphone, Layout],
+      color: "from-brand-orange to-orange-400"
+    },
+    {
+      mainIcon: Settings,
+      bgIcons: [Edit, Save, FileText, Lock, Eye, Settings],
+      color: "from-emerald-500 to-teal-400"
+    },
+    {
+      mainIcon: Zap,
+      bgIcons: [GitBranch, Filter, Bell, Rocket, Search, Zap],
+      color: "from-purple-500 to-pink-500"
+    }
+  ];
+
   const features = t('process.features').map((feature: any, index: number) => ({
     ...feature,
-    icon: [Users, Layout, Settings, Zap][index]
+    ...ecosystemConfig[index]
   }));
 
   return (
@@ -101,7 +132,7 @@ const Process: React.FC = () => {
           </div>
         </div>
 
-        {/* New Features Section */}
+        {/* New Features Section - UPDATED DESIGN */}
         <div className="relative z-10">
             <div className="text-center mb-12 sm:mb-16">
                 <div className="inline-block h-1 w-20 bg-brand-orange rounded-full mb-6 sm:mb-8 shadow-[0_0_15px_rgba(255,85,0,0.5)]"></div>
@@ -111,25 +142,62 @@ const Process: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                {features.map((feature: any, index: number) => (
-                    <div 
-                        key={index}
-                        className="group relative p-6 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/5 hover:border-brand-orange/50 dark:hover:border-brand-orange/50 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-                    >
-                         {/* Hover Gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl pointer-events-none"></div>
-                        <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-brand-orange/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
-                        <div className="relative z-10 flex flex-col items-center text-center h-full">
-                            <div className="w-14 h-14 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 flex items-center justify-center mb-5 text-gray-600 dark:text-gray-300 group-hover:text-brand-orange group-hover:scale-110 transition-all duration-300 shadow-sm group-hover:shadow-[0_0_20px_rgba(255,85,0,0.3)]">
-                                <feature.icon size={28} />
-                            </div>
-                            <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-tight transition-colors">
-                                {feature.title}
-                            </h4>
-                        </div>
-                    </div>
-                ))}
+                {features.map((feature: any, index: number) => {
+                    const MainIcon = feature.mainIcon;
+                    return (
+                      <div 
+                          key={index}
+                          className="group relative flex flex-col overflow-hidden rounded-3xl bg-[#0F0F0F] dark:bg-[#0A0A0A] border border-gray-200 dark:border-white/10 hover:border-brand-orange/50 transition-all duration-500 shadow-xl"
+                      >
+                          {/* Inner Content Container */}
+                          <div className="p-6 relative z-20">
+                              <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-tight transition-colors">
+                                  {feature.title}
+                              </h4>
+                              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                                  {feature.description}
+                              </p>
+                          </div>
+
+                          {/* Visual Grid Area */}
+                          <div className="relative h-40 mt-auto w-full overflow-hidden bg-gray-100 dark:bg-white/5 border-t border-gray-200 dark:border-white/5">
+                               {/* Subtle Radial Gradient Background */}
+                               <div className={`absolute inset-0 bg-gradient-to-t ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                               
+                               {/* Ghost Icons Grid - Background */}
+                               <div className="absolute inset-0 p-4 grid grid-cols-3 gap-4 opacity-10 dark:opacity-20 pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500">
+                                  {feature.bgIcons.map((Icon: any, i: number) => (
+                                      <div key={i} className="flex items-center justify-center">
+                                          <Icon size={24} className="text-gray-900 dark:text-white" />
+                                      </div>
+                                  ))}
+                               </div>
+
+                               {/* Fade overlay for bottom integration */}
+                               <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-transparent to-transparent dark:from-[#0A0A0A] opacity-80"></div>
+
+                               {/* Highlighted Main Icon - Centered floating */}
+                               <div className="absolute inset-0 flex items-center justify-center">
+                                   <div className="relative group-hover:-translate-y-2 transition-transform duration-500 ease-out">
+                                       {/* Glow behind main icon */}
+                                       <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500`}></div>
+                                       
+                                       <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-800 to-black border border-white/10 flex items-center justify-center shadow-2xl z-10 group-hover:border-white/30 transition-colors">
+                                           <MainIcon size={28} className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
+                                       </div>
+                                   </div>
+                               </div>
+                          </div>
+                      </div>
+                    );
+                })}
+            </div>
+            
+            {/* New CTA for Ecosystem */}
+            <div className="mt-12 sm:mt-16 flex justify-center relative z-20 px-4">
+               <button className="font-poppins w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-brand-orange hover:bg-orange-600 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_0_40px_-10px_rgba(255,85,0,0.4)] hover:shadow-[0_0_60px_-15px_rgba(255,85,0,0.6)] hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base">
+                  {t('hero.ctaPrimary')}
+               </button>
             </div>
         </div>
 

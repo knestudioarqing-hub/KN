@@ -110,7 +110,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
             </button>
 
             {/* CTA Button */}
-            <button className="bg-brand-orange hover:bg-orange-600 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-[0_0_20px_-5px_rgba(255,85,0,0.5)] hover:shadow-[0_0_25px_-5px_rgba(255,85,0,0.7)]">
+            <button className="font-poppins bg-brand-orange hover:bg-orange-600 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-[0_0_20px_-5px_rgba(255,85,0,0.5)] hover:shadow-[0_0_25px_-5px_rgba(255,85,0,0.7)]">
               {t('nav.cta')}
             </button>
           </div>
@@ -154,7 +154,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
                 {link.name}
               </a>
             ))}
-            <button className="bg-brand-orange text-white text-sm font-medium px-5 py-3 rounded-lg w-full">
+            <button className="font-poppins bg-brand-orange text-white text-sm font-medium px-5 py-3 rounded-lg w-full">
               {t('nav.cta')}
             </button>
           </div>

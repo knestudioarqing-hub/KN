@@ -24,7 +24,7 @@ const translations: Translations = {
       subtitle: 'We design high-conversion landing pages and websites for B2B businesses and infoproductors, scaling their sales operations through world-class design and strategy.',
       ctaPrimary: 'Schedule a free consultation',
       ctaSecondary: 'Watch Demo Reel',
-      trusted: 'Trusted by 200+ innovative companies'
+      trusted: 'Trusted by 50+ innovative companies'
     },
     dashboard: {
       header_dashboard: 'Dashboard',
@@ -96,11 +96,24 @@ const translations: Translations = {
       ],
       featuresTitle: 'Complete Ecosystem',
       features: [
-        { title: 'CRM and follow-up' },
-        { title: 'High-conversion landing pages' },
-        { title: 'Full control over the landing page' },
-        { title: 'Automation and lead-qualification flows' }
-      ]
+        { 
+          title: 'CRM & Follow-up', 
+          description: 'Track every lead interaction and never miss a sales opportunity.' 
+        },
+        { 
+          title: 'High-conversion LPs', 
+          description: 'Pages scientifically designed to turn visitors into buyers.' 
+        },
+        { 
+          title: 'CMS Control', 
+          description: 'Update text and images instantly without touching code.' 
+        },
+        { 
+          title: 'Smart Automation', 
+          description: 'Connect your favorite tools and automate workflows seamlessly.' 
+        }
+      ],
+      cta: "Build your Ecosystem"
     },
     testimonials: {
       title: 'What our',
@@ -124,7 +137,8 @@ const translations: Translations = {
     stats: {
       projects: { label: 'Successful Projects', desc: 'Landing pages & web systems' },
       countries: { label: 'Countries Served', desc: 'Global remote presence' },
-      rating: { label: 'Client Satisfaction', desc: 'Based on verified reviews' }
+      rating: { label: 'Client Satisfaction', desc: 'Based on verified reviews' },
+      cta: "Become our next Success Story"
     },
     footer: {
       copyright: '© 2024 - 2026. All rights reserved to KN Growth'
@@ -145,7 +159,7 @@ const translations: Translations = {
       subtitle: 'Projetamos landing pages e sites de alta conversão para negócios B2B e infoprodutores, escalando suas operações de vendas por meio de design e estratégia de padrão mundial.',
       ctaPrimary: 'Agendar consulta gratuita',
       ctaSecondary: 'Ver Demo Reel',
-      trusted: 'Com a confiança de +200 empresas inovadoras'
+      trusted: 'Com a confiança de +50 empresas'
     },
     dashboard: {
       header_dashboard: 'Painel',
@@ -217,11 +231,24 @@ const translations: Translations = {
       ],
       featuresTitle: 'Ecossistema Completo',
       features: [
-        { title: 'CRM e acompanhamento' },
-        { title: 'Landing pages de alta conversão' },
-        { title: 'Controle total sobre a landing page' },
-        { title: 'Automação e fluxos de qualificação' }
-      ]
+        { 
+          title: 'CRM e Acompanhamento', 
+          description: 'Rastreie cada interação e nunca perca uma oportunidade de venda.' 
+        },
+        { 
+          title: 'LPs de Alta Conversão', 
+          description: 'Páginas projetadas cientificamente para transformar visitantes em compradores.' 
+        },
+        { 
+          title: 'Controle via CMS', 
+          description: 'Atualize textos e imagens instantaneamente sem tocar em código.' 
+        },
+        { 
+          title: 'Automação Inteligente', 
+          description: 'Conecte suas ferramentas favoritas e automatize fluxos sem esforço.' 
+        }
+      ],
+      cta: "Construa seu Ecossistema"
     },
     testimonials: {
       title: 'O que dizem nossos',
@@ -245,7 +272,8 @@ const translations: Translations = {
     stats: {
       projects: { label: 'Projetos de Sucesso', desc: 'Landing pages e sistemas web' },
       countries: { label: 'Países Atendidos', desc: 'Presença global remota' },
-      rating: { label: 'Satisfação do Cliente', desc: 'Baseado em avaliações verificadas' }
+      rating: { label: 'Satisfação do Cliente', desc: 'Baseado em avaliações verificadas' },
+      cta: "Seja nosso próximo Case de Sucesso"
     },
     footer: {
       copyright: '© 2024 - 2026. Todos direitos reservados a KN Growth'

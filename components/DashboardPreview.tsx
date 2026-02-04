@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Bell, ShoppingBag, ArrowUpRight } from 'lucide-react';
+import { Search, Bell, Layout, ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 
 const DashboardPreview: React.FC = () => {
@@ -69,7 +69,7 @@ const DashboardPreview: React.FC = () => {
                             <div className="col-span-1 text-gray-400">0{index + 1}</div>
                             <div className="col-span-8 text-white font-medium flex items-center gap-3">
                                 <div className="w-8 h-8 rounded bg-gray-800 flex items-center justify-center text-gray-500 flex-shrink-0 group-hover:text-white transition-colors">
-                                    <ShoppingBag size={14} />
+                                    <Layout size={14} />
                                 </div>
                                 <span className="truncate">{name}</span>
                             </div>
