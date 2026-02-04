@@ -147,7 +147,7 @@ const Process: React.FC = () => {
                     return (
                       <div 
                           key={index}
-                          className="group relative flex flex-col overflow-hidden rounded-3xl bg-[#0F0F0F] dark:bg-[#0A0A0A] border border-gray-200 dark:border-white/10 hover:border-brand-orange/50 transition-all duration-500 shadow-xl"
+                          className="group relative flex flex-col overflow-hidden rounded-3xl bg-white dark:bg-[#0A0A0A] border border-gray-200 dark:border-white/10 hover:border-brand-orange/50 transition-all duration-500 shadow-xl"
                       >
                           {/* Inner Content Container */}
                           <div className="p-6 relative z-20">
@@ -160,7 +160,7 @@ const Process: React.FC = () => {
                           </div>
 
                           {/* Visual Grid Area */}
-                          <div className="relative h-40 mt-auto w-full overflow-hidden bg-gray-100 dark:bg-white/5 border-t border-gray-200 dark:border-white/5">
+                          <div className="relative h-40 mt-auto w-full overflow-hidden bg-gray-50 dark:bg-white/5 border-t border-gray-200 dark:border-white/5">
                                {/* Subtle Radial Gradient Background */}
                                <div className={`absolute inset-0 bg-gradient-to-t ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
                                
@@ -174,7 +174,7 @@ const Process: React.FC = () => {
                                </div>
 
                                {/* Fade overlay for bottom integration */}
-                               <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-transparent to-transparent dark:from-[#0A0A0A] opacity-80"></div>
+                               <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent dark:from-[#0A0A0A] opacity-80"></div>
 
                                {/* Highlighted Main Icon - Centered floating */}
                                <div className="absolute inset-0 flex items-center justify-center">
@@ -182,8 +182,8 @@ const Process: React.FC = () => {
                                        {/* Glow behind main icon */}
                                        <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500`}></div>
                                        
-                                       <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-800 to-black border border-white/10 flex items-center justify-center shadow-2xl z-10 group-hover:border-white/30 transition-colors">
-                                           <MainIcon size={28} className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
+                                       <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-white to-gray-100 dark:from-gray-800 dark:to-black border border-gray-200 dark:border-white/10 flex items-center justify-center shadow-2xl z-10 group-hover:border-brand-orange/30 dark:group-hover:border-white/30 transition-colors">
+                                           <MainIcon size={28} className="text-gray-900 dark:text-white drop-shadow-[0_0_10px_rgba(255,85,0,0.2)] dark:drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
                                        </div>
                                    </div>
                                </div>
