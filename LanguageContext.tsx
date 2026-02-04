@@ -15,14 +15,14 @@ const translations: Translations = {
       testimonials: 'Testimonials',
       process: 'Process',
       contact: 'Contact',
-      cta: 'Book a Call'
+      cta: 'Get results now'
     },
     hero: {
       pill: 'Exclusive for B2B services and infoproductors',
       title1: 'Nothing generates more authority',
       title2: 'than RESULTS',
-      subtitle: 'We design high-conversion landing pages and websites for B2B businesses and infoproductors, scaling their sales operations through world-class design and strategy.',
-      ctaPrimary: 'Schedule a free consultation',
+      subtitle: 'That’s why we build high-conversion landing pages and websites for B2B businesses and infoproductors, scaling their sales operations through world-class design and strategy.',
+      ctaPrimary: 'Get results now',
       ctaSecondary: 'Watch Demo Reel',
       trusted: 'Trusted by 50+ innovative companies'
     },
@@ -150,14 +150,14 @@ const translations: Translations = {
       testimonials: 'Depoimentos',
       process: 'Processo',
       contact: 'Contato',
-      cta: 'Agendar Chamada'
+      cta: 'Quero gerar resultados'
     },
     hero: {
       pill: 'Exclusivo para serviços B2B e infoprodutores',
       title1: 'Não existe nada que gere mais',
       title2: 'autoridade do que o RESULTADO',
-      subtitle: 'Projetamos landing pages e sites de alta conversão para negócios B2B e infoprodutores, escalando suas operações de vendas por meio de design e estratégia de padrão mundial.',
-      ctaPrimary: 'Agendar consulta gratuita',
+      subtitle: 'Por isso, projetamos landing pages e sites de alta conversão para negócios B2B e infoprodutores, escalando suas operações de vendas por meio de design e estratégia de padrão mundial.',
+      ctaPrimary: 'Quero gerar resultados',
       ctaSecondary: 'Ver Demo Reel',
       trusted: 'Com a confiança de +50 empresas'
     },
