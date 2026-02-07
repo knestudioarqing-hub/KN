@@ -5,6 +5,7 @@ import Services from './components/Services';
 import Process from './components/Process';
 import Testimonials from './components/Testimonials';
 import Stats from './components/Stats';
+import MobileShowcase from './components/MobileShowcase';
 import Footer from './components/Footer';
 import { LanguageProvider } from './LanguageContext';
 
@@ -32,6 +33,7 @@ const AppContent: React.FC = () => {
         <Hero />
         <Services />
         <Process />
+        <MobileShowcase />
         <Testimonials />
         <Stats />
       </main>

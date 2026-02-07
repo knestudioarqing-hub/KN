@@ -12,13 +12,13 @@ const Services: React.FC = () => {
 
   return (
     <section id="servicios" className="relative py-20 sm:py-32 bg-white dark:bg-black overflow-hidden transition-colors duration-500">
-      
+
       {/* Lighting Effects - High Contrast */}
       <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[500px] h-[500px] bg-brand-orange/20 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
       <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[600px] h-[600px] bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-12 sm:mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6 transition-colors">
@@ -35,13 +35,13 @@ const Services: React.FC = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service: any, index: number) => (
-            <div 
+            <div
               key={index}
               className="group relative p-6 sm:p-8 rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/5 hover:border-brand-orange/30 hover:bg-white dark:hover:bg-white/[0.05] transition-all duration-300 hover:-translate-y-1 shadow-sm dark:shadow-none hover:shadow-xl dark:hover:shadow-none overflow-hidden"
             >
               {/* Hover Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
-              
+
               {/* Internal subtle lighting for card */}
               <div className="absolute -top-20 -right-20 w-40 h-40 bg-brand-orange/5 blur-3xl rounded-full group-hover:bg-brand-orange/10 transition-colors"></div>
 
@@ -74,6 +74,14 @@ const Services: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Portfolio Button */}
+        <div className="mt-12 sm:mt-16 text-center">
+          <button className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300 font-medium hover:border-brand-orange/50 hover:text-brand-orange dark:hover:text-white transition-all duration-300 hover:shadow-lg dark:hover:shadow-[0_0_20px_-5px_rgba(255,255,255,0.1)]">
+            <span>{t('services.cta_portfolio')}</span>
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
       </div>
     </section>

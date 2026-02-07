@@ -49,6 +49,7 @@ const translations: Translations = {
       titleHighlight: 'Drive Your Growth',
       subtitle: 'We don\'t just design pretty websites. We build digital assets focused on profitability, speed, and user experience.',
       more: 'Learn more',
+      cta_portfolio: 'View Portfolio',
       items: [
         {
           title: "High Impact Landing Pages",
@@ -96,21 +97,21 @@ const translations: Translations = {
       ],
       featuresTitle: 'Complete Ecosystem',
       features: [
-        { 
-          title: 'CRM & Follow-up', 
-          description: 'Track every lead interaction and never miss a sales opportunity.' 
+        {
+          title: 'CRM & Follow-up',
+          description: 'Track every lead interaction and never miss a sales opportunity.'
         },
-        { 
-          title: 'High-conversion LPs', 
-          description: 'Pages scientifically designed to turn visitors into buyers.' 
+        {
+          title: 'High-conversion LPs',
+          description: 'Pages scientifically designed to turn visitors into buyers.'
         },
-        { 
-          title: 'CMS Control', 
-          description: 'Update text and images instantly without touching code.' 
+        {
+          title: 'CMS Control',
+          description: 'Update text and images instantly without touching code.'
         },
-        { 
-          title: 'Smart Automation', 
-          description: 'Connect your favorite tools and automate workflows seamlessly.' 
+        {
+          title: 'Smart Automation',
+          description: 'Connect your favorite tools and automate workflows seamlessly.'
         }
       ],
       cta: "Build your Ecosystem"
@@ -142,6 +143,11 @@ const translations: Translations = {
     },
     footer: {
       copyright: '© 2024 - 2026. All rights reserved to KN Growth'
+    },
+    mobileShowcase: {
+      label: 'Recent Work',
+      title: 'Designed for',
+      titleHighlight: 'Mobile Excellence'
     }
   },
   pt: {
@@ -184,6 +190,7 @@ const translations: Translations = {
       titleHighlight: 'Impulsionam seu Crescimento',
       subtitle: 'Não apenas projetamos sites bonitos. Construímos ativos digitais focados em rentabilidade, velocidade e experiência do usuário.',
       more: 'Saiba mais',
+      cta_portfolio: 'Ver Portfólio',
       items: [
         {
           title: "Landing Pages de Alto Impacto",
@@ -231,21 +238,21 @@ const translations: Translations = {
       ],
       featuresTitle: 'Ecossistema Completo',
       features: [
-        { 
-          title: 'CRM e Acompanhamento', 
-          description: 'Rastreie cada interação e nunca perca uma oportunidade de venda.' 
+        {
+          title: 'CRM e Acompanhamento',
+          description: 'Rastreie cada interação e nunca perca uma oportunidade de venda.'
         },
-        { 
-          title: 'LPs de Alta Conversão', 
-          description: 'Páginas projetadas cientificamente para transformar visitantes em compradores.' 
+        {
+          title: 'LPs de Alta Conversão',
+          description: 'Páginas projetadas cientificamente para transformar visitantes em compradores.'
         },
-        { 
-          title: 'Controle via CMS', 
-          description: 'Atualize textos e imagens instantaneamente sem tocar em código.' 
+        {
+          title: 'Controle via CMS',
+          description: 'Atualize textos e imagens instantaneamente sem tocar em código.'
         },
-        { 
-          title: 'Automação Inteligente', 
-          description: 'Conecte suas ferramentas favoritas e automatize fluxos sem esforço.' 
+        {
+          title: 'Automação Inteligente',
+          description: 'Conecte suas ferramentas favoritas e automatize fluxos sem esforço.'
         }
       ],
       cta: "Construa seu Ecossistema"
@@ -277,6 +284,11 @@ const translations: Translations = {
     },
     footer: {
       copyright: '© 2024 - 2026. Todos direitos reservados a KN Growth'
+    },
+    mobileShowcase: {
+      label: 'Trabalhos Recentes',
+      title: 'Projetado para',
+      titleHighlight: 'Excelência Mobile'
     }
   },
   es: {
@@ -319,6 +331,7 @@ const translations: Translations = {
       titleHighlight: 'Impulsan tu Crecimiento',
       subtitle: 'No solo diseñamos sitios bonitos. Construimos activos digitales enfocados en la rentabilidad, velocidad y experiencia del usuario.',
       more: 'Saber más',
+      cta_portfolio: 'Ver Portafolio',
       items: [
         {
           title: "Landing Pages de Alto Impacto",
@@ -366,21 +379,21 @@ const translations: Translations = {
       ],
       featuresTitle: 'Ecosistema Completo',
       features: [
-        { 
-          title: 'CRM y Seguimiento', 
-          description: 'Rastrea cada interacción y nunca pierdas una oportunidad de venta.' 
+        {
+          title: 'CRM y Seguimiento',
+          description: 'Rastrea cada interacción y nunca pierdas una oportunidad de venta.'
         },
-        { 
-          title: 'LPs de Alta Conversión', 
-          description: 'Páginas diseñadas científicamente para convertir visitantes en compradores.' 
+        {
+          title: 'LPs de Alta Conversión',
+          description: 'Páginas diseñadas científicamente para convertir visitantes en compradores.'
         },
-        { 
-          title: 'Control vía CMS', 
-          description: 'Actualiza textos e imágenes instantáneamente sin tocar código.' 
+        {
+          title: 'Control vía CMS',
+          description: 'Actualiza textos e imágenes instantáneamente sin tocar código.'
         },
-        { 
-          title: 'Automatización Inteligente', 
-          description: 'Conecta tus herramientas favoritas y automatiza flujos sin esfuerzo.' 
+        {
+          title: 'Automatización Inteligente',
+          description: 'Conecta tus herramientas favoritas y automatiza flujos sin esfuerzo.'
         }
       ],
       cta: "Construye tu Ecosistema"
@@ -412,6 +425,11 @@ const translations: Translations = {
     },
     footer: {
       copyright: '© 2024 - 2026. Todos los derechos reservados a KN Growth'
+    },
+    mobileShowcase: {
+      label: 'Trabajos Recientes',
+      title: 'Diseñado para la',
+      titleHighlight: 'Excelencia Móvil'
     }
   }
 };
@@ -430,7 +448,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   const t = useCallback((path: string) => {
     const keys = path.split('.');
     let current: any = translations[language];
-    
+
     for (const key of keys) {
       if (!current || current[key] === undefined) {
         console.warn(`Translation missing for key: ${path} in language: ${language}`);
