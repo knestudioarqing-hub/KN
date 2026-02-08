@@ -150,7 +150,8 @@ const translations: Translations = {
     mobileShowcase: {
       label: 'Recent Work',
       title: 'Designed for',
-      titleHighlight: 'Mobile Excellence'
+      titleHighlight: 'Web Excellence',
+      scrollInstructions: 'Use scroll to see more'
     }
   },
   pt: {
@@ -294,7 +295,8 @@ const translations: Translations = {
     mobileShowcase: {
       label: 'Trabalhos Recentes',
       title: 'Projetado para',
-      titleHighlight: 'Excelência Mobile'
+      titleHighlight: 'Conversão Web',
+      scrollInstructions: 'Use o scroll para ver mais'
     }
   },
   es: {
@@ -438,7 +440,8 @@ const translations: Translations = {
     mobileShowcase: {
       label: 'Trabajos Recientes',
       title: 'Diseñado para la',
-      titleHighlight: 'Excelencia Móvil'
+      titleHighlight: 'Conversión Web',
+      scrollInstructions: 'Usa el scroll para ver más'
     }
   }
 };

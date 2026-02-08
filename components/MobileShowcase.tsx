@@ -11,8 +11,8 @@ const MobileShowcase: React.FC = () => {
     const projects = [
         {
             id: 'saas',
-            title: 'High-Conversion Funnel',
-            category: 'Sales Strategy',
+            title: 'Winebulance',
+            category: 'LANDING PAGE',
             color: 'from-orange-600 to-red-600',
             content: (
                 <div className="w-full h-full bg-white overflow-y-auto overflow-x-hidden custom-scrollbar group/screen relative">
@@ -35,8 +35,8 @@ const MobileShowcase: React.FC = () => {
         },
         {
             id: 'finance',
-            title: 'Digital Authority Site',
-            category: 'Web Development',
+            title: 'OGB SPORTS',
+            category: 'LANDING PAGE',
             color: 'from-blue-500 to-cyan-400',
             content: (
                 <div className="w-full h-full bg-white overflow-y-auto overflow-x-hidden custom-scrollbar group/screen relative">
@@ -51,57 +51,17 @@ const MobileShowcase: React.FC = () => {
         },
         {
             id: 'arch',
-            title: 'Lumina Arch',
-            category: 'Architecture Portfolio',
+            title: 'Finanças',
+            category: 'LANDING PAGE',
             color: 'from-orange-500 to-amber-500',
             content: (
-                <div className="w-full h-full bg-white flex overflow-hidden relative font-serif text-neutral-900">
-                    {/* Navigation */}
-                    <div className="w-20 border-r border-neutral-100 flex flex-col items-center py-10 gap-10 sticky left-0 shrink-0">
-                        <div className="font-bold text-xl tracking-tighter">L.</div>
-                        <div className="w-6 h-px bg-neutral-200"></div>
-                        <div className="flex-1 flex flex-col gap-8 opacity-40">
-                            {[1, 2, 3].map(i => <div key={i} className="w-1 h-1 bg-black rounded-full mx-auto"></div>)}
-                        </div>
-                        <Globe size={18} className="opacity-20" />
-                    </div>
-
-                    {/* Hero Section */}
-                    <div className="flex-1 overflow-y-auto">
-                        <div className="h-[70%] bg-neutral-100 relative group overflow-hidden">
-                            <div className="absolute inset-0 bg-neutral-200">
-                                <div className="absolute inset-0 flex items-center justify-center text-neutral-300">
-                                    <ImageIcon size={64} strokeWidth={1} />
-                                </div>
-                            </div>
-                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
-                            <div className="absolute bottom-16 left-16 text-white max-w-lg">
-                                <div className="text-xs uppercase tracking-[0.3em] font-sans font-bold mb-4">Residential / 2024</div>
-                                <h1 className="text-6xl font-light leading-[1] mb-8">Modern Villa in the Slopes</h1>
-                                <button className="px-8 py-3 border border-white/30 backdrop-blur-sm text-xs uppercase tracking-widest font-sans font-bold hover:bg-white hover:text-black transition-all">View Project</button>
-                            </div>
-                        </div>
-
-                        {/* Featured Work Grid */}
-                        <div className="p-16 grid grid-cols-2 gap-16">
-                            {[1, 2].map((_, i) => (
-                                <div key={i} className="space-y-6">
-                                    <div className="aspect-[4/5] bg-neutral-100 border border-neutral-100 relative">
-                                        <div className="absolute inset-0 flex items-center justify-center text-neutral-200">
-                                            <ImageIcon size={32} />
-                                        </div>
-                                    </div>
-                                    <div className="flex justify-between items-end">
-                                        <div>
-                                            <h3 className="text-2xl font-light">Minimalist Retreat</h3>
-                                            <p className="text-xs uppercase tracking-widest text-neutral-400 font-sans mt-2">Norway / Architecture</p>
-                                        </div>
-                                        <ArrowUpRight size={24} strokeWidth={1} />
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                <div className="w-full h-full bg-white overflow-y-auto overflow-x-hidden custom-scrollbar group/screen relative border-none">
+                    {/* Manual scrollable image */}
+                    <img
+                        src="https://i.imgur.com/V0Ia21N.png"
+                        alt="Architecture Portfolio Landing Page"
+                        className="w-full h-auto block"
+                    />
                 </div>
             )
         }
@@ -267,7 +227,9 @@ const MobileShowcase: React.FC = () => {
                             {/* Subtle Instruction Text - BELOW the mockup */}
                             <div className="mt-8 flex items-center justify-center gap-3 animate-pulse">
                                 <span className="h-[1px] w-8 bg-gradient-to-r from-transparent to-gray-400 dark:to-white/20"></span>
-                                <span className="text-[10px] sm:text-xs text-gray-400 dark:text-white/30 uppercase tracking-[0.3em] font-medium">Usa el scroll para ver más</span>
+                                <span className="text-[10px] sm:text-xs text-gray-400 dark:text-white/30 uppercase tracking-[0.3em] font-medium">
+                                    {t('mobileShowcase.scrollInstructions')}
+                                </span>
                                 <span className="h-[1px] w-8 bg-gradient-to-l from-transparent to-gray-400 dark:to-white/20"></span>
                             </div>
                         </div>
