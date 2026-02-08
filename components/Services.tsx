@@ -78,10 +78,15 @@ const Services: React.FC = () => {
 
         {/* Portfolio Button */}
         <div className="mt-12 sm:mt-16 text-center">
-          <button className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300 font-medium hover:border-brand-orange/50 hover:text-brand-orange dark:hover:text-white transition-all duration-300 hover:shadow-lg dark:hover:shadow-[0_0_20px_-5px_rgba(255,255,255,0.1)]">
+          <a
+            href="https://portfolio-kngrowth.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300 font-medium hover:border-brand-orange/50 hover:text-brand-orange dark:hover:text-white transition-all duration-300 hover:shadow-lg dark:hover:shadow-[0_0_20px_-5px_rgba(255,255,255,0.1)]"
+          >
             <span>{t('services.cta_portfolio')}</span>
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
         </div>
       </div>
     </section>
