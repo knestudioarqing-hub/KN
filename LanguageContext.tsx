@@ -59,13 +59,13 @@ const translations: Translations = {
         },
         {
           title: "Corporate Websites",
-          description: "Elevate your digital authority. We build scalable, fast, and secure websites that reflect your brand's excellence.",
-          tags: ["Next.js", "Scalability", "SEO"]
+          description: "Build a digital authority that generates results. A complete ecosystem that your company needs to structure a high-conversion sales funnel.",
+          tags: ["Next.js", "Scalability"]
         },
         {
-          title: "Design Systems & UI/UX",
-          description: "Visual coherence across all touchpoints. We create intuitive interfaces that users love and reinforce your identity.",
-          tags: ["Figma", "Branding", "User Flow"]
+          title: "Automations + AI",
+          description: "We integrate automations that connect every stage of your sales process. The generated data allows you to scale your business with predictability and strategy.",
+          tags: ["CRM", "AI", "Follow-up"]
         }
       ]
     },
@@ -77,8 +77,8 @@ const translations: Translations = {
       steps: [
         {
           title: 'Strategy & Discovery',
-          description: 'We analyze your business model, audience, and competitors. We don\'t write a single line of code without a clear conversion plan.',
-          points: ['Current UX Audit', 'KPI Definition', 'User Personas']
+          description: 'We analyze your business model, understand your audience and competitors. We plan your roadmap from where you are today.',
+          points: ['UX/UI Audit', 'Funnel Audit', 'Audience Audit']
         },
         {
           title: 'High-Level UI/UX Design',
@@ -86,12 +86,12 @@ const translations: Translations = {
           points: ['Premium Visual Design', 'Interactive Prototyping', 'Persuasive Copywriting']
         },
         {
-          title: 'Development & Optimization',
-          description: 'We transform design into clean, fast code. We use the latest technologies to ensure perfect performance on any device.',
+          title: 'Development & Integrations',
+          description: 'We transform design into clean, fast code. We use the latest technologies to ensure perfect performance on any device and automate your business process.',
           points: ['Next.js / React', 'Load speed < 1s', 'Technical SEO']
         },
         {
-          title: 'Launch & Growth',
+          title: 'Service Delivery',
           description: 'We deploy your project and configure tracking tools. But the work doesn\'t stop there; we iterate based on real data.',
           points: ['Analytics Setup', 'Post-Launch Support', 'A/B Testing']
         }
@@ -99,8 +99,8 @@ const translations: Translations = {
       featuresTitle: 'Complete Ecosystem',
       features: [
         {
-          title: 'CRM & Follow-up',
-          description: 'Track every lead interaction and never miss a sales opportunity.'
+          title: 'CRM + Follow-up',
+          description: 'Track every interaction and never miss any sales opportunity.'
         },
         {
           title: 'High-conversion LPs',
@@ -111,8 +111,8 @@ const translations: Translations = {
           description: 'Update text and images instantly without touching code.'
         },
         {
-          title: 'Smart Automation',
-          description: 'Connect your favorite tools and automate workflows seamlessly.'
+          title: 'Integrations + Automations',
+          description: 'We integrate your company\'s daily tools into the new conversion system, without loss of data or information.'
         }
       ],
       cta: "Build your Ecosystem"
@@ -201,13 +201,13 @@ const translations: Translations = {
         },
         {
           title: "Sites Corporativos",
-          description: "Eleve sua autoridade digital. Construímos sites escaláveis, rápidos e seguros que refletem a excelência da sua marca.",
-          tags: ["Next.js", "Escalabilidade", "SEO"]
+          description: "Construa uma autoridade digital que gera resultados. Um ecossistema completo que sua empresa precisa para estruturar um funil de vendas com conversão.",
+          tags: ["Next.js", "Escalabilidade"]
         },
         {
-          title: "Sistemas de Design & UI/UX",
-          description: "Coerência visual em todos os pontos de contato. Criamos interfaces intuitivas que encantam os usuários e reforçam sua identidade.",
-          tags: ["Figma", "Branding", "User Flow"]
+          title: "Automatizações + IA",
+          description: "Integramos automações que conectam cada etapa do seu processo de vendas. Os dados gerados permitem escalar o seu negócio com previsibilidade e estratégia.",
+          tags: ["CRM", "IA", "Follow-up"]
         }
       ]
     },
@@ -219,8 +219,8 @@ const translations: Translations = {
       steps: [
         {
           title: 'Estratégia & Discovery',
-          description: 'Analisamos seu modelo de negócio, audiência e concorrentes. Não escrevemos una única linha de código sem um plano claro para conversão.',
-          points: ['Auditoria de UX atual', 'Definição de KPIs', 'User Personas']
+          description: 'Analisamos o seu modelo de negócio, entendemos o seu público e os concorrentes. Planejamos o seu roadmap a partir do ponto em que você está hoje.',
+          points: ['Auditoria UX/UI', 'Auditoria de funil', 'Auditoria de público']
         },
         {
           title: 'Design UI/UX de Alto Nível',
@@ -228,12 +228,12 @@ const translations: Translations = {
           points: ['Design Visual Premium', 'Prototipagem Interativa', 'Copywriting Persuasivo']
         },
         {
-          title: 'Desenvolvimento & Otimização',
-          description: 'Transformamos o design em código limpo e rápido. Usamos as últimas tecnologias para garantir desempenho perfeito em qualquer dispositivo.',
+          title: 'Desenvolvimento e integrações',
+          description: 'Transformamos o design em código limpo e rápido. Usamos as últimas tecnologias para garantir desempenho perfeito em qualquer dispositivo e automatizamos o seu processo comercial.',
           points: ['Next.js / React', 'Velocidade de carga < 1s', 'SEO Técnico']
         },
         {
-          title: 'Lançamento & Crescimento',
+          title: 'Entrega do serviço',
           description: 'Implantamos seu projeto e configuramos as ferramentas de medição. Mas o trabalho não para aí; iteramos com base em dados reais.',
           points: ['Configuração de Analytics', 'Suporte Pós-Lançamento', 'A/B Testing']
         }
@@ -241,8 +241,8 @@ const translations: Translations = {
       featuresTitle: 'Ecossistema Completo',
       features: [
         {
-          title: 'CRM e Acompanhamento',
-          description: 'Rastreie cada interação e nunca perca uma oportunidade de venda.'
+          title: 'CRM + Follow-up',
+          description: 'Rastreie cada interação e nunca perca nenhuma oportunidade de venda.'
         },
         {
           title: 'LPs de Alta Conversão',
@@ -253,8 +253,8 @@ const translations: Translations = {
           description: 'Atualize textos e imagens instantaneamente sem tocar em código.'
         },
         {
-          title: 'Automação Inteligente',
-          description: 'Conecte suas ferramentas favoritas e automatize fluxos sem esforço.'
+          title: 'Integrações + automações',
+          description: 'Integramos as ferramentas de uso diário da sua empresa ao novo sistema de conversão, sem perda de dados ou informações.'
         }
       ],
       cta: "Construa seu Ecossistema"
@@ -343,13 +343,13 @@ const translations: Translations = {
         },
         {
           title: "Sitios Corporativos",
-          description: "Eleva tu autoridad digital. Construimos sitios escalables, rápidos y seguros que reflejan la excelencia de tu marca.",
-          tags: ["Next.js", "Escalabilidad", "SEO"]
+          description: "Construye una autoridad digital que genera resultados. Un ecosistema completo que tu empresa necesita para estructurar un embudo de ventas con conversión.",
+          tags: ["Next.js", "Escalabilidad"]
         },
         {
-          title: "Sistemas de Diseño & UI/UX",
-          description: "Coherencia visual en todos los puntos de contacto. Creamos interfaces intuitivas que encantan a los usuarios y refuerzan tu identidad.",
-          tags: ["Figma", "Branding", "User Flow"]
+          title: "Automatizaciones + IA",
+          description: "Integramos automatizaciones que conectan cada etapa de tu proceso de ventas. Los datos generados permiten escalar tu negocio con previsibilidad y estrategia.",
+          tags: ["CRM", "IA", "Follow-up"]
         }
       ]
     },
@@ -361,8 +361,8 @@ const translations: Translations = {
       steps: [
         {
           title: 'Estrategia & Discovery',
-          description: 'Analizamos tu modelo de negocio, audiencia y competidores. No escribimos una sola línea de código sin un plan claro para la conversión.',
-          points: ['Auditoría de UX actual', 'Definición de KPIs', 'User Personas']
+          description: 'Analizamos tu modelo de negocio, entendemos a tu audiencia y competidores. Planificamos tu roadmap desde donde te encuentras hoy.',
+          points: ['Auditoría UX/UI', 'Auditoría de embudo', 'Auditoría de público']
         },
         {
           title: 'Diseño UI/UX de Alto Nivel',
@@ -370,12 +370,12 @@ const translations: Translations = {
           points: ['Diseño Visual Premium', 'Prototipado Interactivo', 'Copywriting Persuasivo']
         },
         {
-          title: 'Desarrollo & Optimización',
-          description: 'Transformamos el diseño en código limpio y rápido. Usamos las últimas tecnologías para garantizar un rendimiento perfecto en cualquier dispositivo.',
+          title: 'Desarrollo e integraciones',
+          description: 'Transformamos el diseño en código limpio y rápido. Usamos las últimas tecnologías para garantizar un rendimiento perfecto en cualquier dispositivo y automatizamos tu proceso comercial.',
           points: ['Next.js / React', 'Velocidad de carga < 1s', 'SEO Técnico']
         },
         {
-          title: 'Lanzamiento & Crecimiento',
+          title: 'Entrega del servicio',
           description: 'Desplegamos tu proyecto y configuramos las herramientas de medición. Pero el trabajo no termina ahí; iteramos basándonos en datos reales.',
           points: ['Configuración de Analytics', 'Soporte Post-Lanzamiento', 'A/B Testing']
         }
@@ -383,8 +383,8 @@ const translations: Translations = {
       featuresTitle: 'Ecosistema Completo',
       features: [
         {
-          title: 'CRM y Seguimiento',
-          description: 'Rastrea cada interacción y nunca pierdas una oportunidad de venta.'
+          title: 'CRM + Follow-up',
+          description: 'Rastrea cada interacción y nunca pierdas ninguna oportunidad de venta.'
         },
         {
           title: 'LPs de Alta Conversión',
@@ -395,8 +395,8 @@ const translations: Translations = {
           description: 'Actualiza textos e imágenes instantáneamente sin tocar código.'
         },
         {
-          title: 'Automatización Inteligente',
-          description: 'Conecta tus herramientas favoritas y automatiza flujos sin esfuerzo.'
+          title: 'Integraciones + automatizaciones',
+          description: 'Integramos las herramientas de uso diario de tu empresa al nuevo sistema de conversión, sin pérdida de datos ni información.'
         }
       ],
       cta: "Construye tu Ecosistema"
