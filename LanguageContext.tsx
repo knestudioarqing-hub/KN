@@ -25,7 +25,9 @@ const translations: Translations = {
       subtitle: 'That’s why we build high-conversion landing pages and websites for B2B businesses and infoproductors, scaling their sales operations through world-class design and strategy.',
       ctaPrimary: 'Get results now',
       ctaSecondary: 'Watch Demo Reel',
-      trusted: 'Trusted by 50+ innovative companies'
+      trusted: 'Trusted by 50+ innovative companies',
+      floating_booking: 'New booking confirmed',
+      floating_sale: 'Sale closed: $2,450.00'
     },
     dashboard: {
       header_dashboard: 'Dashboard',
@@ -163,11 +165,13 @@ const translations: Translations = {
     hero: {
       pill: 'Exclusivo para serviços B2B e infoprodutores',
       title1: 'Não existe nada que gere mais',
-      title2: 'autoridade do que o RESULTADO',
+      title2: 'autoridade do que o RESULTADOS',
       subtitle: 'Por isso, projetamos landing pages e sites de alta conversão para negócios B2B e infoprodutores, escalando suas operações de vendas por meio de design e estratégia de padrão mundial.',
       ctaPrimary: 'Quero gerar resultados',
       ctaSecondary: 'Ver Demo Reel',
-      trusted: 'Com a confiança de +50 empresas'
+      trusted: 'Com a confiança de +50 empresas',
+      floating_booking: 'Novo agendamento confirmado',
+      floating_sale: 'Venda realizada: R$ 2.450,00'
     },
     dashboard: {
       header_dashboard: 'Painel',
@@ -305,11 +309,13 @@ const translations: Translations = {
     hero: {
       pill: 'Exclusivo para servicios B2B e infoproductores',
       title1: 'No existe nada que genere más',
-      title2: 'autoridad que el RESULTADO',
+      title2: 'autoridad que el RESULTADOS',
       subtitle: 'Por eso, diseñamos landing pages y sitios web de alta conversión para negocios B2B e infoproductores, escalando sus operaciones de ventas a través de diseño y estrategia de clase mundial.',
       ctaPrimary: 'Quiero generar resultados',
       ctaSecondary: 'Ver Demo Reel',
-      trusted: 'Con la confianza de +50 empresas'
+      trusted: 'Con la confianza de +50 empresas',
+      floating_booking: 'Nuevo agendamiento confirmado',
+      floating_sale: 'Venta realizada: $2,450.00'
     },
     dashboard: {
       header_dashboard: 'Panel',

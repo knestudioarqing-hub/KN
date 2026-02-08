@@ -82,10 +82,14 @@ const Services: React.FC = () => {
             href="https://portfolio-kngrowth.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300 font-medium hover:border-brand-orange/50 hover:text-brand-orange dark:hover:text-white transition-all duration-300 hover:shadow-lg dark:hover:shadow-[0_0_20px_-5px_rgba(255,255,255,0.1)]"
+            className="group relative inline-flex items-center rounded-full bg-gray-200/50 dark:bg-white/10 backdrop-blur-md p-1.5 pr-10 transition-all duration-500 hover:bg-gray-300/80 dark:hover:bg-white/20 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] active:scale-95"
           >
-            <span>{t('services.cta_portfolio')}</span>
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <div className="bg-white px-10 py-3.5 rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.08)] text-[#111] font-bold border border-white/50 transition-transform duration-500 ease-in-out group-hover:translate-x-5 relative z-10">
+              <span className="tracking-tight">{t('services.cta_portfolio')}</span>
+            </div>
+            <div className="absolute right-6 transition-all duration-500 group-hover:translate-x-2 group-hover:opacity-0">
+              <ArrowRight size={22} className="text-[#111] dark:text-white" />
+            </div>
           </a>
         </div>
       </div>
