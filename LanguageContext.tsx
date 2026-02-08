@@ -15,6 +15,7 @@ const translations: Translations = {
       testimonials: 'Testimonials',
       process: 'Process',
       contact: 'Contact',
+      portfolio: 'Portfolio',
       cta: 'Get results now'
     },
     hero: {
@@ -156,6 +157,7 @@ const translations: Translations = {
       testimonials: 'Depoimentos',
       process: 'Processo',
       contact: 'Contato',
+      portfolio: 'Portfólio',
       cta: 'Quero gerar resultados'
     },
     hero: {
@@ -297,6 +299,7 @@ const translations: Translations = {
       testimonials: 'Testimonios',
       process: 'Proceso',
       contact: 'Contacto',
+      portfolio: 'Portafolio',
       cta: 'Quiero generar resultados'
     },
     hero: {
