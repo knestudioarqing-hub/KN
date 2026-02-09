@@ -18,27 +18,27 @@ const Testimonials: React.FC = () => {
 
   return (
     <section id="depoimentos" className="relative py-24 sm:py-32 bg-gray-50 dark:bg-black overflow-hidden border-t border-gray-200 dark:border-white/5 transition-colors duration-500">
-      
+
       {/* Background Decor - Enhanced */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-white/10 to-transparent"></div>
-      
+
       {/* Top Left Orange Glow */}
       <div className="absolute top-20 left-10 w-[300px] h-[300px] bg-brand-orange/10 blur-[80px] rounded-full pointer-events-none"></div>
-      
+
       {/* Bottom Right Purple Glow for contrast */}
       <div className="absolute bottom-20 right-10 w-[300px] h-[300px] bg-purple-500/10 blur-[80px] rounded-full pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
-        <div className="text-center mb-16 sm:mb-20">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6 transition-colors">
+        <div className="text-center mb-16 sm:mb-20 max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold font-sans tracking-tight antialiased text-gray-900 dark:text-white mb-6 transition-colors">
             {t('testimonials.title')} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-orange-200">
               {t('testimonials.titleHighlight')}
             </span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto transition-colors">
+          <p className="text-gray-600 dark:text-gray-400 text-lg transition-colors lg:whitespace-nowrap">
             {t('testimonials.subtitle')}
           </p>
         </div>
@@ -46,8 +46,8 @@ const Testimonials: React.FC = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((t: any, i: number) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className="group relative p-8 rounded-2xl bg-white dark:bg-[#0A0A0A] border border-gray-200 dark:border-white/5 hover:border-brand-orange/20 transition-all duration-300 hover:-translate-y-1 overflow-hidden shadow-lg dark:shadow-none"
             >
               {/* Background Glow on Hover */}
@@ -60,7 +60,7 @@ const Testimonials: React.FC = () => {
 
               {/* Content */}
               <div className="relative z-10 flex flex-col h-full">
-                
+
                 {/* Stars */}
                 <div className="flex gap-1 mb-6 text-brand-orange">
                   {[...Array(5)].map((_, i) => (

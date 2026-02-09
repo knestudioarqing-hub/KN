@@ -58,12 +58,12 @@ const Process: React.FC = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-24 relative z-10">
+        <div className="max-w-4xl mx-auto text-center mb-16 sm:mb-24 relative z-10">
           <span className="text-brand-orange font-semibold tracking-wider uppercase text-xs sm:text-sm mb-4 block">{t('process.label')}</span>
-          <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-colors">
+          <h2 className="text-3xl sm:text-5xl font-bold font-sans tracking-tight antialiased text-gray-900 dark:text-white mb-6 transition-colors">
             {t('process.title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-orange-200">{t('process.titleHighlight')}</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg transition-colors px-4">
+          <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg transition-colors px-4 lg:whitespace-nowrap">
             {t('process.subtitle')}
           </p>
         </div>

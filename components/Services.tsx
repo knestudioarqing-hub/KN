@@ -20,14 +20,14 @@ const Services: React.FC = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center mb-12 sm:mb-20">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6 transition-colors">
+        <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-20">
+          <h2 className="text-3xl sm:text-4xl font-bold font-sans tracking-tight antialiased text-gray-900 dark:text-white mb-6 transition-colors">
             {t('services.title')} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-orange-200">
               {t('services.titleHighlight')}
             </span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed transition-colors px-4">
+          <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed transition-colors px-4 lg:whitespace-nowrap">
             {t('services.subtitle')}
           </p>
         </div>
