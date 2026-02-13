@@ -43,7 +43,7 @@ const ThemeSwitchPopup: React.FC<ThemeSwitchPopupProps> = ({ theme, setTheme }) 
     };
 
     return (
-        <div className="fixed bottom-6 right-6 z-50 transition-all duration-500 transform translate-y-0 opacity-100">
+        <div className="fixed bottom-6 left-4 right-4 sm:left-auto sm:right-6 z-50 flex justify-center sm:block transition-all duration-500 transform translate-y-0 opacity-100">
             <div className="bg-white border border-gray-200 shadow-2xl rounded-2xl p-5 max-w-sm w-full relative overflow-hidden backdrop-blur-sm bg-opacity-95">
 
                 <button
