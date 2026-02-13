@@ -71,7 +71,7 @@ const DashboardPreview: React.FC = () => {
                                 <div key={index} className="min-w-[400px] grid grid-cols-12 gap-4 p-4 items-center hover:bg-gray-100 dark:hover:bg-white/5 transition-colors border-b border-gray-100 dark:border-white/5 last:border-0 group">
                                     <div className="col-span-1 text-gray-400">0{index + 1}</div>
                                     <div className="col-span-8 text-gray-900 dark:text-white font-medium flex items-center gap-3">
-                                        <div className="w-8 h-8 rounded bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-500 flex-shrink-0 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                                        <div className="w-8 h-8 rounded bg-gray-900 dark:bg-white flex items-center justify-center text-white dark:text-black flex-shrink-0 transition-colors shadow-md">
                                             <Layout size={14} />
                                         </div>
                                         <span className="truncate">{name}</span>
