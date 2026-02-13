@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Rocket, Monitor, Layers, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
+import PortfolioLockedModal from './PortfolioLockedModal';
 
 const Services: React.FC = () => {
   const { t } = useLanguage();
+  const [isPortfolioLockedOpen, setIsPortfolioLockedOpen] = useState(false);
 
   const services = t('services.items').map((item: any, index: number) => ({
     ...item,
     icon: [Rocket, Monitor, Layers][index] // Re-map icons to translated items
   }));
+
+  const handlePortfolioClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsPortfolioLockedOpen(true);
+  };
 
   return (
     <section id="servicios" className="relative py-20 sm:py-32 bg-white dark:bg-black overflow-hidden transition-colors duration-500">
@@ -79,9 +86,8 @@ const Services: React.FC = () => {
         {/* Portfolio Button */}
         <div className="mt-12 sm:mt-16 text-center">
           <a
-            href="https://portfolio-kngrowth.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
+            onClick={handlePortfolioClick}
             className="group relative inline-flex items-center rounded-full bg-gray-200/50 dark:bg-white/10 backdrop-blur-md p-1.5 pr-10 transition-all duration-500 hover:bg-gray-300/80 dark:hover:bg-white/20 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] active:scale-95"
           >
             <div className="bg-white px-10 py-3.5 rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.08)] text-[#111] font-bold border border-white/50 transition-transform duration-500 ease-in-out group-hover:translate-x-5 relative z-10">
@@ -93,6 +99,11 @@ const Services: React.FC = () => {
           </a>
         </div>
       </div>
+
+      <PortfolioLockedModal
+        isOpen={isPortfolioLockedOpen}
+        onClose={() => setIsPortfolioLockedOpen(false)}
+      />
     </section>
   );
 };

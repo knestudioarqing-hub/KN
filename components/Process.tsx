@@ -195,7 +195,10 @@ const Process: React.FC = () => {
 
           {/* New CTA for Ecosystem */}
           <div className="mt-12 sm:mt-16 flex justify-center relative z-20 px-4">
-            <button className="font-poppins w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-brand-orange hover:bg-orange-600 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_0_40px_-10px_rgba(255,85,0,0.4)] hover:shadow-[0_0_60px_-15px_rgba(255,85,0,0.6)] hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base">
+            <button
+              onClick={() => window.open("https://calendly.com/contacto-kngrowth/30min", "_blank")}
+              className="font-poppins w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-brand-orange hover:bg-orange-600 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_0_40px_-10px_rgba(255,85,0,0.4)] hover:shadow-[0_0_60px_-15px_rgba(255,85,0,0.6)] hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base"
+            >
               {t('hero.ctaPrimary')}
             </button>
           </div>

@@ -7,10 +7,11 @@ import Testimonials from './components/Testimonials';
 import Stats from './components/Stats';
 import MobileShowcase from './components/MobileShowcase';
 import Footer from './components/Footer';
+import ThemeSwitchPopup from './components/ThemeSwitchPopup';
 import { LanguageProvider } from './LanguageContext';
 
 const AppContent: React.FC = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
     // Apply theme class to html element
@@ -27,7 +28,7 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-black text-gray-900 dark:text-white overflow-x-hidden transition-colors duration-300 flex flex-col">
+    <div className="min-h-screen bg-gray-50 dark:bg-black text-gray-900 dark:text-white overflow-x-hidden transition-colors duration-300 flex flex-col relative">
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main className="flex-grow">
         <Hero />
@@ -38,6 +39,7 @@ const AppContent: React.FC = () => {
         <Stats />
       </main>
       <Footer />
+      <ThemeSwitchPopup theme={theme} setTheme={setTheme} />
     </div>
   );
 };

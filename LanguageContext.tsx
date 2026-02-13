@@ -16,7 +16,19 @@ const translations: Translations = {
       process: 'Process',
       contact: 'Contact',
       portfolio: 'Portfolio',
-      cta: 'Get results now'
+      cta: 'Get results now',
+      themePopup: {
+        title: 'Switch to Dark Mode?',
+        text: 'Would you like to experience the dark mode version?',
+        yes: 'Yes, switch',
+        no: 'No, thanks'
+      },
+      portfolioLocked: {
+        title: 'Exclusive Access',
+        access: 'Member Access Only',
+        message: 'Portfolio access is reserved for partners who take the first step. Schedule your strategic session to unlock our full case studies.',
+        cta: 'Schedule Call'
+      }
     },
     hero: {
       pill: 'Exclusive for B2B services and infoproductors',
@@ -161,12 +173,24 @@ const translations: Translations = {
       process: 'Processo',
       contact: 'Contato',
       portfolio: 'Portfólio',
-      cta: 'Quero gerar resultados'
+      cta: 'Quero gerar resultados',
+      themePopup: {
+        title: 'Mudar para Modo Escuro?',
+        text: 'Gostaria de experimentar a versão em modo escuro?',
+        yes: 'Sim, mudar',
+        no: 'Não, obrigado'
+      },
+      portfolioLocked: {
+        title: 'Acesso Exclusivo',
+        access: 'Acesso Somente para Membros',
+        message: 'O acesso ao portfólio é reservado para parceiros que dão o primeiro passo. Agende sua sessão estratégica para desbloquear nossos estudos de caso completos.',
+        cta: 'Agendar Chamada'
+      }
     },
     hero: {
       pill: 'Exclusivo para serviços B2B e infoprodutores',
       title1: 'Não existe nada que gere mais',
-      title2: 'autoridade do que o RESULTADOS',
+      title2: 'autoridade do que RESULTADOS',
       subtitle: 'Por isso, projetamos landing pages e sites de alta conversão para negócios B2B e infoprodutores, escalando suas operações de vendas por meio de design e estratégia de padrão mundial.',
       ctaPrimary: 'Quero gerar resultados',
       ctaSecondary: 'Ver Demo Reel',
@@ -306,7 +330,19 @@ const translations: Translations = {
       process: 'Proceso',
       contact: 'Contacto',
       portfolio: 'Portafolio',
-      cta: 'Quiero generar resultados'
+      cta: 'Quiero generar resultados',
+      themePopup: {
+        title: '¿Cambiar a Modo Oscuro?',
+        text: '¿Te gustaría experimentar la versión en modo oscuro?',
+        yes: 'Sí, cambiar',
+        no: 'No, gracias'
+      },
+      portfolioLocked: {
+        title: 'Acceso Exclusivo',
+        access: 'Acceso Solo para Miembros',
+        message: 'El acceso al portafolio está reservado para socios que dan el primer paso. Agenda tu sesión estratégica para desbloquear nuestros casos de éxito completos.',
+        cta: 'Agendar Llamada'
+      }
     },
     hero: {
       pill: 'Exclusivo para servicios B2B e infoproductores',
