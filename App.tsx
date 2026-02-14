@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Process from './components/Process';
+import Team from './components/Team';
 import Testimonials from './components/Testimonials';
 import Stats from './components/Stats';
 import MobileShowcase from './components/MobileShowcase';
@@ -35,6 +36,7 @@ const AppContent: React.FC = () => {
         <Services />
         <Process />
         <MobileShowcase />
+        <Team />
         <Testimonials />
         <Stats />
       </main>

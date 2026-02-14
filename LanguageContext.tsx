@@ -156,6 +156,15 @@ const translations: Translations = {
       rating: { label: 'Client Satisfaction', desc: 'Based on verified reviews' },
       cta: "Become our next Success Story"
     },
+    team: {
+      title: 'KN Growth Team',
+      filters: ['All', 'Automations', 'Design', 'Strategy'],
+      members: [
+        { name: 'Carlos Coloma', role: 'CTO', img: 'https://i.imgur.com/sfFgwDa.png' },
+        { name: 'Gianfranco N.', role: 'CEO KN Growth', img: 'https://i.imgur.com/KZ051q2.png' },
+        { name: 'Leandro V.', role: 'Software Developer', img: 'https://i.imgur.com/vsiDMpt.png' }
+      ]
+    },
     footer: {
       copyright: '© 2024 - 2026. All rights reserved to KN Growth'
     },
@@ -313,6 +322,15 @@ const translations: Translations = {
       rating: { label: 'Satisfação do Cliente', desc: 'Baseado em avaliações verificadas' },
       cta: "Seja nosso próximo Case de Sucesso"
     },
+    team: {
+      title: 'Equipe KN Growth',
+      filters: ['Tudo', 'Automações', 'Design', 'Estratégia'],
+      members: [
+        { name: 'Carlos Coloma', role: 'CTO', img: 'https://i.imgur.com/sfFgwDa.png' },
+        { name: 'Gianfranco N.', role: 'CEO KN Growth', img: 'https://i.imgur.com/KZ051q2.png' },
+        { name: 'Leandro V.', role: 'Software Developer', img: 'https://i.imgur.com/vsiDMpt.png' }
+      ]
+    },
     footer: {
       copyright: '© 2024 - 2026. Todos direitos reservados a KN Growth'
     },
@@ -469,6 +487,15 @@ const translations: Translations = {
       countries: { label: 'Países Atendidos', desc: 'Presencia global remota' },
       rating: { label: 'Satisfacción del Cliente', desc: 'Basado en reseñas verificadas' },
       cta: "Sé nuestro próximo Caso de Éxito"
+    },
+    team: {
+      title: 'Equipo KN Growth',
+      filters: ['Todo', 'Automatizaciones', 'Diseño', 'Estrategia'],
+      members: [
+        { name: 'Carlos Coloma', role: 'CTO', img: 'https://i.imgur.com/sfFgwDa.png' },
+        { name: 'Gianfranco N.', role: 'CEO KN Growth', img: 'https://i.imgur.com/KZ051q2.png' },
+        { name: 'Leandro V.', role: 'Software Developer', img: 'https://i.imgur.com/vsiDMpt.png' }
+      ]
     },
     footer: {
       copyright: '© 2024 - 2026. Todos los derechos reservados a KN Growth'
