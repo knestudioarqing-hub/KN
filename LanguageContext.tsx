@@ -34,7 +34,7 @@ const translations: Translations = {
       pill: 'Exclusive for B2B services and infoproductors',
       title1: 'Nothing generates more authority',
       title2: 'than RESULTS',
-      subtitle: 'That’s why we build high-conversion landing pages and websites for B2B businesses and infoproductors, scaling their sales operations through world-class design and strategy.',
+      subtitle: 'That’s why we design visual authority for companies and infoproducers, generating more sales and more qualified leads using assertive and high-impact communication.',
       ctaPrimary: 'Get results now',
       ctaSecondary: 'Watch Demo Reel',
       trusted: 'Trusted by 50+ innovative companies',
@@ -60,53 +60,53 @@ const translations: Translations = {
       vs_last: 'vs last month'
     },
     services: {
-      title: 'Digital Solutions that',
-      titleHighlight: 'Drive Your Growth',
-      subtitle: 'We don\'t just design pretty websites. We build digital assets focused on profitability, speed, and user experience.',
+      title: 'Without strategy, there\'s no impact',
+      titleHighlight: 'and without impact, there are no sales',
+      subtitle: 'We create acquisition systems, focused on qualification for your company and scalable sales growth.',
       more: 'Learn more',
       cta_portfolio: 'View Portfolio',
       items: [
         {
-          title: "High Impact Landing Pages",
+          title: "High Impact Website",
           description: "Optimized for conversion. We transform cold traffic into qualified customers through persuasive copywriting and strategic design.",
-          tags: ["CRO", "Copywriting", "A/B Testing"]
+          tags: []
         },
         {
-          title: "Corporate Websites",
+          title: "Strategic Capture and Qualification",
           description: "Build a digital authority that generates results. A complete ecosystem that your company needs to structure a high-conversion sales funnel.",
-          tags: ["Next.js", "Scalability"]
+          tags: []
         },
         {
-          title: "Automations + AI",
+          title: "Full Pipeline",
           description: "We integrate automations that connect every stage of your sales process. The generated data allows you to scale your business with predictability and strategy.",
-          tags: ["CRM", "AI", "Follow-up"]
+          tags: []
         }
       ]
     },
     process: {
       label: 'Methodology',
       title: 'From Idea to',
-      titleHighlight: 'Conversion',
+      titleHighlight: 'Result',
       subtitle: 'An iterative and transparent process designed to maximize results and minimize friction.',
       steps: [
         {
-          title: 'Strategy & Discovery',
-          description: 'We analyze your business model, understand your audience and competitors. We plan your roadmap from where you are today.',
+          title: 'Meeting & Audit',
+          description: 'We will conduct an initial audit of your situation, providing a PDF report so you know exactly where you stand and how we will proceed.',
           points: ['UX/UI Audit', 'Funnel Audit', 'Audience Audit']
         },
         {
-          title: 'High-Level UI/UX Design',
-          description: 'We create wireframes and high-fidelity prototypes. Every pixel is crafted to guide the user towards the desired action.',
+          title: 'The 4 Islands Method',
+          description: 'We apply our method moving from island to island only when the ship\'s captain (you) gives the OK. This prevents planning divergences avoiding surprises.',
           points: ['Premium Visual Design', 'Interactive Prototyping', 'Persuasive Copywriting']
         },
         {
-          title: 'Development & Integrations',
-          description: 'We transform design into clean, fast code. We use the latest technologies to ensure perfect performance on any device and automate your business process.',
+          title: 'Pre-Implementation',
+          description: 'Once the 4 Islands are approved, we move to intensive implementation and integration of all functionalities.',
           points: ['Next.js / React', 'Load speed < 1s', 'Technical SEO']
         },
         {
-          title: 'Service Delivery',
-          description: 'We deploy your project and configure tracking tools. But the work doesn\'t stop there; we iterate based on real data.',
+          title: 'Launch',
+          description: 'We prepare everything for this rocket launch: domain, hosting, integrations... everything 100% functional.',
           points: ['Analytics Setup', 'Post-Launch Support', 'A/B Testing']
         }
       ],
@@ -200,7 +200,7 @@ const translations: Translations = {
       pill: 'Exclusivo para serviços B2B e infoprodutores',
       title1: 'Não existe nada que gere mais',
       title2: 'autoridade do que RESULTADOS',
-      subtitle: 'Por isso, projetamos landing pages e sites de alta conversão para negócios B2B e infoprodutores, escalando suas operações de vendas por meio de design e estratégia de padrão mundial.',
+      subtitle: 'Por isso que projetamos autoridade visual para empresas e infoprodutores, gerando mais vendas e leads mais qualificados utilizando uma comunicação assertiva e de alto impacto.',
       ctaPrimary: 'Quero gerar resultados',
       ctaSecondary: 'Ver Demo Reel',
       trusted: 'Com a confiança de +50 empresas',
@@ -226,53 +226,53 @@ const translations: Translations = {
       vs_last: 'vs mês anterior'
     },
     services: {
-      title: 'Soluções Digitais que',
-      titleHighlight: 'Impulsionam seu Crescimento',
-      subtitle: 'Não apenas projetamos sites bonitos. Construímos ativos digitais focados em rentabilidade, velocidade e experiência do usuário.',
+      title: 'Sem estratégia, não há impacto',
+      titleHighlight: 'e sem impacto, não há vendas',
+      subtitle: 'Criamos sistemas de captação, focados na qualificação para a sua empresa e aumento escalável de vendas.',
       more: 'Saiba mais',
       cta_portfolio: 'Ver Portfólio',
       items: [
         {
-          title: "Landing Pages de Alto Impacto",
+          title: "Site de alto impacto",
           description: "Otimizadas para conversão. Transformamos tráfego frio em clientes qualificados através de copywriting persuasivo e design estratégico.",
-          tags: ["CRO", "Copywriting", "A/B Testing"]
+          tags: []
         },
         {
-          title: "Sites Corporativos",
+          title: "Captação e qualificação estratégica",
           description: "Construa uma autoridade digital que gera resultados. Um ecossistema completo que sua empresa precisa para estruturar um funil de vendas com conversão.",
-          tags: ["Next.js", "Escalabilidade"]
+          tags: []
         },
         {
-          title: "Automatizações + IA",
+          title: "Balde cheio",
           description: "Integramos automações que conectam cada etapa do seu processo de vendas. Os dados gerados permitem escalar o seu negócio com previsibilidade e estratégia.",
-          tags: ["CRM", "IA", "Follow-up"]
+          tags: []
         }
       ]
     },
     process: {
       label: 'Metodologia',
-      title: 'Da Ideia à',
-      titleHighlight: 'Conversão',
+      title: 'Da Ideia ao',
+      titleHighlight: 'Resultado',
       subtitle: 'Um processo iterativo e transparente projetado para maximizar resultados e minimizar atritos.',
       steps: [
         {
-          title: 'Estratégia & Discovery',
-          description: 'Analisamos o seu modelo de negócio, entendemos o seu público e os concorrentes. Planejamos o seu roadmap a partir do ponto em que você está hoje.',
+          title: 'Reunião e Auditoria',
+          description: 'Faremos uma auditoria da sua situação inicial, através de um relatório em PDF, para que você saiba onde está e como procederemos.',
           points: ['Auditoria UX/UI', 'Auditoria de funil', 'Auditoria de público']
         },
         {
-          title: 'Design UI/UX de Alto Nível',
-          description: 'Criamos wireframes e protótipos de alta fidelidade. Cada pixel é pensado para guiar o usuário para a ação desejada.',
+          title: 'As 4 Ilhas',
+          description: 'Aplicaremos o nosso método das 4 ilhas. Só avançaremos de uma ilha para a outra quando o capitão do barco (você) nos der o OK. Isso evita divergências e surpresas.',
           points: ['Design Visual Premium', 'Prototipagem Interativa', 'Copywriting Persuasivo']
         },
         {
-          title: 'Desenvolvimento e integrações',
-          description: 'Transformamos o design em código limpo e rápido. Usamos as últimas tecnologias para garantir desempenho perfeito em qualquer dispositivo e automatizamos o seu processo comercial.',
+          title: 'Pré-Implementação',
+          description: 'Uma vez aprovadas as 4 ilhas, avançaremos para a implementação intensiva e integração das funcionalidades.',
           points: ['Next.js / React', 'Velocidade de carga < 1s', 'SEO Técnico']
         },
         {
-          title: 'Entrega do serviço',
-          description: 'Implantamos seu projeto e configuramos as ferramentas de medição. Mas o trabalho não para aí; iteramos com base em dados reais.',
+          title: 'Lançamento',
+          description: 'Preparamos tudo para o lançamento deste foguete: domínio, hospedagem, integrações... tudo 100% funcionando.',
           points: ['Configuração de Analytics', 'Suporte Pós-Lançamento', 'A/B Testing']
         }
       ],
@@ -366,7 +366,7 @@ const translations: Translations = {
       pill: 'Exclusivo para servicios B2B e infoproductores',
       title1: 'No existe nada que genere más',
       title2: 'autoridad que el RESULTADOS',
-      subtitle: 'Por eso, diseñamos landing pages y sitios web de alta conversión para negocios B2B e infoproductores, escalando sus operaciones de ventas a través de diseño y estrategia de clase mundial.',
+      subtitle: 'Por eso diseñamos autoridad visual para empresas e infoproductores, generando más ventas y leads más calificados utilizando una comunicación asertiva y de alto impacto.',
       ctaPrimary: 'Quiero generar resultados',
       ctaSecondary: 'Ver Demo Reel',
       trusted: 'Con la confianza de +50 empresas',
@@ -392,53 +392,53 @@ const translations: Translations = {
       vs_last: 'vs mes anterior'
     },
     services: {
-      title: 'Soluciones Digitales que',
-      titleHighlight: 'Impulsan tu Crecimiento',
-      subtitle: 'No solo diseñamos sitios bonitos. Construimos activos digitales enfocados en la rentabilidad, velocidad y experiencia del usuario.',
+      title: 'Sin estrategia, no hay impacto',
+      titleHighlight: 'y sin impacto, no hay ventas',
+      subtitle: 'Creamos sistemas de captación, enfocados en la cualificación para su empresa y aumento escalable de ventas.',
       more: 'Saber más',
       cta_portfolio: 'Ver Portafolio',
       items: [
         {
-          title: "Landing Pages de Alto Impacto",
+          title: "Sitio de Alto Impacto",
           description: "Optimizadas para conversión. Transformamos tráfico frío en clientes calificados a través de copywriting persuasivo y diseño estratégico.",
-          tags: ["CRO", "Copywriting", "A/B Testing"]
+          tags: []
         },
         {
-          title: "Sitios Corporativos",
+          title: "Captación y Calificación Estratégica",
           description: "Construye una autoridad digital que genera resultados. Un ecosistema completo que tu empresa necesita para estructurar un embudo de ventas con conversión.",
-          tags: ["Next.js", "Escalabilidad"]
+          tags: []
         },
         {
-          title: "Automatizaciones + IA",
+          title: "Pipeline Lleno",
           description: "Integramos automatizaciones que conectan cada etapa de tu proceso de ventas. Los datos generados permiten escalar tu negocio con previsibilidad y estrategia.",
-          tags: ["CRM", "IA", "Follow-up"]
+          tags: []
         }
       ]
     },
     process: {
       label: 'Metodología',
-      title: 'De la Idea a la',
-      titleHighlight: 'Conversión',
+      title: 'De la Idea al',
+      titleHighlight: 'Resultado',
       subtitle: 'Un proceso iterativo y transparente diseñado para maximizar resultados y minimizar la fricción.',
       steps: [
         {
-          title: 'Estrategia & Discovery',
-          description: 'Analizamos tu modelo de negocio, entendemos a tu audiencia y competidores. Planificamos tu roadmap desde donde te encuentras hoy.',
+          title: 'Reunión y Auditoría',
+          description: 'Haremos una auditoría de tu situación inicial, mediante un informe PDF para que estés al tanto de dónde te encuentras y cómo procederemos.',
           points: ['Auditoría UX/UI', 'Auditoría de embudo', 'Auditoría de público']
         },
         {
-          title: 'Diseño UI/UX de Alto Nivel',
-          description: 'Creamos wireframes y prototipos de alta fidelidad. Cada píxel está pensado para guiar al usuario hacia la acción deseada.',
+          title: 'Las 4 Islas',
+          description: 'Aplicaremos nuestro método de las 4 islas. Solo avanzaremos cuando el capitán del barco (tú) nos dé el OK. Esto evita divergencias y da certeza del producto final.',
           points: ['Diseño Visual Premium', 'Prototipado Interactivo', 'Copywriting Persuasivo']
         },
         {
-          title: 'Desarrollo e integraciones',
-          description: 'Transformamos el diseño en código limpio y rápido. Usamos las últimas tecnologías para garantizar un rendimiento perfecto en cualquier dispositivo y automatizamos tu proceso comercial.',
+          title: 'Pre-Implementación',
+          description: 'Una vez aprobadas las 4 islas, pasaremos a la implementación intensiva e integración de las funcionalidades.',
           points: ['Next.js / React', 'Velocidad de carga < 1s', 'SEO Técnico']
         },
         {
-          title: 'Entrega del servicio',
-          description: 'Desplegamos tu proyecto y configuramos las herramientas de medición. Pero el trabajo no termina ahí; iteramos basándonos en datos reales.',
+          title: 'Lanzamiento',
+          description: 'Preparamos todo para el lanzamiento de este cohete: dominio, hosting, integraciones... todo 100% funcionando.',
           points: ['Configuración de Analytics', 'Soporte Post-Lanzamiento', 'A/B Testing']
         }
       ],

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowRight, Play, Calendar, DollarSign, CheckCircle } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { ArrowRight, Calendar, DollarSign, CheckCircle } from 'lucide-react';
 import { SplineSceneDemo } from './SplineSceneDemo';
 import VideoModal from './VideoModal';
 import { useLanguage } from '../LanguageContext';
@@ -79,7 +79,7 @@ const Hero: React.FC = () => {
         {/* Main Headline */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 transition-colors duration-300 px-2 leading-tight">
           {t('hero.title1')} <br className="hidden md:block" />
-          <span className="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-500 dark:from-white dark:to-white/60">
+          <span className="text-gray-900 dark:text-white">
             {t('hero.title2').split(' ').slice(0, -1).join(' ')}
           </span>
           {' '}

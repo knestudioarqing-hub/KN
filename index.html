@@ -28,7 +28,7 @@
           },
           colors: {
             brand: {
-              orange: '#FF5500', // Matches the specific orange in the reference
+              orange: '#FF5500',
               dark: '#050505',
               card: '#0A0A0A'
             },
@@ -67,6 +67,30 @@
       }
     }
   </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      transition: background-color 0.3s, color 0.3s;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #555;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FF5500;
+    }
+    .mesh-gradient {
+      background: radial-gradient(circle at center bottom, rgba(255, 85, 0, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    }
+  </style>
   <style>
     html {
       scroll-behavior: smooth;

@@ -95,7 +95,7 @@ const MobileShowcase: React.FC = () => {
                     </span>
                     <h2 className="text-3xl sm:text-4xl font-bold font-sans tracking-tight antialiased text-gray-900 dark:text-white mb-6">
                         {t('mobileShowcase.title')} <br className="hidden sm:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-orange-200">
+                        <span className="text-brand-orange">
                             {t('mobileShowcase.titleHighlight')}
                         </span>
                     </h2>
