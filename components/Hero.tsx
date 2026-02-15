@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Play, Calendar, DollarSign, CheckCircle } from 'lucide-react';
-import DashboardPreview from './DashboardPreview';
+import { SplineSceneDemo } from './SplineSceneDemo';
 import VideoModal from './VideoModal';
 import { useLanguage } from '../LanguageContext';
 
@@ -115,9 +115,9 @@ const Hero: React.FC = () => {
           </button>
         </div>
 
-        {/* Dashboard Preview Section */}
+        {/* 3D Spline Scene Section */}
         <div className="relative w-full max-w-6xl mx-auto z-20 -mb-16 sm:-mb-32 px-2 sm:px-0">
-          <DashboardPreview />
+          <SplineSceneDemo />
 
           <div className="absolute -bottom-1 left-0 right-0 h-24 sm:h-40 bg-gradient-to-t from-gray-50 via-gray-50/80 to-transparent dark:from-black dark:via-black/80 dark:to-transparent z-30 pointer-events-none transition-colors duration-500"></div>
         </div>
