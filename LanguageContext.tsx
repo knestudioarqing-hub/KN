@@ -182,7 +182,7 @@ const translations: Translations = {
       greeting1: "Hello",
       greeting2: "I am STRATON",
       greeting3: "Welcome to KN Growth",
-      ctaLeft: "You can schedule a call with the KN Growth team",
+      ctaLeft: "Schedule a video call with the KN Growth team",
       ctaRight: "It's 100% free and they\nwill guide you step by step"
     }
   },
@@ -359,7 +359,7 @@ const translations: Translations = {
       greeting1: "Olá",
       greeting2: "Sou STRATON",
       greeting3: "Bem-vindo à KN Growth",
-      ctaLeft: "Você pode agendar uma chamada com a equipe da KN Growth",
+      ctaLeft: "Agende uma videochamada com a equipe da KN Growth",
       ctaRight: "É 100% gratuito e eles\nvão te guiar passo a passo"
     }
   },
@@ -536,7 +536,7 @@ const translations: Translations = {
       greeting1: "Hola",
       greeting2: "Soy STRATON",
       greeting3: "Bienvenido a KN Growth",
-      ctaLeft: "Puedes agendar una llamada con el equipo de KN Growth",
+      ctaLeft: "Agende una videollamada con el equipo de KN Growth",
       ctaRight: "Es 100% gratis y\nte guiarán paso a paso"
     }
   }

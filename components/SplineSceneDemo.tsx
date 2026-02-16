@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from '../LanguageContext';
 
 const GREETING_STORAGE_KEY = 'straton_has_greeted';
-const GREETING_DURATION = 13500; // 4s posicionamiento + 3s textos + 3s espera + 4.5s desaparición rápida (1.5s cada uno)
+const GREETING_DURATION = 12500; // 4s posicionamiento + 3s textos + 3s espera + 2.5s desaparición (ajustado para empalmar con CTAs)
 const CTA_DURATION = 5000; // 5s para mostrar los textos CTA antes de hacerlos visibles permanentemente
 
 export type Phase = 'loading' | 'greeting' | 'exit' | 'cta' | 'interactive';
@@ -83,7 +83,7 @@ export function SplineSceneDemo() {
 
         setTimeout(() => {
             setPhase('cta');
-        }, GREETING_DURATION);
+        }, 12000); // Aparece justo cuando termina de desvanecerse el último 'Olá' (aprox 12s)
 
         setTimeout(() => {
             setPhase('interactive');
