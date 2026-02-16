@@ -221,7 +221,7 @@ export function SplineSceneDemo() {
                         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                         className="absolute top-[20%] right-[0.5%] z-20 pointer-events-none max-w-2xl text-right"
                     >
-                        <h2 className="text-3xl md:text-5xl font-instrument text-brand-orange leading-tight tracking-tight whitespace-pre-line">
+                        <h2 className="text-3xl md:text-4xl font-instrument text-brand-orange leading-tight tracking-tight whitespace-pre-line">
                             {formatCTARight(t('straton.ctaRight'))}
                         </h2>
                     </motion.div>
