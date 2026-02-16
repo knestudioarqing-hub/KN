@@ -21,17 +21,30 @@ export function SplineSceneDemo() {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    if (entry.isIntersecting && !hasGreeted.current) {
-                        hasGreeted.current = true;
-                        setIsVisible(true);
-                        // Dar tiempo a que la escena cargue antes de iniciar
-                        setTimeout(() => {
-                            startGreetingSequence();
-                        }, 500);
+                    if (entry.isIntersecting) {
+                        // Si es la primera vez que entra
+                        if (!hasGreeted.current) {
+                            hasGreeted.current = true;
+                            setIsVisible(true);
+                            // Dar tiempo a que la escena cargue antes de iniciar
+                            setTimeout(() => {
+                                startGreetingSequence();
+                            }, 500);
+                        } else {
+                            // Reanudar si ya había iniciado pero estaba pausado
+                            if (splineRef.current?.play) {
+                                splineRef.current.play();
+                            }
+                        }
+                    } else {
+                        // Cuando sale del viewport, detener completamente para ahorrar recursos
+                        if (hasGreeted.current && splineRef.current?.stop) {
+                            splineRef.current.stop();
+                        }
                     }
                 });
             },
-            { threshold: 0.3 }
+            { threshold: 0.1 }
         );
 
         if (containerRef.current) {
