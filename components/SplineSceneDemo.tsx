@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from '../LanguageContext';
 
 const GREETING_STORAGE_KEY = 'straton_has_greeted';
-const GREETING_DURATION = 19000; // 5s posicionamiento + 3s textos + 3s espera + 9s desaparición secuencial
+const GREETING_DURATION = 14500; // 5s posicionamiento + 3s textos + 3s espera + 4.5s desaparición rápida (1.5s cada uno)
 const CTA_DURATION = 5000; // 5s para mostrar los textos CTA antes de hacerlos visibles permanentemente
 
 export type Phase = 'loading' | 'greeting' | 'exit' | 'cta' | 'interactive';
@@ -58,11 +58,11 @@ export function SplineSceneDemo() {
         // 5s: Aparece "Olá"
         // 6s: Aparece "Sou STRATON"
         // 7s: Aparece "Bem-vindo à KN Growth"
-        // 10s (7s + 3s espera): Inicia desaparición secuencial
-        // 10s-13s: Desaparece Greeting 3
-        // 13s-16s: Desaparece Greeting 2
-        // 16s-19s: Desaparece Greeting 1
-        // 19s: Aparecen textos CTA (permanentes)
+        // 10s (7s + 3s espera): Inicia desaparición secuencial RÁPIDA
+        // 10s-11.5s: Desaparece Greeting 3 (1.5s)
+        // 11.5s-13s: Desaparece Greeting 2 (1.5s)
+        // 13s-14.5s: Desaparece Greeting 1 (1.5s)
+        // 14.5s: Aparecen textos CTA (permanentes)
 
         setTimeout(() => {
             setPhase('exit');
@@ -101,10 +101,26 @@ export function SplineSceneDemo() {
         return text;
     };
 
+    const formatCTALeft = (text: string) => {
+        const parts = text.split('KN Growth');
+        if (parts.length > 1) {
+            return <>{parts[0]}<span className="font-bold text-gray-900 dark:text-white">KN Growth</span>{parts[1]}</>;
+        }
+        return text;
+    };
+
+    const formatCTARight = (text: string) => {
+        const parts = text.split('100%');
+        if (parts.length > 1) {
+            return <>{parts[0]}<span className="font-bold">100%</span>{parts[1]}</>;
+        }
+        return text;
+    };
+
     return (
         <div
             ref={containerRef}
-            className={`w-full h-[500px] md:h-[600px] relative transition-all duration-500 overflow-hidden`}
+            className={`w-full h-[500px] md:h-[600px] relative transition-all duration-500 overflow-hidden hidden md:block`}
         >
             {isVisible && (
                 <SplineScene
@@ -127,7 +143,7 @@ export function SplineSceneDemo() {
             {/* Tek Text Overlay - Fase greeting y exit */}
             {(phase === 'greeting' || phase === 'exit') && (
                 <>
-                    {/* Greeting 1: Olá - aparece 5s, desaparece 16s-19s */}
+                    {/* Greeting 1: Olá - aparece 5s, desaparece 13s-14.5s (1.5s rápido) */}
                     <motion.div
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
                         animate={phase === 'exit' 
@@ -135,7 +151,7 @@ export function SplineSceneDemo() {
                             : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
                         transition={phase === 'exit'
-                            ? { duration: 3, delay: 3, ease: "easeInOut" }
+                            ? { duration: 1.5, delay: 1.5, ease: "easeInOut" }
                             : { duration: 0.8, delay: 5.0, ease: "easeOut" }
                         }
                         className="absolute top-[15%] left-[5%] md:left-[5%] z-20 pointer-events-none"
@@ -145,7 +161,7 @@ export function SplineSceneDemo() {
                         </h1>
                     </motion.div>
 
-                    {/* Greeting 2: Sou STRATON - aparece 6s, desaparece 13s-16s */}
+                    {/* Greeting 2: Sou STRATON - aparece 6s, desaparece 11.5s-13s (1.5s rápido) */}
                     <motion.div
                         initial={{ opacity: 0, x: -30, filter: "blur(5px)" }}
                         animate={phase === 'exit' 
@@ -153,7 +169,7 @@ export function SplineSceneDemo() {
                             : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
                         transition={phase === 'exit'
-                            ? { duration: 3, delay: 1.5, ease: "easeInOut" }
+                            ? { duration: 1.5, delay: 0.75, ease: "easeInOut" }
                             : { duration: 0.8, delay: 6.0, ease: "easeOut" }
                         }
                         className="absolute top-[30%] md:top-[30%] left-[5%] md:left-[5%] z-20 pointer-events-none"
@@ -163,7 +179,7 @@ export function SplineSceneDemo() {
                         </h2>
                     </motion.div>
 
-                    {/* Greeting 3: Bem-vindo à KN Growth - aparece 7s, desaparece 10s-13s */}
+                    {/* Greeting 3: Bem-vindo à KN Growth - aparece 7s, desaparece 10s-11.5s (1.5s rápido) */}
                     <motion.div
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
                         animate={phase === 'exit' 
@@ -171,7 +187,7 @@ export function SplineSceneDemo() {
                             : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
                         transition={phase === 'exit'
-                            ? { duration: 3, delay: 0, ease: "easeInOut" }
+                            ? { duration: 1.5, delay: 0, ease: "easeInOut" }
                             : { duration: 0.8, delay: 7.0, ease: "easeOut" }
                         }
                         className="absolute top-[30%] -translate-y-1/2 right-[2%] md:right-[2%] z-20 pointer-events-none md:max-w-md text-right"
@@ -183,31 +199,31 @@ export function SplineSceneDemo() {
                 </>
             )}
 
-            {/* CTA Texts - aparecen a los 19s y se mantienen visibles */}
+            {/* CTA Texts - aparecen a los 14.5s y se mantienen visibles */}
             {(phase === 'cta' || phase === 'interactive') && (
                 <>
-                    {/* CTA Izquierda */}
+                    {/* CTA Izquierda - más a la izquierda, desfasada arriba */}
                     <motion.div
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
                         animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="absolute top-[25%] left-[5%] md:left-[5%] z-20 pointer-events-none max-w-md"
+                        className="absolute top-[20%] left-[2%] z-20 pointer-events-none max-w-lg"
                     >
-                        <p className="text-2xl md:text-3xl text-gray-800 dark:text-gray-200 font-medium leading-tight">
-                            {t('straton.ctaLeft')}
-                        </p>
+                        <h2 className="text-3xl md:text-5xl font-bold text-gray-800 dark:text-gray-200 leading-tight tracking-tight">
+                            {formatCTALeft(t('straton.ctaLeft'))}
+                        </h2>
                     </motion.div>
 
-                    {/* CTA Derecha */}
+                    {/* CTA Derecha - más a la derecha, desfasada abajo */}
                     <motion.div
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
                         animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                        className="absolute top-[25%] right-[5%] md:right-[5%] z-20 pointer-events-none max-w-md text-right"
+                        className="absolute top-[40%] right-[2%] z-20 pointer-events-none max-w-lg text-right"
                     >
-                        <p className="text-2xl md:text-3xl text-brand-orange font-bold leading-tight">
-                            {t('straton.ctaRight')}
-                        </p>
+                        <h2 className="text-3xl md:text-5xl font-bold text-brand-orange leading-tight tracking-tight">
+                            {formatCTARight(t('straton.ctaRight'))}
+                        </h2>
                     </motion.div>
                 </>
             )}
