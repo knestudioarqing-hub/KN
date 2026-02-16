@@ -109,13 +109,7 @@ export function SplineSceneDemo() {
         return text;
     };
 
-    const formatCTARight = (text: string) => {
-        const parts = text.split('100%');
-        if (parts.length > 1) {
-            return <>{parts[0]}<span className="font-bold">100%</span>{parts[1]}</>;
-        }
-        return text;
-    };
+
 
     return (
         <div
@@ -207,9 +201,9 @@ export function SplineSceneDemo() {
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
                         animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="absolute top-[20%] left-[2%] z-20 pointer-events-none max-w-lg"
+                        className="absolute top-[20%] left-[0.5%] z-20 pointer-events-none max-w-lg"
                     >
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-800 dark:text-gray-200 leading-tight tracking-tight">
+                        <h2 className="text-3xl md:text-5xl font-instrument text-gray-800 dark:text-gray-200 leading-tight tracking-tight">
                             {formatCTALeft(t('straton.ctaLeft'))}
                         </h2>
                     </motion.div>
@@ -219,10 +213,10 @@ export function SplineSceneDemo() {
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
                         animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                        className="absolute top-[40%] right-[2%] z-20 pointer-events-none max-w-lg text-right"
+                        className="absolute top-[40%] right-[0.5%] z-20 pointer-events-none max-w-lg text-right"
                     >
-                        <h2 className="text-3xl md:text-5xl font-bold text-brand-orange leading-tight tracking-tight">
-                            {formatCTARight(t('straton.ctaRight'))}
+                        <h2 className="text-3xl md:text-5xl font-instrument text-brand-orange leading-tight tracking-tight whitespace-pre-line">
+                            {t('straton.ctaRight')}
                         </h2>
                     </motion.div>
                 </>
