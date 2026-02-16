@@ -116,16 +116,16 @@ const Hero: React.FC = () => {
         </div>
 
         {/* 3D Spline Scene Section */}
-        <div className="relative w-full max-w-6xl mx-auto z-20 -mb-16 sm:-mb-32 px-2 sm:px-0">
+        <div className="relative w-full max-w-6xl mx-auto z-20 px-2 sm:px-0">
           <SplineSceneDemo />
 
-          <div className="absolute -bottom-1 left-0 right-0 h-24 sm:h-40 bg-gradient-to-t from-gray-50 via-gray-50/80 to-transparent dark:from-black dark:via-black/80 dark:to-transparent z-30 pointer-events-none transition-colors duration-500"></div>
+
         </div>
 
       </div>
 
       {/* Final Section Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-40 bg-gradient-to-t from-gray-50 to-transparent dark:from-black dark:to-transparent z-20 pointer-events-none transition-colors duration-500"></div>
+
 
       {/* Video Pop-up Modal */}
       <VideoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

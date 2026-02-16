@@ -173,6 +173,11 @@ const translations: Translations = {
       title: 'Designed for',
       titleHighlight: 'Web Excellence',
       scrollInstructions: 'Use scroll to see more'
+    },
+    straton: {
+      greeting1: "Hello",
+      greeting2: "I am STRATON",
+      greeting3: "Welcome to KN Growth"
     }
   },
   pt: {
@@ -339,6 +344,11 @@ const translations: Translations = {
       title: 'Projetado para',
       titleHighlight: 'Conversão Web',
       scrollInstructions: 'Use o scroll para ver mais'
+    },
+    straton: {
+      greeting1: "Olá",
+      greeting2: "Sou STRATON",
+      greeting3: "Bem-vindo à KN Growth"
     }
   },
   es: {
@@ -505,6 +515,11 @@ const translations: Translations = {
       title: 'Diseñado para la',
       titleHighlight: 'Conversión Web',
       scrollInstructions: 'Usa el scroll para ver más'
+    },
+    straton: {
+      greeting1: "Hola",
+      greeting2: "Soy STRATON",
+      greeting3: "Bienvenido a KN Growth"
     }
   }
 };
