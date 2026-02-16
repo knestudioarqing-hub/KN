@@ -78,24 +78,24 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 transition-colors duration-300 px-2 leading-tight">
+        <h1 className="text-[30px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 transition-colors duration-300 px-2 leading-tight">
           {t('hero.title1')} <br className="hidden md:block" />
           <span className="text-gray-900 dark:text-white">
             {t('hero.title2').split(' ').slice(0, -1).join(' ')}
           </span>
           {' '}
-          <span className="relative inline-flex items-center justify-center p-2 sm:p-4 group/pill">
+          <span className="relative inline-flex items-center justify-center p-0 sm:p-4 group/pill align-middle">
             {/* Selection Box Lines */}
-            <div className="absolute inset-0 border border-gray-300 dark:border-white/10 pointer-events-none opacity-40 group-hover/pill:opacity-100 transition-opacity"></div>
+            <div className="hidden sm:block absolute inset-0 border border-gray-300 dark:border-white/10 pointer-events-none opacity-40 group-hover/pill:opacity-100 transition-opacity"></div>
 
             {/* Selection Handles (Red Anchor Points) */}
-            <div className="absolute -top-1 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF5500] border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
-            <div className="absolute -top-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF5500] border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
-            <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF5500] border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
-            <div className="absolute -bottom-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF5500] border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
+            <div className="hidden sm:block absolute -top-1 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF5500] border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
+            <div className="hidden sm:block absolute -top-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF5500] border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
+            <div className="hidden sm:block absolute -bottom-1 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF5500] border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
+            <div className="hidden sm:block absolute -bottom-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF5500] border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
 
             {/* The 3D Orange Pill */}
-            <span className="relative inline-block px-6 py-1.5 sm:px-10 sm:py-2.5 rounded-full bg-gradient-to-b from-[#FF5500] to-[#E64D00] text-white shadow-[0_10px_25px_-5px_rgba(255,85,0,0.4),inset_0_1px_4px_rgba(255,255,255,0.4)] transform hover:scale-[1.02] transition-all duration-300 cursor-default select-none border border-orange-400/20 active:scale-95 text-[0.85em] sm:text-[0.9em]">
+            <span className="relative inline-block px-3 py-1.5 sm:px-10 sm:py-2.5 rounded-full bg-gradient-to-b from-[#FF5500] to-[#E64D00] text-white shadow-[0_10px_25px_-5px_rgba(255,85,0,0.4),inset_0_1px_4px_rgba(255,255,255,0.4)] transform hover:scale-[1.02] transition-all duration-300 cursor-default select-none border border-orange-400/20 active:scale-95 text-[0.85em] sm:text-[0.9em] ml-1 sm:ml-0">
               {t('hero.title2').split(' ').pop()}
             </span>
           </span>
