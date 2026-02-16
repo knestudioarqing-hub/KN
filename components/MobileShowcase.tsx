@@ -10,16 +10,16 @@ const MobileShowcase: React.FC = () => {
     // Mock Projects Data (Simulating the "Desktop/Web" with CSS UI)
     const projects = [
         {
-            id: 'saas',
-            title: 'Winebulance',
+            id: 'gym',
+            title: 'Brave Gym',
             category: 'LANDING PAGE',
             color: 'from-orange-600 to-red-600',
             content: (
                 <div className="w-full h-full bg-white overflow-y-auto overflow-x-hidden custom-scrollbar group/screen relative">
                     {/* Manual scrollable image */}
                     <img
-                        src="https://i.imgur.com/jv4Zbfx.png"
-                        alt="Sales Funnel"
+                        src="https://i.imgur.com/zQU3JED.png"
+                        alt="Brave Gym Landing Page"
                         className="w-full h-auto block"
                     />
 
@@ -34,16 +34,16 @@ const MobileShowcase: React.FC = () => {
             )
         },
         {
-            id: 'finance',
-            title: 'OGB SPORTS',
+            id: 'global',
+            title: 'Global Horizon',
             category: 'LANDING PAGE',
             color: 'from-blue-500 to-cyan-400',
             content: (
-                <div className="w-full h-full bg-white overflow-y-auto overflow-x-hidden custom-scrollbar group/screen relative">
+                <div className="w-full h-full bg-[#050505] overflow-y-auto overflow-x-hidden custom-scrollbar group/screen relative">
                     {/* Manual scrollable image */}
                     <img
-                        src="https://i.imgur.com/JURqdk6.png"
-                        alt="Digital Authority Landing Page"
+                        src="https://imgur.com/D8Jnedz.png"
+                        alt="Global Horizon Landing Page"
                         className="w-full h-auto block"
                     />
                 </div>
