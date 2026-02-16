@@ -109,7 +109,13 @@ export function SplineSceneDemo() {
         return text;
     };
 
-
+    const formatCTARight = (text: string) => {
+        const parts = text.split('100% gratuito');
+        if (parts.length > 1) {
+            return <>{parts[0]}<span className="font-bold">100% gratuito</span>{parts[1]}</>;
+        }
+        return text;
+    };
 
     return (
         <div
@@ -140,7 +146,7 @@ export function SplineSceneDemo() {
                     {/* Greeting 1: Olá - aparece 5s, desaparece 13s-14.5s (1.5s rápido) */}
                     <motion.div
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
-                        animate={phase === 'exit' 
+                        animate={phase === 'exit'
                             ? { opacity: 0, x: -30, filter: "blur(5px)" }
                             : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
@@ -158,7 +164,7 @@ export function SplineSceneDemo() {
                     {/* Greeting 2: Sou STRATON - aparece 6s, desaparece 11.5s-13s (1.5s rápido) */}
                     <motion.div
                         initial={{ opacity: 0, x: -30, filter: "blur(5px)" }}
-                        animate={phase === 'exit' 
+                        animate={phase === 'exit'
                             ? { opacity: 0, x: -20, filter: "blur(3px)" }
                             : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
@@ -176,7 +182,7 @@ export function SplineSceneDemo() {
                     {/* Greeting 3: Bem-vindo à KN Growth - aparece 7s, desaparece 10s-11.5s (1.5s rápido) */}
                     <motion.div
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
-                        animate={phase === 'exit' 
+                        animate={phase === 'exit'
                             ? { opacity: 0, x: 30, filter: "blur(5px)" }
                             : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
@@ -201,9 +207,9 @@ export function SplineSceneDemo() {
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
                         animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="absolute top-[20%] left-[0.5%] z-20 pointer-events-none max-w-lg"
+                        className="absolute top-[20%] left-[2%] md:left-[5%] z-20 pointer-events-none max-w-[40%] md:max-w-sm text-left"
                     >
-                        <h2 className="text-3xl md:text-5xl font-instrument text-gray-800 dark:text-gray-200 leading-tight tracking-tight">
+                        <h2 className="text-3xl md:text-4xl font-instrument text-gray-800 dark:text-gray-200 leading-tight tracking-tight">
                             {formatCTALeft(t('straton.ctaLeft'))}
                         </h2>
                     </motion.div>
@@ -216,7 +222,7 @@ export function SplineSceneDemo() {
                         className="absolute top-[40%] right-[0.5%] z-20 pointer-events-none max-w-lg text-right"
                     >
                         <h2 className="text-3xl md:text-5xl font-instrument text-brand-orange leading-tight tracking-tight whitespace-pre-line">
-                            {t('straton.ctaRight')}
+                            {formatCTARight(t('straton.ctaRight'))}
                         </h2>
                     </motion.div>
                 </>

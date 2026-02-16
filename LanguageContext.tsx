@@ -352,7 +352,7 @@ const translations: Translations = {
       greeting2: "Sou STRATON",
       greeting3: "Bem-vindo à KN Growth",
       ctaLeft: "Você pode agendar uma chamada com a equipe da KN Growth",
-      ctaRight: "É 100% gratuito e eles vão te guiar passo a passo"
+      ctaRight: "É 100% gratuito e eles\nvão te guiar passo a passo"
     }
   },
   es: {
