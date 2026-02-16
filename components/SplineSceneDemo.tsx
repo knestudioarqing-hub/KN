@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { useLanguage } from '../LanguageContext';
 
 const GREETING_STORAGE_KEY = 'straton_has_greeted';
-const GREETING_DURATION = 9000; // 5s posicionamiento + 3s textos + 1s margen
+const GREETING_DURATION = 19000; // 5s posicionamiento + 3s textos + 3s espera + 9s desaparición secuencial
 
-type Phase = 'loading' | 'greeting' | 'interactive';
+type Phase = 'loading' | 'greeting' | 'exit' | 'interactive';
 
 export function SplineSceneDemo() {
     const { t } = useLanguage();
@@ -41,6 +41,21 @@ export function SplineSceneDemo() {
         if (splineRef.current?.pauseGameControls) {
             splineRef.current.pauseGameControls();
         }
+
+        // Timeline:
+        // 0s-5s: Straton se posiciona
+        // 5s: Aparece "Hola"
+        // 6s: Aparece "Soy STRATON"
+        // 7s: Aparece "Bienvenido a KN Growth"
+        // 10s (7s + 3s espera): Inicia desaparición secuencial
+        // 10s-13s: Desaparece Greeting 3
+        // 13s-16s: Desaparece Greeting 2
+        // 16s-19s: Desaparece Greeting 1
+        // 19s: Modo interactivo
+
+        setTimeout(() => {
+            setPhase('exit');
+        }, 10000);
 
         setTimeout(() => {
             setPhase('interactive');
@@ -79,7 +94,7 @@ export function SplineSceneDemo() {
             <SplineScene
                 ref={splineRef}
                 scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                className={`w-full h-full transition-all duration-300 ${phase === 'greeting'
+                className={`w-full h-full transition-all duration-300 ${phase === 'greeting' || phase === 'exit'
                     ? 'cursor-wait scale-[1.02]'
                     : 'cursor-grab active:cursor-grabbing'
                     }`}
@@ -93,13 +108,19 @@ export function SplineSceneDemo() {
             )}
 
             {/* Tek Text Overlay */}
-            {phase !== 'loading' && (
+            {(phase === 'greeting' || phase === 'exit') && (
                 <>
-                    {/* Greeting 1: Hola - aparece a los 5s */}
+                    {/* Greeting 1: Hola - aparece 5s, desaparece 16s-19s */}
                     <motion.div
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.8, delay: 5.0, ease: "easeOut" }}
+                        animate={phase === 'exit' 
+                            ? { opacity: 0, x: -30, filter: "blur(5px)" }
+                            : { opacity: 1, x: 0, filter: "blur(0px)" }
+                        }
+                        transition={phase === 'exit'
+                            ? { duration: 3, delay: 3, ease: "easeInOut" }
+                            : { duration: 0.8, delay: 5.0, ease: "easeOut" }
+                        }
                         className="absolute top-[15%] left-[5%] md:left-[5%] z-20 pointer-events-none"
                     >
                         <h1 className="text-6xl md:text-8xl font-bold text-gray-900 dark:text-white tracking-tighter">
@@ -107,11 +128,17 @@ export function SplineSceneDemo() {
                         </h1>
                     </motion.div>
 
-                    {/* Greeting 2: Soy STRATON - aparece a los 6s */}
+                    {/* Greeting 2: Soy STRATON - aparece 6s, desaparece 13s-16s */}
                     <motion.div
                         initial={{ opacity: 0, x: -30, filter: "blur(5px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.8, delay: 6.0, ease: "easeOut" }}
+                        animate={phase === 'exit' 
+                            ? { opacity: 0, x: -20, filter: "blur(3px)" }
+                            : { opacity: 1, x: 0, filter: "blur(0px)" }
+                        }
+                        transition={phase === 'exit'
+                            ? { duration: 3, delay: 1.5, ease: "easeInOut" }
+                            : { duration: 0.8, delay: 6.0, ease: "easeOut" }
+                        }
                         className="absolute top-[30%] md:top-[30%] left-[5%] md:left-[5%] z-20 pointer-events-none"
                     >
                         <h2 className="text-3xl md:text-5xl text-gray-500 dark:text-gray-400 font-light tracking-tight">
@@ -119,11 +146,17 @@ export function SplineSceneDemo() {
                         </h2>
                     </motion.div>
 
-                    {/* Greeting 3: Bienvenido a KN Growth - aparece a los 7s */}
+                    {/* Greeting 3: Bienvenido a KN Growth - aparece 7s, desaparece 10s-13s */}
                     <motion.div
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.8, delay: 7.0, ease: "easeOut" }}
+                        animate={phase === 'exit' 
+                            ? { opacity: 0, x: 30, filter: "blur(5px)" }
+                            : { opacity: 1, x: 0, filter: "blur(0px)" }
+                        }
+                        transition={phase === 'exit'
+                            ? { duration: 3, delay: 0, ease: "easeInOut" }
+                            : { duration: 0.8, delay: 7.0, ease: "easeOut" }
+                        }
                         className="absolute top-[30%] -translate-y-1/2 right-[2%] md:right-[2%] z-20 pointer-events-none md:max-w-md text-right"
                     >
                         <h2 className="text-4xl md:text-6xl text-gray-900 dark:text-white font-medium leading-tight tracking-tight">
