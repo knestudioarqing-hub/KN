@@ -160,12 +160,17 @@ export function SplineSceneDemo() {
                     <motion.div
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
                         animate={phase === 'exit' 
-                            ? { opacity: 0, x: -30, filter: "blur(5px)" }
-                            : { opacity: 1, x: 0, filter: "blur(0px)" }
+                            ? { opacity: 0, x: -30, filter: "blur(5px)", y: 0 }
+                            : { opacity: 1, x: 0, filter: "blur(0px)", y: [0, -8, 0] }
                         }
                         transition={phase === 'exit'
                             ? { duration: 1.5, delay: 1.5, ease: "easeInOut" }
-                            : { duration: 0.8, delay: 4.0, ease: "easeOut" }
+                            : { 
+                                opacity: { duration: 0.8, delay: 4.0, ease: "easeOut" },
+                                x: { duration: 0.8, delay: 4.0, ease: "easeOut" },
+                                filter: { duration: 0.8, delay: 4.0, ease: "easeOut" },
+                                y: { duration: 4, ease: "easeInOut", repeat: Infinity, delay: 4.0 }
+                            }
                         }
                         className="absolute top-[15%] left-[5%] md:left-[5%] z-20 pointer-events-none"
                     >
@@ -178,12 +183,17 @@ export function SplineSceneDemo() {
                     <motion.div
                         initial={{ opacity: 0, x: -30, filter: "blur(5px)" }}
                         animate={phase === 'exit' 
-                            ? { opacity: 0, x: -20, filter: "blur(3px)" }
-                            : { opacity: 1, x: 0, filter: "blur(0px)" }
+                            ? { opacity: 0, x: -20, filter: "blur(3px)", y: 0 }
+                            : { opacity: 1, x: 0, filter: "blur(0px)", y: [0, -8, 0] }
                         }
                         transition={phase === 'exit'
                             ? { duration: 1.5, delay: 0.75, ease: "easeInOut" }
-                            : { duration: 0.8, delay: 5.0, ease: "easeOut" }
+                            : { 
+                                opacity: { duration: 0.8, delay: 5.0, ease: "easeOut" },
+                                x: { duration: 0.8, delay: 5.0, ease: "easeOut" },
+                                filter: { duration: 0.8, delay: 5.0, ease: "easeOut" },
+                                y: { duration: 4.5, ease: "easeInOut", repeat: Infinity, delay: 5.5 }
+                            }
                         }
                         className="absolute top-[30%] md:top-[30%] left-[5%] md:left-[5%] z-20 pointer-events-none"
                     >
@@ -196,12 +206,17 @@ export function SplineSceneDemo() {
                     <motion.div
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
                         animate={phase === 'exit' 
-                            ? { opacity: 0, x: 30, filter: "blur(5px)" }
-                            : { opacity: 1, x: 0, filter: "blur(0px)" }
+                            ? { opacity: 0, x: 30, filter: "blur(5px)", y: 0 }
+                            : { opacity: 1, x: 0, filter: "blur(0px)", y: [0, -8, 0] }
                         }
                         transition={phase === 'exit'
                             ? { duration: 1.5, delay: 0, ease: "easeInOut" }
-                            : { duration: 0.8, delay: 6.0, ease: "easeOut" }
+                            : { 
+                                opacity: { duration: 0.8, delay: 6.0, ease: "easeOut" },
+                                x: { duration: 0.8, delay: 6.0, ease: "easeOut" },
+                                filter: { duration: 0.8, delay: 6.0, ease: "easeOut" },
+                                y: { duration: 5, ease: "easeInOut", repeat: Infinity, delay: 7 }
+                            }
                         }
                         className="absolute top-[30%] -translate-y-1/2 right-[2%] md:right-[2%] z-20 pointer-events-none md:max-w-md text-right"
                     >
@@ -218,8 +233,13 @@ export function SplineSceneDemo() {
                     {/* CTA Izquierda - más a la izquierda, desfasada arriba */}
                     <motion.div
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        animate={{ opacity: 1, x: 0, filter: "blur(0px)", y: [0, -8, 0] }}
+                        transition={{ 
+                            opacity: { duration: 0.8, ease: "easeOut" },
+                            x: { duration: 0.8, ease: "easeOut" },
+                            filter: { duration: 0.8, ease: "easeOut" },
+                            y: { duration: 4.2, ease: "easeInOut", repeat: Infinity, delay: 0.5 }
+                        }}
                         className="absolute top-[20%] left-[2%] md:left-[5%] z-20 pointer-events-none max-w-[40%] md:max-w-sm text-left"
                     >
                         <h2 className="text-3xl md:text-4xl font-instrument text-gray-800 dark:text-gray-200 leading-tight tracking-tight">
@@ -230,8 +250,13 @@ export function SplineSceneDemo() {
                     {/* CTA Derecha - más a la derecha, desfasada abajo */}
                     <motion.div
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                        animate={{ opacity: 1, x: 0, filter: "blur(0px)", y: [0, -8, 0] }}
+                        transition={{ 
+                            opacity: { duration: 0.8, delay: 0.3, ease: "easeOut" },
+                            x: { duration: 0.8, delay: 0.3, ease: "easeOut" },
+                            filter: { duration: 0.8, delay: 0.3, ease: "easeOut" },
+                            y: { duration: 4.8, ease: "easeInOut", repeat: Infinity, delay: 1.5 }
+                        }}
                         className="absolute top-[20%] right-[0.5%] z-20 pointer-events-none max-w-2xl text-right"
                     >
                         <h2 className="text-3xl md:text-4xl font-instrument text-brand-orange leading-tight tracking-tight whitespace-pre-line">
