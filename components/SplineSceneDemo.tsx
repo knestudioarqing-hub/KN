@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { useLanguage } from '../LanguageContext';
 
 const GREETING_STORAGE_KEY = 'straton_has_greeted';
-const GREETING_DURATION = 11000; // Increased to allow full text sequence after robot positioning
+const GREETING_DURATION = 21000; // Total duration: 7s (posicionamiento) + 3s (textos) + 3s (espera) + 9s (desaparición secuencial)
 
-type Phase = 'loading' | 'greeting' | 'interactive';
+type Phase = 'loading' | 'greeting' | 'exit' | 'interactive';
 
 export function SplineSceneDemo() {
     const { t } = useLanguage();
@@ -16,21 +16,6 @@ export function SplineSceneDemo() {
     const hasGreeted = useRef(false);
 
     useEffect(() => {
-        // Verificar si ya se saludó anteriormente
-        const alreadyGreeted = localStorage.getItem(GREETING_STORAGE_KEY) === 'true';
-
-        if (alreadyGreeted) {
-            // Even if greeted, we might want to start in interactive but keep text visible?
-            // For now, let's play the animation every time but skip the 'lock' on controls?
-            // User requested "activar solamente cuando se llega a la seccion".
-            // We'll stick to the logic: if entered, start sequence.
-            // If already greeted, maybe just faster?
-            // Let's reset the 'already greeted' check for the visual animation part, 
-            // but keep it for the interaction lock if needed.
-            // Actually, the user requirement implies a cinematic intro. 
-            // Let's force the intro sequence every time the component mounts/becomes visible.
-        }
-
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -57,6 +42,21 @@ export function SplineSceneDemo() {
             splineRef.current.pauseGameControls();
         }
 
+        // Timeline:
+        // 0s-7s: Straton se posiciona
+        // 7s: Aparece "Hola"
+        // 8s: Aparece "Soy STRATON"
+        // 9s: Aparece "Bienvenido a KN Growth"
+        // 12s (9s + 3s espera): Inicia desaparición secuencial
+        // 12s-15s: Desaparece Greeting 3
+        // 15s-18s: Desaparece Greeting 2
+        // 18s-21s: Desaparece Greeting 1
+        // 21s: Modo interactivo
+
+        setTimeout(() => {
+            setPhase('exit');
+        }, 12000);
+
         setTimeout(() => {
             setPhase('interactive');
             localStorage.setItem(GREETING_STORAGE_KEY, 'true');
@@ -70,7 +70,6 @@ export function SplineSceneDemo() {
         console.log('STRATON loaded');
     };
 
-    // Helper to bold specific keywords if present
     const formatGreeting2 = (text: string) => {
         const parts = text.split('STRATON');
         if (parts.length > 1) {
@@ -95,7 +94,7 @@ export function SplineSceneDemo() {
             <SplineScene
                 ref={splineRef}
                 scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                className={`w-full h-full transition-all duration-300 ${phase === 'greeting'
+                className={`w-full h-full transition-all duration-300 ${phase === 'greeting' || phase === 'exit'
                     ? 'cursor-wait scale-[1.02]'
                     : 'cursor-grab active:cursor-grabbing'
                     }`}
@@ -109,13 +108,19 @@ export function SplineSceneDemo() {
             )}
 
             {/* Tek Text Overlay */}
-            {phase !== 'loading' && (
+            {(phase === 'greeting' || phase === 'exit') && (
                 <>
-                    {/* Greeting 1: Hola */}
+                    {/* Greeting 1: Hola - aparece 7s, desaparece 18s-21s */}
                     <motion.div
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.8, delay: 7.0, ease: "easeOut" }}
+                        animate={phase === 'exit' 
+                            ? { opacity: 0, x: -30, filter: "blur(5px)" }
+                            : { opacity: 1, x: 0, filter: "blur(0px)" }
+                        }
+                        transition={phase === 'exit'
+                            ? { duration: 3, ease: "easeInOut" }
+                            : { duration: 0.8, delay: 7.0, ease: "easeOut" }
+                        }
                         className="absolute top-[15%] left-[5%] md:left-[5%] z-20 pointer-events-none"
                     >
                         <h1 className="text-6xl md:text-8xl font-bold text-gray-900 dark:text-white tracking-tighter">
@@ -123,11 +128,17 @@ export function SplineSceneDemo() {
                         </h1>
                     </motion.div>
 
-                    {/* Greeting 2: Soy STRATON */}
+                    {/* Greeting 2: Soy STRATON - aparece 8s, desaparece 15s-18s */}
                     <motion.div
                         initial={{ opacity: 0, x: -30, filter: "blur(5px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.8, delay: 8.0, ease: "easeOut" }}
+                        animate={phase === 'exit' 
+                            ? { opacity: 0, x: -20, filter: "blur(3px)" }
+                            : { opacity: 1, x: 0, filter: "blur(0px)" }
+                        }
+                        transition={phase === 'exit'
+                            ? { duration: 3, delay: 0, ease: "easeInOut" }
+                            : { duration: 0.8, delay: 8.0, ease: "easeOut" }
+                        }
                         className="absolute top-[30%] md:top-[30%] left-[5%] md:left-[5%] z-20 pointer-events-none"
                     >
                         <h2 className="text-3xl md:text-5xl text-gray-500 dark:text-gray-400 font-light tracking-tight">
@@ -135,11 +146,17 @@ export function SplineSceneDemo() {
                         </h2>
                     </motion.div>
 
-                    {/* Greeting 3: Bienvenido a KN Growth */}
+                    {/* Greeting 3: Bienvenido a KN Growth - aparece 9s, desaparece 12s-15s */}
                     <motion.div
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.8, delay: 9.0, ease: "easeOut" }}
+                        animate={phase === 'exit' 
+                            ? { opacity: 0, x: 30, filter: "blur(5px)" }
+                            : { opacity: 1, x: 0, filter: "blur(0px)" }
+                        }
+                        transition={phase === 'exit'
+                            ? { duration: 3, delay: 0, ease: "easeInOut" }
+                            : { duration: 0.8, delay: 9.0, ease: "easeOut" }
+                        }
                         className="absolute top-[30%] -translate-y-1/2 right-[2%] md:right-[2%] z-20 pointer-events-none md:max-w-md text-right"
                     >
                         <h2 className="text-4xl md:text-6xl text-gray-900 dark:text-white font-medium leading-tight tracking-tight">
@@ -154,7 +171,7 @@ export function SplineSceneDemo() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 4.0 }}
+                    transition={{ delay: 1.0 }}
                     className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20"
                 >
                     <p className="text-xs text-gray-500 dark:text-gray-400 bg-white/80 dark:bg-black/50 px-4 py-2 rounded-full backdrop-blur-md border border-white/20 shadow-sm">
