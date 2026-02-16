@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from '../LanguageContext';
 
 const GREETING_STORAGE_KEY = 'straton_has_greeted';
-const GREETING_DURATION = 14500; // 5s posicionamiento + 3s textos + 3s espera + 4.5s desaparición rápida (1.5s cada uno)
+const GREETING_DURATION = 13500; // 4s posicionamiento + 3s textos + 3s espera + 4.5s desaparición rápida (1.5s cada uno)
 const CTA_DURATION = 5000; // 5s para mostrar los textos CTA antes de hacerlos visibles permanentemente
 
 export type Phase = 'loading' | 'greeting' | 'exit' | 'cta' | 'interactive';
@@ -67,19 +67,19 @@ export function SplineSceneDemo() {
         }
 
         // Timeline:
-        // 0s-5s: Straton se posiciona
-        // 5s: Aparece "Olá"
-        // 6s: Aparece "Sou STRATON"
-        // 7s: Aparece "Bem-vindo à KN Growth"
-        // 10s (7s + 3s espera): Inicia desaparición secuencial RÁPIDA
-        // 10s-11.5s: Desaparece Greeting 3 (1.5s)
-        // 11.5s-13s: Desaparece Greeting 2 (1.5s)
-        // 13s-14.5s: Desaparece Greeting 1 (1.5s)
-        // 14.5s: Aparecen textos CTA (permanentes)
+        // 0s-4s: Straton se posiciona
+        // 4s: Aparece "Olá"
+        // 5s: Aparece "Sou STRATON"
+        // 6s: Aparece "Bem-vindo à KN Growth"
+        // 9s (6s + 3s espera): Inicia desaparición secuencial RÁPIDA
+        // 9s-10.5s: Desaparece Greeting 3 (1.5s)
+        // 10.5s-12s: Desaparece Greeting 2 (1.5s)
+        // 12s-13.5s: Desaparece Greeting 1 (1.5s)
+        // 13.5s: Aparecen textos CTA (permanentes)
 
         setTimeout(() => {
             setPhase('exit');
-        }, 10000);
+        }, 9000);
 
         setTimeout(() => {
             setPhase('cta');
@@ -156,16 +156,16 @@ export function SplineSceneDemo() {
             {/* Tek Text Overlay - Fase greeting y exit */}
             {(phase === 'greeting' || phase === 'exit') && (
                 <>
-                    {/* Greeting 1: Olá - aparece 5s, desaparece 13s-14.5s (1.5s rápido) */}
+                    {/* Greeting 1: Olá - aparece 4s, desaparece 12s-13.5s (1.5s rápido) */}
                     <motion.div
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
-                        animate={phase === 'exit'
+                        animate={phase === 'exit' 
                             ? { opacity: 0, x: -30, filter: "blur(5px)" }
                             : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
                         transition={phase === 'exit'
                             ? { duration: 1.5, delay: 1.5, ease: "easeInOut" }
-                            : { duration: 0.8, delay: 5.0, ease: "easeOut" }
+                            : { duration: 0.8, delay: 4.0, ease: "easeOut" }
                         }
                         className="absolute top-[15%] left-[5%] md:left-[5%] z-20 pointer-events-none"
                     >
@@ -174,16 +174,16 @@ export function SplineSceneDemo() {
                         </h1>
                     </motion.div>
 
-                    {/* Greeting 2: Sou STRATON - aparece 6s, desaparece 11.5s-13s (1.5s rápido) */}
+                    {/* Greeting 2: Sou STRATON - aparece 5s, desaparece 10.5s-12s (1.5s rápido) */}
                     <motion.div
                         initial={{ opacity: 0, x: -30, filter: "blur(5px)" }}
-                        animate={phase === 'exit'
+                        animate={phase === 'exit' 
                             ? { opacity: 0, x: -20, filter: "blur(3px)" }
                             : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
                         transition={phase === 'exit'
                             ? { duration: 1.5, delay: 0.75, ease: "easeInOut" }
-                            : { duration: 0.8, delay: 6.0, ease: "easeOut" }
+                            : { duration: 0.8, delay: 5.0, ease: "easeOut" }
                         }
                         className="absolute top-[30%] md:top-[30%] left-[5%] md:left-[5%] z-20 pointer-events-none"
                     >
@@ -192,16 +192,16 @@ export function SplineSceneDemo() {
                         </h2>
                     </motion.div>
 
-                    {/* Greeting 3: Bem-vindo à KN Growth - aparece 7s, desaparece 10s-11.5s (1.5s rápido) */}
+                    {/* Greeting 3: Bem-vindo à KN Growth - aparece 6s, desaparece 9s-10.5s (1.5s rápido) */}
                     <motion.div
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
-                        animate={phase === 'exit'
+                        animate={phase === 'exit' 
                             ? { opacity: 0, x: 30, filter: "blur(5px)" }
                             : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
                         transition={phase === 'exit'
                             ? { duration: 1.5, delay: 0, ease: "easeInOut" }
-                            : { duration: 0.8, delay: 7.0, ease: "easeOut" }
+                            : { duration: 0.8, delay: 6.0, ease: "easeOut" }
                         }
                         className="absolute top-[30%] -translate-y-1/2 right-[2%] md:right-[2%] z-20 pointer-events-none md:max-w-md text-right"
                     >
@@ -212,7 +212,7 @@ export function SplineSceneDemo() {
                 </>
             )}
 
-            {/* CTA Texts - aparecen a los 14.5s y se mantienen visibles */}
+            {/* CTA Texts - aparecen a los 13.5s y se mantienen visibles */}
             {(phase === 'cta' || phase === 'interactive') && (
                 <>
                     {/* CTA Izquierda - más a la izquierda, desfasada arriba */}
