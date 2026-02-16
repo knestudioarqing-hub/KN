@@ -24,11 +24,11 @@ const Services: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-20">
-          <h2 className="text-3xl sm:text-4xl font-bold font-sans tracking-tight antialiased text-gray-900 dark:text-white mb-6 transition-colors">
-            {t('services.title')} <br />
+          <h2 className="text-3xl sm:text-4xl font-bold font-sans tracking-tight antialiased text-gray-900 dark:text-white mb-6 transition-colors text-balance max-w-[300px] sm:max-w-4xl mx-auto">
+            {t('services.title')} <br className="hidden sm:block" />
             <span className="text-brand-orange">{t('services.titleHighlight')}</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed transition-colors px-4 lg:whitespace-nowrap">
+          <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed transition-colors px-4 lg:whitespace-nowrap">
             {t('services.subtitle')}
           </p>
         </div>
@@ -37,13 +37,29 @@ const Services: React.FC = () => {
           {services.map((service: any, index: number) => (
             <div key={index} className="group relative p-6 sm:p-8 rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/5 hover:border-brand-orange/30 hover:bg-white dark:hover:bg-white/[0.05] transition-all duration-300 hover:-translate-y-1 shadow-sm dark:shadow-none hover:shadow-xl dark:hover:shadow-none overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
-              <div className="absolute -top-20 -right-20 w-40 h-40 bg-brand-orange/5 blur-3xl rounded-full group-hover:bg-brand-orange/10 transition-colors"></div>
 
-              <div className="relative w-12 h-12 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 flex items-center justify-center mb-6 group-hover:border-brand-orange/50 transition-colors shadow-sm dark:shadow-none">
-                <service.icon className="text-gray-500 dark:text-gray-300 group-hover:text-brand-orange transition-colors" size={24} />
+              {/* Corner Neon Effect */}
+              <div className="absolute inset-0 rounded-2xl pointer-events-none overflow-hidden">
+                {/* Top Left Corner */}
+                <div className="absolute top-0 left-0 w-24 h-[1.5px] bg-gradient-to-r from-brand-orange via-brand-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <div className="absolute top-0 left-0 w-[1.5px] h-24 bg-gradient-to-b from-brand-orange via-brand-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                {/* Bottom Right Corner */}
+                <div className="absolute bottom-0 right-0 w-24 h-[1.5px] bg-gradient-to-l from-brand-orange via-brand-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <div className="absolute bottom-0 right-0 w-[1.5px] h-24 bg-gradient-to-t from-brand-orange via-brand-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                {/* Corner Sparkles */}
+                <div className="absolute top-0 left-0 w-1.5 h-1.5 bg-brand-orange rounded-full blur-[1.5px] opacity-0 group-hover:opacity-100 transition-all duration-500 shadow-[0_0_8px_#ff5500]"></div>
+                <div className="absolute bottom-0 right-0 w-1.5 h-1.5 bg-brand-orange rounded-full blur-[1.5px] opacity-0 group-hover:opacity-100 transition-all duration-500 shadow-[0_0_8px_#ff5500]"></div>
               </div>
 
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-brand-orange transition-colors relative z-10">{service.title}</h3>
+              <div className="absolute -top-20 -right-20 w-40 h-40 bg-brand-orange/5 blur-3xl rounded-full group-hover:bg-brand-orange/10 transition-colors"></div>
+
+              <div className="absolute bottom-8 right-8 text-gray-400 dark:text-gray-500 group-hover:text-brand-orange transition-colors z-10">
+                <service.icon size={28} />
+              </div>
+
+              <h3 className="text-[25px] font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-brand-orange group-hover:drop-shadow-[0_0_10px_rgba(255,85,0,0.3)] transition-all duration-500 relative z-10">{service.title}</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 relative z-10">{service.description}</p>
 
               {service.tags && service.tags.length > 0 && (
@@ -72,6 +88,7 @@ const Services: React.FC = () => {
       </div>
 
       <PortfolioLockedModal isOpen={isPortfolioLockedOpen} onClose={() => setIsPortfolioLockedOpen(false)} />
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-orange/50 shadow-[0_0_15px_rgba(255,85,0,1)] z-50 md:hidden"></div>
     </section>
   );
 };

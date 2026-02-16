@@ -86,7 +86,7 @@ const MobileShowcase: React.FC = () => {
     }, [activeIndex, isPaused]);
 
     return (
-        <section className="relative py-20 sm:py-32 bg-gray-50 dark:bg-black overflow-hidden border-t border-gray-200 dark:border-white/5">
+        <section className="relative pt-20 sm:pt-32 pb-10 sm:pb-16 bg-gray-50 dark:bg-black overflow-hidden border-t border-gray-200 dark:border-white/5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="text-center mb-16 sm:mb-24">
@@ -238,6 +238,7 @@ const MobileShowcase: React.FC = () => {
                 </div>
 
             </div>
+            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-orange/50 shadow-[0_0_15px_rgba(255,85,0,1)] z-50 md:hidden"></div>
         </section>
     );
 };

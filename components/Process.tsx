@@ -47,15 +47,29 @@ const Process: React.FC = () => {
               <div key={step.id} className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-16 ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
                 <div className="flex-1 w-full md:text-right group">
                   <div className={`flex flex-col ${index % 2 === 0 ? 'md:items-end' : 'md:items-start'} items-start`}>
-                    <div className={`text-6xl sm:text-[120px] leading-none font-bold text-gray-100 dark:text-white/[0.03] absolute -top-8 right-4 sm:-top-10 ${index % 2 === 0 ? 'md:right-auto md:left-full md:-ml-20' : 'md:left-auto md:right-full md:-mr-20'} select-none pointer-events-none transition-colors group-hover:text-gray-200 dark:group-hover:text-white/[0.06]`}>
+                    <div className={`text-6xl sm:text-[120px] leading-none font-bold text-gray-100 dark:text-white/[0.03] absolute -top-8 right-4 sm:-top-10 ${index % 2 === 0 ? 'md:right-auto md:left-full md:-ml-20' : 'md:left-auto md:right-full md:-mr-20'} select-none pointer-events-none transition-all duration-500 group-hover:text-gray-300 dark:group-hover:text-white/10 group-hover:scale-110`}>
                       {step.id}
                     </div>
-                    <div className="relative z-10 p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-white/5 bg-white dark:bg-white/[0.02] shadow-lg dark:shadow-none backdrop-blur-sm hover:border-brand-orange/30 transition-all duration-300 w-full max-w-lg">
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="w-10 h-10 rounded-lg bg-brand-orange/10 flex items-center justify-center text-brand-orange flex-shrink-0">
-                          <step.icon size={20} />
-                        </div>
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white transition-colors text-left">{step.title}</h3>
+                    <div className="relative z-10 p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-white/5 bg-white dark:bg-white/[0.02] shadow-lg dark:shadow-none backdrop-blur-sm hover:border-brand-orange/30 transition-all duration-300 w-full max-w-lg overflow-hidden">
+                      {/* Corner Neon Effect */}
+                      <div className="absolute inset-0 rounded-2xl pointer-events-none overflow-hidden">
+                        {/* Top Left Corner */}
+                        <div className="absolute top-0 left-0 w-24 h-[1.5px] bg-gradient-to-r from-brand-orange via-brand-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                        <div className="absolute top-0 left-0 w-[1.5px] h-24 bg-gradient-to-b from-brand-orange via-brand-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                        {/* Bottom Right Corner */}
+                        <div className="absolute bottom-0 right-0 w-24 h-[1.5px] bg-gradient-to-l from-brand-orange via-brand-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                        <div className="absolute bottom-0 right-0 w-[1.5px] h-24 bg-gradient-to-t from-brand-orange via-brand-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                        {/* Corner Sparkles */}
+                        <div className="absolute top-0 left-0 w-1.5 h-1.5 bg-brand-orange rounded-full blur-[1.5px] opacity-0 group-hover:opacity-100 transition-all duration-500 shadow-[0_0_8px_#ff5500]"></div>
+                        <div className="absolute bottom-0 right-0 w-1.5 h-1.5 bg-brand-orange rounded-full blur-[1.5px] opacity-0 group-hover:opacity-100 transition-all duration-500 shadow-[0_0_8px_#ff5500]"></div>
+                      </div>
+                      <div className="absolute bottom-8 right-8 text-brand-orange opacity-40 group-hover:opacity-100 transition-opacity z-10">
+                        <step.icon size={28} />
+                      </div>
+                      <div className="mb-4">
+                        <h3 className="text-3xl font-bold text-gray-900 dark:text-white group-hover:text-brand-orange group-hover:drop-shadow-[0_0_10px_rgba(255,85,0,0.3)] transition-all duration-500 text-left">{step.title}</h3>
                       </div>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6 transition-colors text-left">{step.description}</p>
                       <ul className="space-y-2 text-left">
@@ -85,17 +99,38 @@ const Process: React.FC = () => {
 
         <div className="relative z-10">
           <div className="text-center mb-12 sm:mb-16">
-            <div className="inline-block h-1 w-20 bg-brand-orange rounded-full mb-6 sm:mb-8 shadow-[0_0_15px_rgba(255,85,0,0.5)]"></div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white transition-colors px-4">{t('process.featuresTitle')}</h3>
+            <span className="text-brand-orange font-semibold tracking-wider uppercase text-xs sm:text-sm mb-4 block">
+              {t('process.featuresLabel')}
+            </span>
+            <h3 className="text-3xl sm:text-5xl font-bold font-sans tracking-tight antialiased text-gray-900 dark:text-white mb-6 transition-colors px-4">
+              {t('process.featuresTitle').split(' ').slice(0, -1).join(' ')} <span className="text-brand-orange">{t('process.featuresTitle').split(' ').pop()}</span>
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg transition-colors px-4 max-w-full mx-auto md:whitespace-nowrap">
+              {t('process.featuresSubtitle')}
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {features.map((feature: any, index: number) => {
               const MainIcon = feature.mainIcon;
               return (
-                <div key={index} className="group relative flex flex-col overflow-hidden rounded-3xl bg-white dark:bg-[#0A0A0A] border border-gray-200 dark:border-white/10 hover:border-brand-orange/50 transition-all duration-500 shadow-xl">
-                  <div className="p-6 relative z-20">
-                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-tight transition-colors">{feature.title}</h4>
+                <div key={index} className="group relative flex flex-col overflow-hidden rounded-3xl bg-white dark:bg-[#0A0A0A] border border-gray-200 dark:border-white/10 hover:border-brand-orange/50 transition-all duration-500 shadow-xl min-h-[380px]">
+                  {/* Corner Neon Effect */}
+                  <div className="absolute inset-0 rounded-3xl pointer-events-none overflow-hidden">
+                    {/* Top Left Corner */}
+                    <div className="absolute top-0 left-0 w-24 h-[1.5px] bg-gradient-to-r from-brand-orange via-brand-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <div className="absolute top-0 left-0 w-[1.5px] h-24 bg-gradient-to-b from-brand-orange via-brand-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                    {/* Bottom Right Corner */}
+                    <div className="absolute bottom-0 right-0 w-24 h-[1.5px] bg-gradient-to-l from-brand-orange via-brand-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <div className="absolute bottom-0 right-0 w-[1.5px] h-24 bg-gradient-to-t from-brand-orange via-brand-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                    {/* Corner Sparkles */}
+                    <div className="absolute top-0 left-0 w-1.5 h-1.5 bg-brand-orange rounded-full blur-[1.5px] opacity-0 group-hover:opacity-100 transition-all duration-500 shadow-[0_0_8px_#ff5500]"></div>
+                    <div className="absolute bottom-0 right-0 w-1.5 h-1.5 bg-brand-orange rounded-full blur-[1.5px] opacity-0 group-hover:opacity-100 transition-all duration-500 shadow-[0_0_8px_#ff5500]"></div>
+                  </div>
+                  <div className="px-5 pt-12 relative z-20">
+                    <h4 className="text-[25px] font-bold text-gray-900 dark:text-white mb-2 leading-tight group-hover:text-brand-orange group-hover:drop-shadow-[0_0_10px_rgba(255,85,0,0.3)] transition-all duration-500">{feature.title}</h4>
                     <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{feature.description}</p>
                   </div>
                   <div className="relative h-40 mt-auto w-full overflow-hidden bg-gray-50 dark:bg-white/5 border-t border-gray-200 dark:border-white/5">
@@ -107,10 +142,10 @@ const Process: React.FC = () => {
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent dark:from-[#0A0A0A] opacity-80"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="relative group-hover:-translate-y-2 transition-transform duration-500 ease-out">
+                      <div className="relative group-hover:-translate-y-2 transition-transform duration-500 ease-out flex items-center justify-center">
                         <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500`}></div>
-                        <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-white to-gray-100 dark:from-gray-800 dark:to-black border border-gray-200 dark:border-white/10 flex items-center justify-center shadow-2xl z-10 group-hover:border-brand-orange/30 dark:group-hover:border-white/30 transition-colors">
-                          <MainIcon size={28} className="text-gray-900 dark:text-white drop-shadow-[0_0_10px_rgba(255,85,0,0.2)] dark:drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
+                        <div className="relative flex items-center justify-center z-10 text-gray-900 dark:text-white transition-colors">
+                          <MainIcon size={32} className="drop-shadow-[0_0_10px_rgba(255,85,0,0.3)] dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
                         </div>
                       </div>
                     </div>
@@ -127,6 +162,7 @@ const Process: React.FC = () => {
           </div>
         </div>
       </div>
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-orange/50 shadow-[0_0_15px_rgba(255,85,0,1)] z-50 md:hidden"></div>
     </section>
   );
 };

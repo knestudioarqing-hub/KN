@@ -133,7 +133,7 @@ export function SplineSceneDemo() {
     return (
         <div
             ref={containerRef}
-            className={`w-full h-[500px] md:h-[600px] relative transition-all duration-500 overflow-hidden hidden md:block`}
+            className={`w-full h-[600px] md:h-[800px] relative transition-all duration-500 overflow-hidden hidden md:block`}
         >
             {isVisible && (
                 <SplineScene
@@ -159,13 +159,13 @@ export function SplineSceneDemo() {
                     {/* Greeting 1: Olá - aparece 4s, desaparece 12s-13.5s (1.5s rápido) */}
                     <motion.div
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
-                        animate={phase === 'exit' 
+                        animate={phase === 'exit'
                             ? { opacity: 0, x: -30, filter: "blur(5px)" }
                             : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
                         transition={phase === 'exit'
                             ? { duration: 1.5, delay: 1.5, ease: "easeInOut" }
-                            : { 
+                            : {
                                 opacity: { duration: 0.8, delay: 4.0, ease: "easeOut" },
                                 x: { duration: 0.8, delay: 4.0, ease: "easeOut" },
                                 filter: { duration: 0.8, delay: 4.0, ease: "easeOut" }
@@ -182,13 +182,13 @@ export function SplineSceneDemo() {
                     {/* Greeting 2: Sou STRATON - aparece 5s, desaparece 10.5s-12s (1.5s rápido) */}
                     <motion.div
                         initial={{ opacity: 0, x: -30, filter: "blur(5px)" }}
-                        animate={phase === 'exit' 
+                        animate={phase === 'exit'
                             ? { opacity: 0, x: -20, filter: "blur(3px)" }
                             : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
                         transition={phase === 'exit'
                             ? { duration: 1.5, delay: 0.75, ease: "easeInOut" }
-                            : { 
+                            : {
                                 opacity: { duration: 0.8, delay: 5.0, ease: "easeOut" },
                                 x: { duration: 0.8, delay: 5.0, ease: "easeOut" },
                                 filter: { duration: 0.8, delay: 5.0, ease: "easeOut" }
@@ -205,13 +205,13 @@ export function SplineSceneDemo() {
                     {/* Greeting 3: Bem-vindo à KN Growth - aparece 6s, desaparece 9s-10.5s (1.5s rápido) */}
                     <motion.div
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
-                        animate={phase === 'exit' 
+                        animate={phase === 'exit'
                             ? { opacity: 0, x: 30, filter: "blur(5px)" }
                             : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
                         transition={phase === 'exit'
                             ? { duration: 1.5, delay: 0, ease: "easeInOut" }
-                            : { 
+                            : {
                                 opacity: { duration: 0.8, delay: 6.0, ease: "easeOut" },
                                 x: { duration: 0.8, delay: 6.0, ease: "easeOut" },
                                 filter: { duration: 0.8, delay: 6.0, ease: "easeOut" }
@@ -233,8 +233,8 @@ export function SplineSceneDemo() {
                     {/* CTA Izquierda - más a la izquierda, desfasada arriba */}
                     <motion.div
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        transition={{ 
+                        animate={{ opacity: 1, x: -30, filter: "blur(0px)" }} // x: -30 para moverlo 30px a la izquierda
+                        transition={{
                             opacity: { duration: 0.8, ease: "easeOut" },
                             x: { duration: 0.8, ease: "easeOut" },
                             filter: { duration: 0.8, ease: "easeOut" }
@@ -250,13 +250,13 @@ export function SplineSceneDemo() {
                     {/* CTA Derecha - más a la derecha, desfasada abajo */}
                     <motion.div
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        transition={{ 
+                        animate={{ opacity: 1, x: 60, filter: "blur(0px)" }} // x: 60 (30 previos + 30 nuevos) para moverlo más a la derecha
+                        transition={{
                             opacity: { duration: 0.8, delay: 0.3, ease: "easeOut" },
                             x: { duration: 0.8, delay: 0.3, ease: "easeOut" },
                             filter: { duration: 0.8, delay: 0.3, ease: "easeOut" }
                         }}
-                        className="absolute top-[20%] right-[0.5%] z-20 pointer-events-none max-w-2xl text-right animate-float-strato-5"
+                        className="absolute top-[68%] right-[0.5%] z-20 pointer-events-none max-w-2xl text-right animate-float-strato-5"
                         style={{ willChange: 'transform' }}
                     >
                         <h2 className="text-3xl md:text-4xl font-instrument text-brand-orange leading-tight tracking-tight whitespace-pre-line">
@@ -266,19 +266,7 @@ export function SplineSceneDemo() {
                 </>
             )}
 
-            {/* Interactive hint */}
-            {phase === 'interactive' && (
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.0 }}
-                    className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20"
-                >
-                    <p className="text-xs text-gray-500 dark:text-gray-400 bg-white/80 dark:bg-black/50 px-4 py-2 rounded-full backdrop-blur-md border border-white/20 shadow-sm">
-                        Hover & Drag to Interact
-                    </p>
-                </motion.div>
-            )}
+
         </div>
     )
 }

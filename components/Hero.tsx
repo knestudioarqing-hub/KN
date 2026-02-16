@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Calendar, DollarSign, CheckCircle } from 'lucide-react';
-import { SplineSceneDemo } from './SplineSceneDemo';
 import VideoModal from './VideoModal';
 import { useLanguage } from '../LanguageContext';
 
@@ -9,11 +8,13 @@ const Hero: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="relative pt-28 pb-0 sm:pt-40 sm:pb-0 overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-500">
+    <div className="relative pt-28 pb-0 sm:pt-40 sm:pb-0 min-h-screen overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-500 flex flex-col justify-center rounded-b-[50px] md:rounded-b-[90px] z-10">
 
       {/* Background Stars Effect (Dark Mode only) */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
+        {/* Mobile Separator Glow */}
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-orange/50 shadow-[0_0_15px_rgba(255,85,0,1)] z-50 md:hidden"></div>
 
         {/* Stars - hidden in light mode */}
         <div className="hidden dark:block">
@@ -27,26 +28,26 @@ const Hero: React.FC = () => {
       {/* Floating Widgets - Pushed further to the edges to avoid title overlap */}
       <div className="hidden xl:block absolute inset-0 pointer-events-none z-20 overflow-hidden">
         {/* Booking Widget */}
-        <div className="absolute top-[35%] left-[5%] animate-float transition-all duration-700 active:scale-95" style={{ animationDuration: '8s' }}>
+        <div className="absolute top-[28%] left-[5%] animate-float transition-all duration-700 active:scale-95" style={{ animationDuration: '8s' }}>
           <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/30 dark:bg-white/5 backdrop-blur-sm border border-white/40 dark:border-white/10 shadow-lg">
             <div className="w-7 h-7 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
               <Calendar size={14} />
             </div>
             <div className="flex flex-col">
               <p className="text-[9px] uppercase tracking-tighter text-gray-500 dark:text-gray-400 font-bold leading-tight">{t('hero.floating_booking')}</p>
-              <p className="text-[11px] text-gray-900 dark:text-white font-medium leading-tight">Hoje, 14:30</p>
+              <p className="text-[11px] text-gray-900 dark:text-white font-medium leading-tight">{t('hero.floating_time')}</p>
             </div>
           </div>
         </div>
 
         {/* Sale Widget */}
-        <div className="absolute top-[50%] right-[3%] animate-float-delayed transition-all duration-700 active:scale-95" style={{ animationDuration: '9s', animationDelay: '2s' }}>
+        <div className="absolute top-[58%] right-[3%] animate-float-delayed transition-all duration-700 active:scale-95" style={{ animationDuration: '9s', animationDelay: '2s' }}>
           <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/30 dark:bg-white/5 backdrop-blur-sm border border-white/40 dark:border-white/10 shadow-lg">
             <div className="w-7 h-7 rounded-full bg-brand-orange/10 flex items-center justify-center text-brand-orange">
               <DollarSign size={14} />
             </div>
             <div className="flex flex-col">
-              <p className="text-[9px] uppercase tracking-tighter text-gray-500 dark:text-gray-400 font-bold leading-tight">Checkout</p>
+              <p className="text-[9px] uppercase tracking-tighter text-gray-500 dark:text-gray-400 font-bold leading-tight">{t('hero.floating_checkout')}</p>
               <p className="text-[11px] text-gray-900 dark:text-white font-medium leading-tight">{t('hero.floating_sale')}</p>
             </div>
             <div className="ml-1 w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center text-white">
@@ -77,13 +78,13 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 transition-colors duration-300 px-2 leading-tight">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 transition-colors duration-300 px-2 leading-tight">
           {t('hero.title1')} <br className="hidden md:block" />
           <span className="text-gray-900 dark:text-white">
             {t('hero.title2').split(' ').slice(0, -1).join(' ')}
           </span>
           {' '}
-          <span className="relative inline-flex items-center justify-center p-3 sm:p-4 group/pill">
+          <span className="relative inline-flex items-center justify-center p-2 sm:p-4 group/pill">
             {/* Selection Box Lines */}
             <div className="absolute inset-0 border border-gray-300 dark:border-white/10 pointer-events-none opacity-40 group-hover/pill:opacity-100 transition-opacity"></div>
 
@@ -113,13 +114,6 @@ const Hero: React.FC = () => {
           >
             {t('hero.ctaPrimary')}
           </button>
-        </div>
-
-        {/* 3D Spline Scene Section */}
-        <div className="relative w-full max-w-6xl mx-auto z-20 px-2 sm:px-0">
-          <SplineSceneDemo />
-
-
         </div>
 
       </div>

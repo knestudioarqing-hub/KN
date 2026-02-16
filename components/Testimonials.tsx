@@ -24,7 +24,7 @@ const Testimonials: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 sm:mb-20 max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold font-sans tracking-tight antialiased text-gray-900 dark:text-white mb-6 transition-colors">
+          <h2 className="text-3xl sm:text-4xl font-semibold font-sans tracking-tight antialiased text-gray-900 dark:text-white mb-6 transition-colors">
             {t('testimonials.title')} <br />
             <span className="text-brand-orange">{t('testimonials.titleHighlight')}</span>
           </h2>
@@ -43,9 +43,9 @@ const Testimonials: React.FC = () => {
                 <div className="flex gap-1 mb-6 text-brand-orange">
                   {[...Array(5)].map((_, i) => (<Star key={i} size={16} fill="currentColor" />))}
                 </div>
-                <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-8 flex-grow transition-colors">"{t.content}"</p>
+                <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-8 flex-grow transition-colors">"{t.content}"</p>
                 <div className="mt-auto pt-6 border-t border-gray-100 dark:border-white/5">
-                  <p className="font-semibold text-gray-900 dark:text-white transition-colors">{t.name}</p>
+                  <p className="font-medium text-gray-900 dark:text-white transition-colors">{t.name}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{t.role}</p>
                 </div>
               </div>

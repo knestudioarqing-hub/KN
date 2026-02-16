@@ -6,7 +6,7 @@ const Team: React.FC = () => {
     const { t } = useLanguage();
 
     return (
-        <section className="relative bg-white dark:bg-black py-20 sm:py-32 scroll-mt-24 overflow-hidden transition-colors duration-500" id="equipo">
+        <section className="relative bg-white dark:bg-black pt-10 sm:pt-16 pb-20 sm:pb-32 scroll-mt-24 overflow-hidden transition-colors duration-500" id="equipo">
             {/* Grid Background Effect */}
             <div className="absolute inset-0 opacity-5 dark:opacity-5 pointer-events-none"
                 style={{
@@ -51,7 +51,7 @@ const Team: React.FC = () => {
                         <div
                             key={idx}
                             className={`group relative rounded-3xl overflow-hidden aspect-[4/5] bg-[#0A0A0A] border border-gray-200 dark:border-white/10 hover:border-brand-orange/50 transition-all duration-500 shadow-xl ${member.role.includes('CEO') ? 'order-3 md:order-2' :
-                                    idx === 0 ? 'order-1 md:order-1' : 'order-2 md:order-3'
+                                idx === 0 ? 'order-1 md:order-1' : 'order-2 md:order-3'
                                 }`}
                         >
                             {/* Image with grayscale to color transition */}
@@ -68,8 +68,8 @@ const Team: React.FC = () => {
                                     <h3 className="text-xl sm:text-2xl font-bold tracking-tight">{member.name}</h3>
                                 </div>
 
-                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brand-orange flex items-center justify-center text-white shadow-lg shadow-brand-orange/20 transform group-hover:rotate-45 transition-transform duration-500">
-                                    <ArrowUpRight size={20} />
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brand-orange/20 backdrop-blur-xl border border-brand-orange/40 flex items-center justify-center text-white shadow-[0_8px_32px_rgba(255,85,0,0.2)] transform group-hover:rotate-45 transition-all duration-500 group-hover:bg-brand-orange/40">
+                                    <ArrowUpRight size={20} className="drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
                                 </div>
                             </div>
 

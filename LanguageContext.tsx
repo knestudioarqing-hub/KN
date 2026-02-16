@@ -16,7 +16,7 @@ const translations: Translations = {
       process: 'Process',
       contact: 'Contact',
       portfolio: 'Portfolio',
-      cta: 'Get results now',
+      cta: 'I want to generate results',
       themePopup: {
         title: 'Switch to Dark Mode?',
         text: 'Would you like to experience the dark mode version?',
@@ -32,13 +32,15 @@ const translations: Translations = {
     },
     hero: {
       pill: 'Exclusive for B2B services and infoproductors',
-      title1: 'Nothing generates more authority',
+      title1: 'There is nothing that generates more authority',
       title2: 'than RESULTS',
       subtitle: 'That’s why we design visual authority for companies and infoproducers, generating more sales and more qualified leads using assertive and high-impact communication.',
-      ctaPrimary: 'Get results now',
+      ctaPrimary: 'I want to generate results',
       ctaSecondary: 'Watch Demo Reel',
       trusted: 'Trusted by 50+ innovative companies',
       floating_booking: 'New booking confirmed',
+      floating_time: 'Today, 2:30 PM',
+      floating_checkout: 'Checkout',
       floating_sale: 'Sale closed: $2,450.00'
     },
     dashboard: {
@@ -60,7 +62,7 @@ const translations: Translations = {
       vs_last: 'vs last month'
     },
     services: {
-      title: 'Without strategy, there\'s no impact',
+      title: 'Without strategy, there is no impact',
       titleHighlight: 'and without impact, there are no sales',
       subtitle: 'We create acquisition systems, focused on qualification for your company and scalable sales growth.',
       more: 'Learn more',
@@ -111,6 +113,8 @@ const translations: Translations = {
         }
       ],
       featuresTitle: 'Complete Ecosystem',
+      featuresLabel: 'Ecosystem',
+      featuresSubtitle: 'We will integrate this ecosystem into your company, efficiently and quickly',
       features: [
         {
           title: 'CRM + Follow-up',
@@ -129,7 +133,7 @@ const translations: Translations = {
           description: 'We integrate your company\'s daily tools into the new conversion system, without loss of data or information.'
         }
       ],
-      cta: "Build your Ecosystem"
+      cta: "I want to generate results"
     },
     testimonials: {
       title: 'What our',
@@ -154,7 +158,7 @@ const translations: Translations = {
       projects: { label: 'Successful Projects', desc: 'Landing pages & web systems' },
       countries: { label: 'Countries Served', desc: 'Global remote presence' },
       rating: { label: 'Client Satisfaction', desc: 'Based on verified reviews' },
-      cta: "Become our next Success Story"
+      cta: "I want to generate results"
     },
     team: {
       title: 'KN Growth Team',
@@ -212,6 +216,8 @@ const translations: Translations = {
       ctaSecondary: 'Ver Demo Reel',
       trusted: 'Com a confiança de +50 empresas',
       floating_booking: 'Novo agendamento confirmado',
+      floating_time: 'Hoje, 14:30',
+      floating_checkout: 'Checkout',
       floating_sale: 'Venda realizada: R$ 2.450,00'
     },
     dashboard: {
@@ -284,6 +290,8 @@ const translations: Translations = {
         }
       ],
       featuresTitle: 'Ecossistema Completo',
+      featuresLabel: 'Ecossistema',
+      featuresSubtitle: 'Integraremos este ecossistema à sua empresa, de maneira eficiente e rápida',
       features: [
         {
           title: 'CRM + Follow-up',
@@ -302,7 +310,7 @@ const translations: Translations = {
           description: 'Integramos as ferramentas de uso diário da sua empresa ao novo sistema de conversão, sem perda de dados ou informações.'
         }
       ],
-      cta: "Construa seu Ecossistema"
+      cta: "Quero gerar resultados"
     },
     testimonials: {
       title: 'O que dizem nossos',
@@ -327,7 +335,7 @@ const translations: Translations = {
       projects: { label: 'Projetos de Sucesso', desc: 'Landing pages e sistemas web' },
       countries: { label: 'Países Atendidos', desc: 'Presença global remota' },
       rating: { label: 'Satisfação do Cliente', desc: 'Baseado em avaliações verificadas' },
-      cta: "Seja nosso próximo Case de Sucesso"
+      cta: "Quero gerar resultados"
     },
     team: {
       title: 'Equipe KN Growth',
@@ -379,12 +387,14 @@ const translations: Translations = {
     hero: {
       pill: 'Exclusivo para servicios B2B e infoproductores',
       title1: 'No existe nada que genere más',
-      title2: 'autoridad que el RESULTADOS',
+      title2: 'autoridad que RESULTADOS',
       subtitle: 'Por eso diseñamos autoridad visual para empresas e infoproductores, generando más ventas y leads más calificados utilizando una comunicación asertiva y de alto impacto.',
       ctaPrimary: 'Quiero generar resultados',
       ctaSecondary: 'Ver Demo Reel',
       trusted: 'Con la confianza de +50 empresas',
       floating_booking: 'Nuevo agendamiento confirmado',
+      floating_time: 'Hoy, 14:30',
+      floating_checkout: 'Checkout',
       floating_sale: 'Venta realizada: $2,450.00'
     },
     dashboard: {
@@ -457,6 +467,8 @@ const translations: Translations = {
         }
       ],
       featuresTitle: 'Ecosistema Completo',
+      featuresLabel: 'Ecosistema',
+      featuresSubtitle: 'Integraremos este ecosistema a tu empresa, de manera eficiente y rápida',
       features: [
         {
           title: 'CRM + Follow-up',
@@ -475,7 +487,7 @@ const translations: Translations = {
           description: 'Integramos las herramientas de uso diario de tu empresa al nuevo sistema de conversión, sin pérdida de datos ni información.'
         }
       ],
-      cta: "Construye tu Ecosistema"
+      cta: "Quiero generar resultados"
     },
     testimonials: {
       title: 'Lo que dicen nuestros',
@@ -500,7 +512,7 @@ const translations: Translations = {
       projects: { label: 'Proyectos Exitosos', desc: 'Landing pages y sistemas web' },
       countries: { label: 'Países Atendidos', desc: 'Presencia global remota' },
       rating: { label: 'Satisfacción del Cliente', desc: 'Basado en reseñas verificadas' },
-      cta: "Sé nuestro próximo Caso de Éxito"
+      cta: "Quiero generar resultados"
     },
     team: {
       title: 'Equipo KN Growth',
