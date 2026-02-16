@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from '../LanguageContext';
 
 const GREETING_STORAGE_KEY = 'straton_has_greeted';
-const GREETING_DURATION = 21000; // Total duration: 7s (posicionamiento) + 3s (textos) + 3s (espera) + 9s (desaparición secuencial)
+const GREETING_DURATION = 19000; // Total duration: 5s (posicionamiento) + 3s (textos) + 3s (espera) + 9s (desaparición secuencial)
 
 type Phase = 'loading' | 'greeting' | 'exit' | 'interactive';
 
@@ -43,19 +43,19 @@ export function SplineSceneDemo() {
         }
 
         // Timeline:
-        // 0s-7s: Straton se posiciona
-        // 7s: Aparece "Hola"
-        // 8s: Aparece "Soy STRATON"
-        // 9s: Aparece "Bienvenido a KN Growth"
-        // 12s (9s + 3s espera): Inicia desaparición secuencial
-        // 12s-15s: Desaparece Greeting 3
-        // 15s-18s: Desaparece Greeting 2
-        // 18s-21s: Desaparece Greeting 1
-        // 21s: Modo interactivo
+        // 0s-5s: Straton se posiciona
+        // 5s: Aparece "Hola"
+        // 6s: Aparece "Soy STRATON"
+        // 7s: Aparece "Bienvenido a KN Growth"
+        // 10s (7s + 3s espera): Inicia desaparición secuencial
+        // 10s-13s: Desaparece Greeting 3
+        // 13s-16s: Desaparece Greeting 2
+        // 16s-19s: Desaparece Greeting 1
+        // 19s: Modo interactivo
 
         setTimeout(() => {
             setPhase('exit');
-        }, 12000);
+        }, 10000);
 
         setTimeout(() => {
             setPhase('interactive');
@@ -110,7 +110,7 @@ export function SplineSceneDemo() {
             {/* Tek Text Overlay */}
             {(phase === 'greeting' || phase === 'exit') && (
                 <>
-                    {/* Greeting 1: Hola - aparece 7s, desaparece 18s-21s */}
+                    {/* Greeting 1: Hola - aparece 5s, desaparece 16s-19s */}
                     <motion.div
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
                         animate={phase === 'exit' 
@@ -118,8 +118,8 @@ export function SplineSceneDemo() {
                             : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
                         transition={phase === 'exit'
-                            ? { duration: 3, ease: "easeInOut" }
-                            : { duration: 0.8, delay: 7.0, ease: "easeOut" }
+                            ? { duration: 3, delay: 3, ease: "easeInOut" }
+                            : { duration: 0.8, delay: 5.0, ease: "easeOut" }
                         }
                         className="absolute top-[15%] left-[5%] md:left-[5%] z-20 pointer-events-none"
                     >
@@ -128,7 +128,7 @@ export function SplineSceneDemo() {
                         </h1>
                     </motion.div>
 
-                    {/* Greeting 2: Soy STRATON - aparece 8s, desaparece 15s-18s */}
+                    {/* Greeting 2: Soy STRATON - aparece 6s, desaparece 13s-16s */}
                     <motion.div
                         initial={{ opacity: 0, x: -30, filter: "blur(5px)" }}
                         animate={phase === 'exit' 
@@ -136,8 +136,8 @@ export function SplineSceneDemo() {
                             : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
                         transition={phase === 'exit'
-                            ? { duration: 3, delay: 0, ease: "easeInOut" }
-                            : { duration: 0.8, delay: 8.0, ease: "easeOut" }
+                            ? { duration: 3, delay: 1.5, ease: "easeInOut" }
+                            : { duration: 0.8, delay: 6.0, ease: "easeOut" }
                         }
                         className="absolute top-[30%] md:top-[30%] left-[5%] md:left-[5%] z-20 pointer-events-none"
                     >
@@ -146,7 +146,7 @@ export function SplineSceneDemo() {
                         </h2>
                     </motion.div>
 
-                    {/* Greeting 3: Bienvenido a KN Growth - aparece 9s, desaparece 12s-15s */}
+                    {/* Greeting 3: Bienvenido a KN Growth - aparece 7s, desaparece 10s-13s */}
                     <motion.div
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
                         animate={phase === 'exit' 
@@ -155,7 +155,7 @@ export function SplineSceneDemo() {
                         }
                         transition={phase === 'exit'
                             ? { duration: 3, delay: 0, ease: "easeInOut" }
-                            : { duration: 0.8, delay: 9.0, ease: "easeOut" }
+                            : { duration: 0.8, delay: 7.0, ease: "easeOut" }
                         }
                         className="absolute top-[30%] -translate-y-1/2 right-[2%] md:right-[2%] z-20 pointer-events-none md:max-w-md text-right"
                     >
