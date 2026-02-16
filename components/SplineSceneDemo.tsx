@@ -5,14 +5,16 @@ import { useLanguage } from '../LanguageContext';
 
 const GREETING_STORAGE_KEY = 'straton_has_greeted';
 const GREETING_DURATION = 19000; // 5s posicionamiento + 3s textos + 3s espera + 9s desaparición secuencial
+const CTA_DURATION = 5000; // 5s para mostrar los textos CTA antes de hacerlos visibles permanentemente
 
-type Phase = 'loading' | 'greeting' | 'exit' | 'interactive';
+export type Phase = 'loading' | 'greeting' | 'exit' | 'cta' | 'interactive';
 
 export function SplineSceneDemo() {
     const { t } = useLanguage();
     const splineRef = useRef<SplineSceneRef>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [phase, setPhase] = useState<Phase>('loading');
+    const [isVisible, setIsVisible] = useState(false);
     const hasGreeted = useRef(false);
 
     useEffect(() => {
@@ -21,7 +23,11 @@ export function SplineSceneDemo() {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting && !hasGreeted.current) {
                         hasGreeted.current = true;
-                        startGreetingSequence();
+                        setIsVisible(true);
+                        // Dar tiempo a que la escena cargue antes de iniciar
+                        setTimeout(() => {
+                            startGreetingSequence();
+                        }, 500);
                     }
                 });
             },
@@ -36,6 +42,11 @@ export function SplineSceneDemo() {
     }, []);
 
     const startGreetingSequence = () => {
+        // Iniciar la animación de Straton
+        if (splineRef.current?.play) {
+            splineRef.current.play();
+        }
+
         setPhase('greeting');
 
         if (splineRef.current?.pauseGameControls) {
@@ -44,18 +55,22 @@ export function SplineSceneDemo() {
 
         // Timeline:
         // 0s-5s: Straton se posiciona
-        // 5s: Aparece "Hola"
-        // 6s: Aparece "Soy STRATON"
-        // 7s: Aparece "Bienvenido a KN Growth"
+        // 5s: Aparece "Olá"
+        // 6s: Aparece "Sou STRATON"
+        // 7s: Aparece "Bem-vindo à KN Growth"
         // 10s (7s + 3s espera): Inicia desaparición secuencial
         // 10s-13s: Desaparece Greeting 3
         // 13s-16s: Desaparece Greeting 2
         // 16s-19s: Desaparece Greeting 1
-        // 19s: Modo interactivo
+        // 19s: Aparecen textos CTA (permanentes)
 
         setTimeout(() => {
             setPhase('exit');
         }, 10000);
+
+        setTimeout(() => {
+            setPhase('cta');
+        }, GREETING_DURATION);
 
         setTimeout(() => {
             setPhase('interactive');
@@ -63,7 +78,7 @@ export function SplineSceneDemo() {
             if (splineRef.current?.resumeGameControls) {
                 splineRef.current.resumeGameControls();
             }
-        }, GREETING_DURATION);
+        }, GREETING_DURATION + CTA_DURATION);
     };
 
     const handleSplineLoad = () => {
@@ -91,26 +106,28 @@ export function SplineSceneDemo() {
             ref={containerRef}
             className={`w-full h-[500px] md:h-[600px] relative transition-all duration-500 overflow-hidden`}
         >
-            <SplineScene
-                ref={splineRef}
-                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                className={`w-full h-full transition-all duration-300 ${phase === 'greeting' || phase === 'exit'
-                    ? 'cursor-wait scale-[1.02]'
-                    : 'cursor-grab active:cursor-grabbing'
-                    }`}
-                onLoad={handleSplineLoad}
-            />
+            {isVisible && (
+                <SplineScene
+                    ref={splineRef}
+                    scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                    className={`w-full h-full transition-all duration-300 ${phase === 'greeting' || phase === 'exit' || phase === 'cta'
+                        ? 'cursor-wait scale-[1.02]'
+                        : 'cursor-grab active:cursor-grabbing'
+                        }`}
+                    onLoad={handleSplineLoad}
+                />
+            )}
 
-            {phase === 'loading' && (
+            {!isVisible && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-transparent to-gray-50/50 dark:to-black/50 pointer-events-none">
                     <div className="w-12 h-12 border-4 border-brand-orange border-t-transparent rounded-full animate-spin"></div>
                 </div>
             )}
 
-            {/* Tek Text Overlay */}
+            {/* Tek Text Overlay - Fase greeting y exit */}
             {(phase === 'greeting' || phase === 'exit') && (
                 <>
-                    {/* Greeting 1: Hola - aparece 5s, desaparece 16s-19s */}
+                    {/* Greeting 1: Olá - aparece 5s, desaparece 16s-19s */}
                     <motion.div
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
                         animate={phase === 'exit' 
@@ -128,7 +145,7 @@ export function SplineSceneDemo() {
                         </h1>
                     </motion.div>
 
-                    {/* Greeting 2: Soy STRATON - aparece 6s, desaparece 13s-16s */}
+                    {/* Greeting 2: Sou STRATON - aparece 6s, desaparece 13s-16s */}
                     <motion.div
                         initial={{ opacity: 0, x: -30, filter: "blur(5px)" }}
                         animate={phase === 'exit' 
@@ -146,7 +163,7 @@ export function SplineSceneDemo() {
                         </h2>
                     </motion.div>
 
-                    {/* Greeting 3: Bienvenido a KN Growth - aparece 7s, desaparece 10s-13s */}
+                    {/* Greeting 3: Bem-vindo à KN Growth - aparece 7s, desaparece 10s-13s */}
                     <motion.div
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
                         animate={phase === 'exit' 
@@ -162,6 +179,35 @@ export function SplineSceneDemo() {
                         <h2 className="text-4xl md:text-6xl text-gray-900 dark:text-white font-medium leading-tight tracking-tight">
                             {formatGreeting3(t('straton.greeting3'))}
                         </h2>
+                    </motion.div>
+                </>
+            )}
+
+            {/* CTA Texts - aparecen a los 19s y se mantienen visibles */}
+            {(phase === 'cta' || phase === 'interactive') && (
+                <>
+                    {/* CTA Izquierda */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
+                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="absolute top-[25%] left-[5%] md:left-[5%] z-20 pointer-events-none max-w-md"
+                    >
+                        <p className="text-2xl md:text-3xl text-gray-800 dark:text-gray-200 font-medium leading-tight">
+                            {t('straton.ctaLeft')}
+                        </p>
+                    </motion.div>
+
+                    {/* CTA Derecha */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
+                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                        className="absolute top-[25%] right-[5%] md:right-[5%] z-20 pointer-events-none max-w-md text-right"
+                    >
+                        <p className="text-2xl md:text-3xl text-brand-orange font-bold leading-tight">
+                            {t('straton.ctaRight')}
+                        </p>
                     </motion.div>
                 </>
             )}

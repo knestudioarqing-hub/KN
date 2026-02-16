@@ -177,7 +177,9 @@ const translations: Translations = {
     straton: {
       greeting1: "Hello",
       greeting2: "I am STRATON",
-      greeting3: "Welcome to KN Growth"
+      greeting3: "Welcome to KN Growth",
+      ctaLeft: "You can schedule a call with the KN Growth team",
+      ctaRight: "It's 100% free and they will guide you step by step"
     }
   },
   pt: {
@@ -313,7 +315,7 @@ const translations: Translations = {
         },
         {
           role: "Marketing Dir @ Luxify",
-          content: "Entenderam perfeitamente nossa estética premium. A equipe conseguiu capturar a essência da marca e traduzi-la em uma experiencia digital fluida e rápida."
+          content: "Entenderam perfeitamente nossa estética premium. A equipe conseguiu capturar a essência da marca e traduzi-la em uma experiência digital fluida e rápida."
         },
         {
           role: "Founder @ StartScale",
@@ -348,7 +350,9 @@ const translations: Translations = {
     straton: {
       greeting1: "Olá",
       greeting2: "Sou STRATON",
-      greeting3: "Bem-vindo à KN Growth"
+      greeting3: "Bem-vindo à KN Growth",
+      ctaLeft: "Você pode agendar uma chamada com a equipe da KN Growth",
+      ctaRight: "É 100% gratuito e eles vão te guiar passo a passo"
     }
   },
   es: {
@@ -519,7 +523,9 @@ const translations: Translations = {
     straton: {
       greeting1: "Hola",
       greeting2: "Soy STRATON",
-      greeting3: "Bienvenido a KN Growth"
+      greeting3: "Bienvenido a KN Growth",
+      ctaLeft: "Puedes agendar una llamada con el equipo de KN Growth",
+      ctaRight: "Es 100% gratis y te guiarán paso a paso"
     }
   }
 };
