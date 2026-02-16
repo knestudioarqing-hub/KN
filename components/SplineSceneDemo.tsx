@@ -160,19 +160,19 @@ export function SplineSceneDemo() {
                     <motion.div
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
                         animate={phase === 'exit' 
-                            ? { opacity: 0, x: -30, filter: "blur(5px)", y: 0 }
-                            : { opacity: 1, x: 0, filter: "blur(0px)", y: [0, -8, 0] }
+                            ? { opacity: 0, x: -30, filter: "blur(5px)" }
+                            : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
                         transition={phase === 'exit'
                             ? { duration: 1.5, delay: 1.5, ease: "easeInOut" }
                             : { 
                                 opacity: { duration: 0.8, delay: 4.0, ease: "easeOut" },
                                 x: { duration: 0.8, delay: 4.0, ease: "easeOut" },
-                                filter: { duration: 0.8, delay: 4.0, ease: "easeOut" },
-                                y: { duration: 4, ease: "easeInOut", repeat: Infinity, delay: 4.0 }
+                                filter: { duration: 0.8, delay: 4.0, ease: "easeOut" }
                             }
                         }
-                        className="absolute top-[15%] left-[5%] md:left-[5%] z-20 pointer-events-none"
+                        className="absolute top-[15%] left-[5%] md:left-[5%] z-20 pointer-events-none animate-float-strato-1"
+                        style={{ willChange: 'transform' }}
                     >
                         <h1 className="text-6xl md:text-8xl font-bold text-gray-900 dark:text-white tracking-tighter">
                             {t('straton.greeting1')}
@@ -183,19 +183,19 @@ export function SplineSceneDemo() {
                     <motion.div
                         initial={{ opacity: 0, x: -30, filter: "blur(5px)" }}
                         animate={phase === 'exit' 
-                            ? { opacity: 0, x: -20, filter: "blur(3px)", y: 0 }
-                            : { opacity: 1, x: 0, filter: "blur(0px)", y: [0, -8, 0] }
+                            ? { opacity: 0, x: -20, filter: "blur(3px)" }
+                            : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
                         transition={phase === 'exit'
                             ? { duration: 1.5, delay: 0.75, ease: "easeInOut" }
                             : { 
                                 opacity: { duration: 0.8, delay: 5.0, ease: "easeOut" },
                                 x: { duration: 0.8, delay: 5.0, ease: "easeOut" },
-                                filter: { duration: 0.8, delay: 5.0, ease: "easeOut" },
-                                y: { duration: 4.5, ease: "easeInOut", repeat: Infinity, delay: 5.5 }
+                                filter: { duration: 0.8, delay: 5.0, ease: "easeOut" }
                             }
                         }
-                        className="absolute top-[30%] md:top-[30%] left-[5%] md:left-[5%] z-20 pointer-events-none"
+                        className="absolute top-[30%] md:top-[30%] left-[5%] md:left-[5%] z-20 pointer-events-none animate-float-strato-2"
+                        style={{ willChange: 'transform' }}
                     >
                         <h2 className="text-3xl md:text-5xl text-gray-500 dark:text-gray-400 font-light tracking-tight">
                             {formatGreeting2(t('straton.greeting2'))}
@@ -206,19 +206,19 @@ export function SplineSceneDemo() {
                     <motion.div
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
                         animate={phase === 'exit' 
-                            ? { opacity: 0, x: 30, filter: "blur(5px)", y: 0 }
-                            : { opacity: 1, x: 0, filter: "blur(0px)", y: [0, -8, 0] }
+                            ? { opacity: 0, x: 30, filter: "blur(5px)" }
+                            : { opacity: 1, x: 0, filter: "blur(0px)" }
                         }
                         transition={phase === 'exit'
                             ? { duration: 1.5, delay: 0, ease: "easeInOut" }
                             : { 
                                 opacity: { duration: 0.8, delay: 6.0, ease: "easeOut" },
                                 x: { duration: 0.8, delay: 6.0, ease: "easeOut" },
-                                filter: { duration: 0.8, delay: 6.0, ease: "easeOut" },
-                                y: { duration: 5, ease: "easeInOut", repeat: Infinity, delay: 7 }
+                                filter: { duration: 0.8, delay: 6.0, ease: "easeOut" }
                             }
                         }
-                        className="absolute top-[30%] -translate-y-1/2 right-[2%] md:right-[2%] z-20 pointer-events-none md:max-w-md text-right"
+                        className="absolute top-[30%] -translate-y-1/2 right-[2%] md:right-[2%] z-20 pointer-events-none md:max-w-md text-right animate-float-strato-3"
+                        style={{ willChange: 'transform' }}
                     >
                         <h2 className="text-4xl md:text-6xl text-gray-900 dark:text-white font-medium leading-tight tracking-tight">
                             {formatGreeting3(t('straton.greeting3'))}
@@ -233,14 +233,14 @@ export function SplineSceneDemo() {
                     {/* CTA Izquierda - más a la izquierda, desfasada arriba */}
                     <motion.div
                         initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)", y: [0, -8, 0] }}
+                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                         transition={{ 
                             opacity: { duration: 0.8, ease: "easeOut" },
                             x: { duration: 0.8, ease: "easeOut" },
-                            filter: { duration: 0.8, ease: "easeOut" },
-                            y: { duration: 4.2, ease: "easeInOut", repeat: Infinity, delay: 0.5 }
+                            filter: { duration: 0.8, ease: "easeOut" }
                         }}
-                        className="absolute top-[20%] left-[2%] md:left-[5%] z-20 pointer-events-none max-w-[40%] md:max-w-sm text-left"
+                        className="absolute top-[20%] left-[2%] md:left-[5%] z-20 pointer-events-none max-w-[40%] md:max-w-sm text-left animate-float-strato-4"
+                        style={{ willChange: 'transform' }}
                     >
                         <h2 className="text-3xl md:text-4xl font-instrument text-gray-800 dark:text-gray-200 leading-tight tracking-tight">
                             {formatCTALeft(t('straton.ctaLeft'))}
@@ -250,14 +250,14 @@ export function SplineSceneDemo() {
                     {/* CTA Derecha - más a la derecha, desfasada abajo */}
                     <motion.div
                         initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)", y: [0, -8, 0] }}
+                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                         transition={{ 
                             opacity: { duration: 0.8, delay: 0.3, ease: "easeOut" },
                             x: { duration: 0.8, delay: 0.3, ease: "easeOut" },
-                            filter: { duration: 0.8, delay: 0.3, ease: "easeOut" },
-                            y: { duration: 4.8, ease: "easeInOut", repeat: Infinity, delay: 1.5 }
+                            filter: { duration: 0.8, delay: 0.3, ease: "easeOut" }
                         }}
-                        className="absolute top-[20%] right-[0.5%] z-20 pointer-events-none max-w-2xl text-right"
+                        className="absolute top-[20%] right-[0.5%] z-20 pointer-events-none max-w-2xl text-right animate-float-strato-5"
+                        style={{ willChange: 'transform' }}
                     >
                         <h2 className="text-3xl md:text-4xl font-instrument text-brand-orange leading-tight tracking-tight whitespace-pre-line">
                             {formatCTARight(t('straton.ctaRight'))}
