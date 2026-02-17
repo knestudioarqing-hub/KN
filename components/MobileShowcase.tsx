@@ -50,16 +50,16 @@ const MobileShowcase: React.FC = () => {
             )
         },
         {
-            id: 'arch',
-            title: 'Finanças',
+            id: 'upxpress',
+            title: 'UP Xpress',
             category: 'LANDING PAGE',
             color: 'from-orange-500 to-amber-500',
             content: (
-                <div className="w-full h-full bg-white overflow-y-auto overflow-x-hidden custom-scrollbar group/screen relative border-none">
+                <div className="w-full h-full bg-[#050505] overflow-y-auto overflow-x-hidden custom-scrollbar group/screen relative border-none">
                     {/* Manual scrollable image */}
                     <img
-                        src="https://i.imgur.com/V0Ia21N.png"
-                        alt="Architecture Portfolio Landing Page"
+                        src="https://imgur.com/tKnAt4o.png"
+                        alt="UP Xpress Landing Page"
                         className="w-full h-auto block"
                     />
                 </div>
