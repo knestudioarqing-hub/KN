@@ -31,17 +31,17 @@ const translations: Translations = {
       }
     },
     hero: {
-      pill: 'Exclusive for B2B services and infoproductors',
+      pill: 'Exclusive for private clinics and health professionals',
       title1: 'There is nothing that generates more authority',
       title2: 'than RESULTS',
-      subtitle: 'That’s why we design visual authority for companies and infoproducers, generating more sales and more qualified leads using assertive and high-impact communication.',
+      subtitle: 'We create digital authority for private clinics that want to lead their market, attracting qualified patients and increasing booking predictability.',
       ctaPrimary: 'I want to generate results',
       ctaSecondary: 'Watch Demo Reel',
-      trusted: 'Trusted by 50+ innovative companies',
-      floating_booking: 'New booking confirmed',
-      floating_time: 'Today, 2:30 PM',
-      floating_checkout: 'Checkout',
-      floating_sale: 'Sale closed: $2,450.00'
+      trusted: 'Trusted by 50+ clinics and health professionals',
+      floating_booking: 'Assessment Scheduled',
+      floating_time: 'Today, 11:00 AM',
+      floating_checkout: 'NEW APPOINTMENT',
+      floating_sale: 'Gabriel Souza - Today, 10:15 AM'
     },
     dashboard: {
       header_dashboard: 'Dashboard',
@@ -81,6 +81,11 @@ const translations: Translations = {
         {
           title: "Full Pipeline",
           description: "We integrate automations that connect every stage of your sales process. The generated data allows you to scale your business with predictability and strategy.",
+          tags: []
+        },
+        {
+          title: "Digital Authority & Medical SEO",
+          description: "Position your clinic at the top of search results. We implement specialized SEO strategies for healthcare to attract patients searching for your specialties.",
           tags: []
         }
       ]
@@ -208,17 +213,17 @@ const translations: Translations = {
       }
     },
     hero: {
-      pill: 'Exclusivo para serviços B2B e infoprodutores',
+      pill: 'Exclusivo para clínicas privadas e profissionais de saúde',
       title1: 'Não existe nada que gere mais',
       title2: 'autoridade do que RESULTADOS',
-      subtitle: 'Por isso que projetamos autoridade visual para empresas e infoprodutores, gerando mais vendas e leads mais qualificados utilizando uma comunicação assertiva e de alto impacto.',
+      subtitle: 'Criamos autoridade digital para clínicas privadas que querem liderar seu mercado, atraindo pacientes qualificados e aumentando previsibilidade de agendamentos.',
       ctaPrimary: 'Quero gerar resultados',
       ctaSecondary: 'Ver Demo Reel',
-      trusted: 'Com a confiança de +50 empresas',
-      floating_booking: 'Novo agendamento confirmado',
-      floating_time: 'Hoje, 14:30',
-      floating_checkout: 'Checkout',
-      floating_sale: 'Venda realizada: R$ 2.450,00'
+      trusted: 'Confiança de +50 clínicas e profissionais de saúde',
+      floating_booking: 'Avaliação Agendada',
+      floating_time: 'Hoje, 11:00',
+      floating_checkout: 'NOVO AGENDAMENTO',
+      floating_sale: 'Gabriel Souza - Hoje, 10:15'
     },
     dashboard: {
       header_dashboard: 'Painel',
@@ -258,6 +263,11 @@ const translations: Translations = {
         {
           title: "Balde cheio",
           description: "Integramos automações que conectam cada etapa do seu processo de vendas. Os dados gerados permitem escalar o seu negócio com previsibilidade e estratégia.",
+          tags: []
+        },
+        {
+          title: "Autoridade Digital & SEO Médico",
+          description: "Posicione sua clínica no topo dos resultados de busca. Implementamos estratégias de SEO especializadas para saúde para atrair pacientes que buscam suas especialidades.",
           tags: []
         }
       ]
@@ -385,17 +395,17 @@ const translations: Translations = {
       }
     },
     hero: {
-      pill: 'Exclusivo para servicios B2B e infoproductores',
+      pill: 'Exclusivo para clínicas privadas y profesionales de salud',
       title1: 'No existe nada que genere más',
       title2: 'autoridad que RESULTADOS',
-      subtitle: 'Por eso diseñamos autoridad visual para empresas e infoproductores, generando más ventas y leads más calificados utilizando una comunicación asertiva y de alto impacto.',
+      subtitle: 'Creamos autoridad digital para clínicas privadas que quieren liderar su mercado, atrayendo pacientes cualificados y aumentando la previsibilidad de sus citas.',
       ctaPrimary: 'Quiero generar resultados',
       ctaSecondary: 'Ver Demo Reel',
-      trusted: 'Con la confianza de +50 empresas',
-      floating_booking: 'Nuevo agendamiento confirmado',
-      floating_time: 'Hoy, 14:30',
-      floating_checkout: 'Checkout',
-      floating_sale: 'Venta realizada: $2,450.00'
+      trusted: 'Con la confianza de +50 clínicas y profesionales de salud',
+      floating_booking: 'Evaluación Agendada',
+      floating_time: 'Hoy, 11:00',
+      floating_checkout: 'NUEVA CITA',
+      floating_sale: 'Gabriel Souza - Hoy, 10:15'
     },
     dashboard: {
       header_dashboard: 'Panel',
@@ -435,6 +445,11 @@ const translations: Translations = {
         {
           title: "Pipeline Lleno",
           description: "Integramos automatizaciones que conectan cada etapa de tu proceso de ventas. Los datos generados permiten escalar tu negocio con previsibilidad y estrategia.",
+          tags: []
+        },
+        {
+          title: "Autoridad Digital y SEO Médico",
+          description: "Posicione su clínica en la cima de los resultados de búsqueda. Implementamos estrategias de SEO especializadas para salud para atraer pacientes que buscan sus especialidades.",
           tags: []
         }
       ]

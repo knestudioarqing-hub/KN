@@ -26,7 +26,7 @@ const MobileShowcase: React.FC = () => {
                     {/* Floating Scroll Indicator - Visible on hover */}
                     <div className="sticky bottom-4 left-1/2 -translate-x-1/2 z-50 pointer-events-none transition-all duration-500 opacity-0 group-hover/screen:opacity-100 translate-y-2 group-hover/screen:translate-y-0">
                         <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-black/80 backdrop-blur-md border border-white/20 shadow-2xl">
-                            <div className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse"></div>
+                            <div className="w-1.5 h-1.5 rounded-full bg-brand-accent1 animate-pulse"></div>
                             <span className="text-[10px] text-white font-bold uppercase tracking-widest whitespace-nowrap">Scroll para explorar</span>
                         </div>
                     </div>
@@ -86,16 +86,16 @@ const MobileShowcase: React.FC = () => {
     }, [activeIndex, isPaused]);
 
     return (
-        <section className="relative pt-20 sm:pt-32 pb-10 sm:pb-16 bg-gray-50 dark:bg-black overflow-hidden border-t border-gray-200 dark:border-white/5">
+        <section className="relative pt-20 sm:pt-32 pb-10 sm:pb-16 bg-brand-secondary dark:bg-black overflow-hidden border-t border-gray-200 dark:border-white/5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="text-center mb-16 sm:mb-24">
-                    <span className="text-brand-orange font-semibold tracking-wider uppercase text-xs sm:text-sm mb-4 block">
+                    <span className="text-brand-accent1 font-semibold tracking-wider uppercase text-xs sm:text-sm mb-4 block">
                         {t('mobileShowcase.label')}
                     </span>
                     <h2 className="text-3xl sm:text-4xl font-bold font-sans tracking-tight antialiased text-gray-900 dark:text-white mb-6">
                         {t('mobileShowcase.title')} <br className="hidden sm:block" />
-                        <span className="text-brand-orange">
+                        <span className="text-brand-accent1">
                             {t('mobileShowcase.titleHighlight')}
                         </span>
                     </h2>
@@ -113,11 +113,11 @@ const MobileShowcase: React.FC = () => {
                                     key={project.id}
                                     onClick={() => setActiveIndex(index)}
                                     className={`cursor-pointer transition-all duration-500 p-4 sm:p-6 rounded-2xl border ${index === activeIndex
-                                        ? 'bg-white dark:bg-white/10 border-brand-orange/30 shadow-lg scale-105'
+                                        ? 'bg-white dark:bg-white/10 border-brand-accent1/30 shadow-lg scale-105'
                                         : 'bg-transparent border-transparent hover:bg-white/50 dark:hover:bg-white/5 hover:border-gray-200 dark:hover:border-white/5 opacity-60 hover:opacity-100'
                                         }`}
                                 >
-                                    <div className={`text-xs font-bold uppercase tracking-wider mb-2 ${index === activeIndex ? 'text-brand-orange' : 'text-gray-400'}`}>
+                                    <div className={`text-xs font-bold uppercase tracking-wider mb-2 ${index === activeIndex ? 'text-brand-accent1' : 'text-gray-400'}`}>
                                         {project.category}
                                     </div>
                                     <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
@@ -130,10 +130,10 @@ const MobileShowcase: React.FC = () => {
 
                         {/* Navigation Controls - Desktop ONLY (Mobile has them on the sides) */}
                         <div className="hidden md:flex items-center justify-center md:justify-start gap-4 pt-4">
-                            <button onClick={prevSlide} className="p-3 rounded-full bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-white hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300">
+                            <button onClick={prevSlide} className="p-3 rounded-full bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-white hover:bg-brand-accent1 hover:text-white hover:border-brand-accent1 transition-all duration-300">
                                 <ChevronLeft size={20} />
                             </button>
-                            <button onClick={nextSlide} className="p-3 rounded-full bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-white hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300">
+                            <button onClick={nextSlide} className="p-3 rounded-full bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-white hover:bg-brand-accent1 hover:text-white hover:border-brand-accent1 transition-all duration-300">
                                 <ChevronRight size={20} />
                             </button>
                         </div>
@@ -238,7 +238,7 @@ const MobileShowcase: React.FC = () => {
                 </div>
 
             </div>
-            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-orange/50 shadow-[0_0_15px_rgba(255,85,0,1)] z-50 md:hidden"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-accent1/30 shadow-[0_0_15px_rgba(31,111,235,0.5)] z-50 md:hidden"></div>
         </section>
     );
 };

@@ -8,101 +8,97 @@ const Hero: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="relative pt-28 pb-0 sm:pt-40 sm:pb-0 min-h-screen overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-500 flex flex-col justify-center rounded-b-[50px] md:rounded-b-[90px] z-10">
+    <div className="relative pt-28 pb-0 sm:pt-40 sm:pb-0 min-h-screen overflow-hidden bg-brand-secondary dark:bg-[#031515] transition-colors duration-500 flex flex-col justify-center rounded-b-[50px] md:rounded-b-[90px] z-10">
 
       {/* Background Stars Effect (Dark Mode only) */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 brightness-100 contrast-150 mix-blend-overlay"></div>
         {/* Mobile Separator Glow */}
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-orange/50 shadow-[0_0_15px_rgba(255,85,0,1)] z-50 md:hidden"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-accent1/30 shadow-[0_0_15px_rgba(31,111,235,0.5)] z-50 md:hidden"></div>
 
         {/* Stars - hidden in light mode */}
         <div className="hidden dark:block">
-          <div className="absolute top-10 left-10 w-1 h-1 bg-white rounded-full opacity-70 animate-pulse"></div>
-          <div className="absolute top-20 right-20 w-1 h-1 bg-white rounded-full opacity-50 animate-pulse"></div>
-          <div className="absolute bottom-40 left-1/4 w-1 h-1 bg-white rounded-full opacity-60 animate-pulse delay-75"></div>
-          <div className="absolute top-1/3 right-1/3 w-0.5 h-0.5 bg-white rounded-full opacity-80"></div>
+          <div className="absolute top-10 left-10 w-1 h-1 bg-white rounded-full opacity-30 animate-pulse"></div>
+          <div className="absolute top-20 right-20 w-1 h-1 bg-white rounded-full opacity-20 animate-pulse"></div>
         </div>
       </div>
 
-      {/* Floating Widgets - Pushed further to the edges to avoid title overlap */}
+      {/* Floating Widgets */}
       <div className="hidden xl:block absolute inset-0 pointer-events-none z-20 overflow-hidden">
-        {/* Booking Widget */}
-        <div className="absolute top-[28%] left-[5%] animate-float transition-all duration-700 active:scale-95" style={{ animationDuration: '8s' }}>
-          <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/30 dark:bg-white/5 backdrop-blur-sm border border-white/40 dark:border-white/10 shadow-lg">
-            <div className="w-7 h-7 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+        {/* Booking Widget 1 */}
+        <div className="absolute top-[28%] left-[5%] animate-float" style={{ animationDuration: '8s' }}>
+          <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/50 dark:bg-brand-primary/20 backdrop-blur-md border border-white/60 dark:border-brand-accent1/20 shadow-xl">
+            <div className="w-7 h-7 rounded-full bg-brand-accent2/10 flex items-center justify-center text-brand-accent2">
               <Calendar size={14} />
             </div>
             <div className="flex flex-col">
               <p className="text-[9px] uppercase tracking-tighter text-gray-500 dark:text-gray-400 font-bold leading-tight">{t('hero.floating_booking')}</p>
-              <p className="text-[11px] text-gray-900 dark:text-white font-medium leading-tight">{t('hero.floating_time')}</p>
+              <p className="text-[11px] text-brand-primary dark:text-white font-medium leading-tight">{t('hero.floating_time')}</p>
             </div>
           </div>
         </div>
 
-        {/* Sale Widget */}
-        <div className="absolute top-[58%] right-[3%] animate-float-delayed transition-all duration-700 active:scale-95" style={{ animationDuration: '9s', animationDelay: '2s' }}>
-          <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/30 dark:bg-white/5 backdrop-blur-sm border border-white/40 dark:border-white/10 shadow-lg">
-            <div className="w-7 h-7 rounded-full bg-brand-orange/10 flex items-center justify-center text-brand-orange">
-              <DollarSign size={14} />
+        {/* Booking Widget 2 (Brazilian Patient) */}
+        <div className="absolute top-[58%] right-[3%] animate-float-delayed" style={{ animationDuration: '9s', animationDelay: '2s' }}>
+          <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/50 dark:bg-brand-primary/20 backdrop-blur-md border border-white/60 dark:border-brand-accent1/20 shadow-xl">
+            <div className="w-7 h-7 rounded-full bg-brand-accent1/10 flex items-center justify-center text-brand-accent1">
+              <CheckCircle size={14} />
             </div>
             <div className="flex flex-col">
               <p className="text-[9px] uppercase tracking-tighter text-gray-500 dark:text-gray-400 font-bold leading-tight">{t('hero.floating_checkout')}</p>
-              <p className="text-[11px] text-gray-900 dark:text-white font-medium leading-tight">{t('hero.floating_sale')}</p>
+              <p className="text-[11px] text-brand-primary dark:text-white font-medium leading-tight">{t('hero.floating_sale')}</p>
             </div>
-            <div className="ml-1 w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center text-white">
+            <div className="ml-1 w-4 h-4 rounded-full bg-brand-accent2 flex items-center justify-center text-white">
               <CheckCircle size={8} />
             </div>
           </div>
         </div>
       </div>
 
-      {/* The Massive Orange Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] sm:w-[150%] h-[350px] sm:h-[600px] bg-brand-orange/20 dark:bg-brand-orange/20 blur-[60px] sm:blur-[120px] rounded-[100%] pointer-events-none z-0 translate-y-1/3 transition-colors duration-500"></div>
+      {/* The Massive Clinical Glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] h-[350px] sm:h-[600px] bg-brand-accent1/10 dark:bg-brand-accent1/5 blur-[60px] sm:blur-[120px] rounded-[100%] pointer-events-none z-0 translate-y-1/3 transition-colors duration-500"></div>
 
-      {/* Another focused glow */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[300px] sm:w-[800px] h-[300px] sm:h-[400px] bg-brand-orange/10 sm:bg-brand-orange/5 blur-[60px] sm:blur-[80px] rounded-full pointer-events-none z-0 opacity-30 sm:opacity-100"></div>
-
+      {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
         {/* Pill Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-brand-orange/50 transition-colors cursor-pointer mb-6 sm:mb-8 group shadow-sm dark:shadow-none mx-auto max-w-full">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-brand-primary/40 border border-gray-200 dark:border-brand-accent1/20 hover:border-brand-accent1/50 transition-colors cursor-pointer mb-6 sm:mb-8 group shadow-sm mx-auto max-w-full">
           <span className="flex h-2 w-2 relative flex-shrink-0">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-orange"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent1 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-accent1"></span>
           </span>
-          <span className="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 group-hover:text-brand-orange dark:group-hover:text-white transition-colors truncate">
+          <span className="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 group-hover:text-brand-accent1 dark:group-hover:text-white transition-colors truncate">
             {t('hero.pill')}
           </span>
-          <ArrowRight size={14} className="text-gray-400 group-hover:text-brand-orange transition-colors flex-shrink-0" />
+          <ArrowRight size={14} className="text-gray-400 group-hover:text-brand-accent1 transition-colors flex-shrink-0" />
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-[30px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 transition-colors duration-300 px-2 leading-tight">
+        <h1 className="text-[30px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-brand-primary dark:text-white mb-6 leading-tight">
           {t('hero.title1')} <br className="hidden md:block" />
-          <span className="text-gray-900 dark:text-white">
+          <span className="text-brand-primary dark:text-white">
             {t('hero.title2').split(' ').slice(0, -1).join(' ')}
           </span>
           {' '}
           <span className="relative inline-flex items-center justify-center p-0 sm:p-4 group/pill align-middle">
             {/* Selection Box Lines */}
-            <div className="hidden sm:block absolute inset-0 border border-gray-300 dark:border-white/10 pointer-events-none opacity-40 group-hover/pill:opacity-100 transition-opacity"></div>
+            <div className="hidden sm:block absolute inset-0 border border-brand-accent1/20 dark:border-white/10 pointer-events-none opacity-40 group-hover/pill:opacity-100 transition-opacity"></div>
 
-            {/* Selection Handles (Red Anchor Points) */}
-            <div className="hidden sm:block absolute -top-1 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF5500] border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
-            <div className="hidden sm:block absolute -top-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF5500] border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
-            <div className="hidden sm:block absolute -bottom-1 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF5500] border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
-            <div className="hidden sm:block absolute -bottom-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF5500] border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
+            {/* Selection Handles (Blue Anchor Points) */}
+            <div className="hidden sm:block absolute -top-1 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-accent1 border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
+            <div className="hidden sm:block absolute -top-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-accent1 border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
+            <div className="hidden sm:block absolute -bottom-1 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-accent1 border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
+            <div className="hidden sm:block absolute -bottom-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-accent1 border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
 
-            {/* The 3D Orange Pill */}
-            <span className="relative inline-block px-3 py-1.5 sm:px-10 sm:py-2.5 rounded-full bg-gradient-to-b from-[#FF5500] to-[#E64D00] text-white shadow-[0_10px_25px_-5px_rgba(255,85,0,0.4),inset_0_1px_4px_rgba(255,255,255,0.4)] transform hover:scale-[1.02] transition-all duration-300 cursor-default select-none border border-orange-400/20 active:scale-95 text-[0.85em] sm:text-[0.9em] ml-1 sm:ml-0">
+            {/* The 3D Medical Pill */}
+            <span className="relative inline-block px-3 py-1.5 sm:px-10 sm:py-2.5 rounded-full bg-gradient-to-b from-brand-accent1 to-[#1559C0] text-white shadow-[0_10px_25px_-5px_rgba(31,111,235,0.4),inset_0_1px_4px_rgba(255,255,255,0.4)] transform hover:scale-[1.02] transition-all duration-300 cursor-default select-none border border-blue-400/20 active:scale-95 text-[0.85em] sm:text-[0.9em] ml-1 sm:ml-0 uppercase tracking-widest">
               {t('hero.title2').split(' ').pop()}
             </span>
           </span>
         </h1>
 
         {/* Subheadline */}
-        <p className="max-w-2xl mx-auto text-sm sm:text-xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 leading-relaxed tracking-tight sm:tracking-normal transition-colors duration-300 px-4">
+        <p className="max-w-2xl mx-auto text-sm sm:text-xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 leading-relaxed tracking-tight sm:tracking-normal px-4">
           {t('hero.subtitle')}
         </p>
 
@@ -110,18 +106,13 @@ const Hero: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 sm:mb-20 px-4">
           <button
             onClick={() => window.open("https://calendly.com/contacto-kngrowth/30min", "_blank")}
-            className="font-poppins w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-brand-orange hover:bg-orange-600 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_0_40px_-10px_rgba(255,85,0,0.4)] hover:shadow-[0_0_60px_-15px_rgba(255,85,0,0.6)] hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base"
+            className="font-poppins w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-brand-accent1 hover:bg-brand-accent1/90 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_10px_40px_-10px_rgba(31,111,235,0.4)] hover:shadow-[0_20px_60px_-15px_rgba(31,111,235,0.6)] hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base"
           >
             {t('hero.ctaPrimary')}
           </button>
         </div>
 
       </div>
-
-      {/* Final Section Gradient */}
-
-
-      {/* Video Pop-up Modal */}
       <VideoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );

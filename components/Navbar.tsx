@@ -99,7 +99,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href, link.isPortfolio)}
-                  className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-brand-orange dark:hover:text-white transition-colors cursor-pointer"
+                  className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-brand-accent1 dark:hover:text-white transition-colors cursor-pointer"
                 >
                   {link.name}
                 </a>
@@ -129,7 +129,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
               {/* CTA Button */}
               <button
                 onClick={handleBooking}
-                className="font-poppins bg-brand-orange hover:bg-orange-600 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-[0_0_20px_-5px_rgba(255,85,0,0.5)] hover:shadow-[0_0_25px_-5px_rgba(255,85,0,0.7)]"
+                className="font-poppins bg-brand-accent1 hover:bg-[#1559C0] text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_15px_-5px_rgba(31,111,235,0.4)] hover:shadow-[0_8px_25px_-5px_rgba(31,111,235,0.6)]"
               >
                 {t('nav.cta')}
               </button>
@@ -176,7 +176,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
               ))}
               <button
                 onClick={handleBooking}
-                className="font-poppins bg-brand-orange text-white text-base font-medium px-5 py-4 rounded-lg w-full shadow-lg shadow-brand-orange/30 mt-4"
+                className="font-poppins bg-brand-accent1 text-white text-base font-medium px-5 py-4 rounded-lg w-full shadow-lg shadow-brand-accent1/30 mt-4"
               >
                 {t('nav.cta')}
               </button>

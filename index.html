@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- Tailwind -->
@@ -23,13 +23,19 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
+            sans: ['DM Sans', 'Inter', 'sans-serif'],
             poppins: ['Poppins', 'sans-serif'],
             instrument: ['Instrument Sans', 'sans-serif'],
+            dm: ['DM Sans', 'sans-serif'],
+            albert: ['Albert Sans', 'sans-serif'],
           },
           colors: {
             brand: {
-              orange: '#FF5500',
+              primary: '#062F2E',    // Verde petróleo profundo - Hero
+              secondary: '#F4F7F9',  // Blanco clínico frío - Fondos claros
+              accent1: '#1F6FEB',    // Azul médico confianza - CTA/Destacados
+              accent2: '#2BB673',    // Verde salud moderno - Bienestar
+              orange: '#FF5500',     // Mantener el naranja original para retrocompatibilidad parcial o borrar si se desea
               dark: '#050505',
               card: '#0A0A0A'
             },
@@ -92,11 +98,11 @@
               },
             },
             pulseGlow: {
-              '0%, 100%': { 
+              '0%, 100%': {
                 boxShadow: '0 0 20px rgba(255, 85, 0, 0.3)',
                 transform: 'scale(1)'
               },
-              '50%': { 
+              '50%': {
                 boxShadow: '0 0 60px rgba(255, 85, 0, 0.6), 0 0 100px rgba(255, 85, 0, 0.3)',
                 transform: 'scale(1.02)'
               },
@@ -124,22 +130,28 @@
     html {
       scroll-behavior: smooth;
     }
+
     body {
       transition: background-color 0.3s, color 0.3s;
     }
+
     ::-webkit-scrollbar {
       width: 8px;
     }
+
     ::-webkit-scrollbar-track {
       background: transparent;
     }
+
     ::-webkit-scrollbar-thumb {
       background: #555;
       border-radius: 4px;
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: #FF5500;
     }
+
     .mesh-gradient {
       background: radial-gradient(circle at center bottom, rgba(255, 85, 0, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
     }
