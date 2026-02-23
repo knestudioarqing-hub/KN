@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-
 import Services from './components/Services';
 import Process from './components/Process';
 import Team from './components/Team';
@@ -10,7 +9,11 @@ import Stats from './components/Stats';
 import MobileShowcase from './components/MobileShowcase';
 import Footer from './components/Footer';
 import ThemeSwitchPopup from './components/ThemeSwitchPopup';
+import ComingSoon from './components/ComingSoon';
 import { LanguageProvider } from './LanguageContext';
+
+// 🚧 Pon en `true` para mostrar la portada y ocultar el sitio
+const COMING_SOON = true;
 
 const AppContent: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -31,19 +34,24 @@ const AppContent: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-black text-gray-900 dark:text-white overflow-x-hidden transition-colors duration-300 flex flex-col relative">
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <main className="flex-grow">
-        <Hero />
-
-        <Services />
-        <Process />
-        <MobileShowcase />
-        <Team />
-        <Testimonials />
-        <Stats />
-      </main>
-      <Footer />
-      <ThemeSwitchPopup theme={theme} setTheme={setTheme} />
+      {COMING_SOON ? (
+        <ComingSoon />
+      ) : (
+        <>
+          <Navbar theme={theme} toggleTheme={toggleTheme} />
+          <main className="flex-grow">
+            <Hero />
+            <Services />
+            <Process />
+            <MobileShowcase />
+            <Team />
+            <Testimonials />
+            <Stats />
+          </main>
+          <Footer />
+          <ThemeSwitchPopup theme={theme} setTheme={setTheme} />
+        </>
+      )}
     </div>
   );
 };
