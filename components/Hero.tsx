@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Calendar, DollarSign, CheckCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Calendar, CheckCircle, ArrowRight } from 'lucide-react';
 import VideoModal from './VideoModal';
 import { useLanguage } from '../LanguageContext';
 
@@ -8,26 +8,48 @@ const Hero: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="relative pt-28 pb-0 sm:pt-40 sm:pb-0 min-h-screen overflow-hidden bg-brand-secondary dark:bg-[#031515] transition-colors duration-500 flex flex-col justify-center rounded-b-[50px] md:rounded-b-[90px] z-10">
+    <div
+      className="relative min-h-screen overflow-hidden transition-colors duration-500 flex flex-col justify-center rounded-b-[50px] md:rounded-b-[90px] z-10 pb-8"
+      style={{ backgroundColor: '#F4F7F9' }}
+    >
+      {/* ── FIGMA BACKGROUND IMAGE ── covers full hero */}
+      {/* Light mode: show Figma-composed image */}
+      <div
+        className="absolute inset-0 z-0 dark:hidden"
+        style={{
+          backgroundImage: 'url(https://i.imgur.com/0kT8MIc.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
 
-      {/* Background Stars Effect (Dark Mode only) */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 brightness-100 contrast-150 mix-blend-overlay"></div>
-        {/* Mobile Separator Glow */}
+      {/* Dark mode: same image + dark overlay to adapt */}
+      <div className="absolute inset-0 z-0 hidden dark:block" style={{ backgroundColor: '#031515' }}>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url(https://i.imgur.com/0kT8MIc.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.18,
+          }}
+        />
+      </div>
+
+      {/* Noise texture overlay */}
+      <div className="absolute inset-0 z-[1] pointer-events-none">
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.06] brightness-100 contrast-150 mix-blend-overlay"></div>
+        {/* Mobile separator glow */}
         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-accent1/30 shadow-[0_0_15px_rgba(31,111,235,0.5)] z-50 md:hidden"></div>
-
-        {/* Stars - hidden in light mode */}
-        <div className="hidden dark:block">
-          <div className="absolute top-10 left-10 w-1 h-1 bg-white rounded-full opacity-30 animate-pulse"></div>
-          <div className="absolute top-20 right-20 w-1 h-1 bg-white rounded-full opacity-20 animate-pulse"></div>
-        </div>
       </div>
 
       {/* Floating Widgets */}
       <div className="hidden xl:block absolute inset-0 pointer-events-none z-20 overflow-hidden">
-        {/* Booking Widget 1 */}
-        <div className="absolute top-[28%] left-[5%] animate-float" style={{ animationDuration: '8s' }}>
-          <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/50 dark:bg-brand-primary/20 backdrop-blur-md border border-white/60 dark:border-brand-accent1/20 shadow-xl">
+        {/* Booking Widget 1 - Lowered by another ~30px */}
+        <div className="absolute top-[21%] left-[45%] animate-float" style={{ animationDuration: '8s' }}>
+          <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/60 dark:bg-brand-primary/20 backdrop-blur-md border border-white/60 dark:border-brand-accent1/20 shadow-xl">
             <div className="w-7 h-7 rounded-full bg-brand-accent2/10 flex items-center justify-center text-brand-accent2">
               <Calendar size={14} />
             </div>
@@ -38,9 +60,9 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Booking Widget 2 (Brazilian Patient) */}
-        <div className="absolute top-[58%] right-[3%] animate-float-delayed" style={{ animationDuration: '9s', animationDelay: '2s' }}>
-          <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/50 dark:bg-brand-primary/20 backdrop-blur-md border border-white/60 dark:border-brand-accent1/20 shadow-xl">
+        {/* Booking Widget 2 */}
+        <div className="absolute top-[68%] right-[5%] animate-float" style={{ animationDuration: '9s', animationDelay: '2s' }}>
+          <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/60 dark:bg-brand-primary/20 backdrop-blur-md border border-white/60 dark:border-brand-accent1/20 shadow-xl">
             <div className="w-7 h-7 rounded-full bg-brand-accent1/10 flex items-center justify-center text-brand-accent1">
               <CheckCircle size={14} />
             </div>
@@ -55,62 +77,54 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* The Massive Clinical Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] h-[350px] sm:h-[600px] bg-brand-accent1/10 dark:bg-brand-accent1/5 blur-[60px] sm:blur-[120px] rounded-[100%] pointer-events-none z-0 translate-y-1/3 transition-colors duration-500"></div>
+      {/* Hero Content — Left aligned */}
+      <div className="relative z-10 w-full px-6 sm:px-16 lg:px-24 xl:px-32 flex flex-col items-start justify-center pt-[80px] sm:pt-[50px]">
 
-      {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Name Label */}
+        <p
+          className="font-poppins dark:text-gray-300 mb-[14px] tracking-wide"
+          style={{ fontSize: 'clamp(13px, 3.5vw, 16px)', fontWeight: 300, color: '#3D3D3D' }}
+        >
+          Gianfranco N. | CEO KN Growth
+        </p>
 
-        {/* Pill Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-brand-primary/40 border border-gray-200 dark:border-brand-accent1/20 hover:border-brand-accent1/50 transition-colors cursor-pointer mb-6 sm:mb-8 group shadow-sm mx-auto max-w-full">
-          <span className="flex h-2 w-2 relative flex-shrink-0">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent1 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-accent1"></span>
-          </span>
-          <span className="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 group-hover:text-brand-accent1 dark:group-hover:text-white transition-colors truncate">
-            {t('hero.pill')}
-          </span>
-          <ArrowRight size={14} className="text-gray-400 group-hover:text-brand-accent1 transition-colors flex-shrink-0" />
-        </div>
-
-        {/* Main Headline */}
-        <h1 className="text-[30px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-brand-primary dark:text-white mb-6 leading-tight">
-          {t('hero.title1')} <br className="hidden md:block" />
-          <span className="text-brand-primary dark:text-white">
-            {t('hero.title2').split(' ').slice(0, -1).join(' ')}
-          </span>
-          {' '}
-          <span className="relative inline-flex items-center justify-center p-0 sm:p-4 group/pill align-middle">
-            {/* Selection Box Lines */}
-            <div className="hidden sm:block absolute inset-0 border border-brand-accent1/20 dark:border-white/10 pointer-events-none opacity-40 group-hover/pill:opacity-100 transition-opacity"></div>
-
-            {/* Selection Handles (Blue Anchor Points) */}
-            <div className="hidden sm:block absolute -top-1 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-accent1 border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
-            <div className="hidden sm:block absolute -top-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-accent1 border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
-            <div className="hidden sm:block absolute -bottom-1 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-accent1 border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
-            <div className="hidden sm:block absolute -bottom-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-accent1 border border-white dark:border-black shadow-sm z-10 transition-transform group-hover/pill:scale-125"></div>
-
-            {/* The 3D Medical Pill */}
-            <span className="relative inline-block px-3 py-1.5 sm:px-10 sm:py-2.5 rounded-full bg-gradient-to-b from-brand-accent1 to-[#1559C0] text-white shadow-[0_10px_25px_-5px_rgba(31,111,235,0.4),inset_0_1px_4px_rgba(255,255,255,0.4)] transform hover:scale-[1.02] transition-all duration-300 cursor-default select-none border border-blue-400/20 active:scale-95 text-[0.85em] sm:text-[0.9em] ml-1 sm:ml-0 uppercase tracking-widest">
-              {t('hero.title2').split(' ').pop()}
-            </span>
+        {/* H1 */}
+        <h1 className="font-poppins dark:text-white leading-tight mb-[15px]" style={{ fontSize: 'clamp(30px, 8vw, 50px)', color: '#171717', textShadow: '0px 4px 4px rgba(0, 0, 0, 0.15)' }}>
+          <span style={{ fontWeight: 400 }}>Você é referência no que faz.</span>
+          <br />
+          <span style={{
+            fontWeight: 600,
+            backgroundImage: 'linear-gradient(to right, #2BB673 0%, #1B764A 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            display: 'inline-block',
+            filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15))'
+          }}>
+            Seu site deveria ser também
           </span>
         </h1>
 
-        {/* Subheadline */}
-        <p className="max-w-2xl mx-auto text-sm sm:text-xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 leading-relaxed tracking-tight sm:tracking-normal px-4">
-          {t('hero.subtitle')}
+        {/* H2 */}
+        <p
+          className="font-poppins dark:text-gray-300 mb-[35px] max-w-xl"
+          style={{ fontSize: 'clamp(15px, 4vw, 20px)', fontWeight: 400, lineHeight: '1.6', color: '#171717' }}
+        >
+          <span dangerouslySetInnerHTML={{ __html: t('hero.subtitle') }} />
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 sm:mb-20 px-4">
-          <button
-            onClick={() => window.open("https://calendly.com/contacto-kngrowth/30min", "_blank")}
-            className="font-poppins w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-brand-accent1 hover:bg-brand-accent1/90 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_10px_40px_-10px_rgba(31,111,235,0.4)] hover:shadow-[0_20px_60px_-15px_rgba(31,111,235,0.6)] hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base"
-          >
-            {t('hero.ctaPrimary')}
-          </button>
-        </div>
+        {/* CTA Button */}
+        <button
+          onClick={() => window.open("https://calendly.com/contacto-kngrowth/30min", "_blank")}
+          className="font-poppins py-3.5 text-white rounded-full font-semibold transition-all duration-300 hover:scale-[1.04] active:scale-95 text-base"
+          style={{
+            paddingLeft: '34px',
+            paddingRight: '34px',
+            background: 'linear-gradient(135deg, #34d47a 0%, #2BB673 45%, #1a9e5c 100%)',
+            boxShadow: '0 8px 30px -6px rgba(43,182,115,0.6), inset 0 1px 0 rgba(255,255,255,0.18)',
+          }}
+        >
+          {t('hero.ctaPrimary')}
+        </button>
 
       </div>
       <VideoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

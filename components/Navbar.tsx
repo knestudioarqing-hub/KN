@@ -9,16 +9,29 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const [isPortfolioLockedOpen, setIsPortfolioLockedOpen] = useState(false);
+  const lastScrollY = React.useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const currentY = window.scrollY;
+      const diff = currentY - lastScrollY.current;
+      // Only trigger after scrolling past 80px from top
+      if (currentY > 80) {
+        if (diff > 8) {
+          setIsHidden(true);  // scrolling down → hide
+        } else if (diff < -8) {
+          setIsHidden(false); // scrolling up → show
+        }
+      } else {
+        setIsHidden(false); // near top → always show
+      }
+      lastScrollY.current = currentY;
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -75,12 +88,9 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'py-4 bg-white/80 dark:bg-black/60 backdrop-blur-md border-b border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none'
-          : 'py-6 bg-transparent'
-          }`}
+        className={`fixed top-4 left-0 right-0 z-50 py-5 bg-transparent transition-transform duration-500 ease-in-out ${isHidden ? '-translate-y-[120%]' : 'translate-y-0'}`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-6 sm:px-16 lg:px-24 xl:px-32">
           <div className="flex items-center justify-between relative">
             {/* Logo */}
             <div
@@ -92,44 +102,63 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
               </span>
             </div>
 
-            {/* Desktop Links - Absolutely Centered */}
-            <div className="hidden md:flex items-center space-x-8 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href, link.isPortfolio)}
-                  className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-brand-accent1 dark:hover:text-white transition-colors cursor-pointer"
+            <div
+              className="hidden md:flex items-center py-[5px] pr-[5px] pl-[100px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+            >
+              {/* Pill background — starts 70px from outer div left = 30px before Serviços */}
+              <div
+                className="absolute top-0 bottom-0 right-0 pointer-events-none"
+                style={{
+                  left: '70px',
+                  background: 'rgba(255, 255, 255, 0.20)',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
+                  borderRadius: '9999px',
+                  boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.25)',
+                  zIndex: -1,
+                }}
+              />
+              {/* Nav Links */}
+              <div className="flex items-center gap-6">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href, link.isPortfolio)}
+                    className="text-sm font-medium text-gray-600 dark:text-gray-200 hover:text-brand-accent1 dark:hover:text-white transition-colors cursor-pointer whitespace-nowrap"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
+
+              {/* Toggles (Language & Theme) - 50px from Portfólio */}
+              <div className="flex items-center gap-5 ml-[50px]">
+                <button
+                  onClick={cycleLanguage}
+                  className="flex items-center gap-1 text-xs font-bold text-gray-600 dark:text-gray-200 hover:text-brand-accent1 dark:hover:text-white transition-colors uppercase"
                 >
-                  {link.name}
-                </a>
-              ))}
-            </div>
+                  <Globe size={14} />
+                  {language}
+                </button>
 
-            {/* Right Actions */}
-            <div className="hidden md:flex items-center gap-4 relative z-10">
-              {/* Language Toggle */}
-              <button
-                onClick={cycleLanguage}
-                className="flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-bold bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-white/20 transition-colors uppercase"
-              >
-                <Globe size={14} />
-                {language}
-              </button>
-
-              {/* Theme Toggle */}
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors focus:outline-none"
-                aria-label="Toggle Dark Mode"
-              >
-                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
+                <button
+                  onClick={toggleTheme}
+                  className="hidden p-1.5 rounded-full text-gray-600 dark:text-gray-200 hover:text-brand-accent1 dark:hover:text-white transition-colors focus:outline-none"
+                  aria-label="Toggle Dark Mode"
+                >
+                  {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                </button>
+              </div>
 
               {/* CTA Button */}
               <button
                 onClick={handleBooking}
-                className="font-poppins bg-brand-accent1 hover:bg-[#1559C0] text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_15px_-5px_rgba(31,111,235,0.4)] hover:shadow-[0_8px_25px_-5px_rgba(31,111,235,0.6)]"
+                className="font-poppins text-white text-sm font-semibold px-5 py-[10px] flex items-center justify-center rounded-full transition-all duration-300 whitespace-nowrap ml-[85px] hover:scale-[1.04] active:scale-95"
+                style={{
+                  background: 'linear-gradient(135deg, #34d47a 0%, #2BB673 45%, #1a9e5c 100%)',
+                  boxShadow: '0 4px 20px -4px rgba(43,182,115,0.55), inset 0 1px 0 rgba(255,255,255,0.18)',
+                }}
               >
                 {t('nav.cta')}
               </button>
@@ -146,7 +175,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
               </button>
               <button
                 onClick={toggleTheme}
-                className="p-2 text-gray-600 dark:text-gray-300"
+                className="hidden p-2 text-gray-600 dark:text-gray-300"
               >
                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
               </button>
@@ -176,7 +205,11 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
               ))}
               <button
                 onClick={handleBooking}
-                className="font-poppins bg-brand-accent1 text-white text-base font-medium px-5 py-4 rounded-lg w-full shadow-lg shadow-brand-accent1/30 mt-4"
+                className="font-poppins text-white text-base font-semibold px-5 py-4 rounded-xl w-full mt-4 transition-all duration-300 active:scale-95"
+                style={{
+                  background: 'linear-gradient(135deg, #34d47a 0%, #2BB673 45%, #1a9e5c 100%)',
+                  boxShadow: '0 4px 20px -4px rgba(43,182,115,0.55), inset 0 1px 0 rgba(255,255,255,0.18)',
+                }}
               >
                 {t('nav.cta')}
               </button>

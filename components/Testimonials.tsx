@@ -28,11 +28,11 @@ const Testimonials: React.FC = () => {
             {t('testimonials.title')} <br />
             <span className="text-brand-accent1">{t('testimonials.titleHighlight')}</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg transition-colors lg:whitespace-nowrap">{t('testimonials.subtitle')}</p>
+          <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg transition-colors">{t('testimonials.subtitle')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((t: any, i: number) => (
+          {testimonials.map((item: any, i: number) => (
             <div key={i} className="group relative p-8 rounded-2xl bg-white dark:bg-[#0A0A0A] border border-gray-200 dark:border-white/5 hover:border-brand-accent1/20 transition-all duration-300 hover:-translate-y-1 overflow-hidden shadow-lg dark:shadow-none">
               <div className="absolute inset-0 bg-gradient-to-b from-brand-accent1/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               <div className="absolute top-6 right-6 text-gray-100 dark:text-white/[0.03] group-hover:text-gray-200 dark:group-hover:text-white/[0.05] transition-colors pointer-events-none">
@@ -43,10 +43,10 @@ const Testimonials: React.FC = () => {
                 <div className="flex gap-1 mb-6 text-brand-accent2">
                   {[...Array(5)].map((_, i) => (<Star key={i} size={16} fill="currentColor" />))}
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-8 flex-grow transition-colors">"{t.content}"</p>
+                <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-8 flex-grow transition-colors">"{item.content}"</p>
                 <div className="mt-auto pt-6 border-t border-gray-100 dark:border-white/5">
-                  <p className="font-medium text-gray-900 dark:text-white transition-colors">{t.name}</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{t.role}</p>
+                  <p className="font-medium text-gray-900 dark:text-white transition-colors">{item.name}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{item.role}</p>
                 </div>
               </div>
             </div>

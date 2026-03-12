@@ -1,172 +1,200 @@
-import React from 'react';
-import { Search, PenTool, Code2, Rocket, CheckCircle, Target, Layout, Settings, Cpu, Mail, Calendar, MessageSquare, Phone, Users, Image, MousePointer, Monitor, Smartphone, Edit, Save, FileText, Lock, Eye, GitBranch, Filter, Bell, Link } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
+import PortfolioLockedModal from './PortfolioLockedModal';
+
+// ─── Placeholder Visual Cards ─────────────────────────────────────────────────
+
+const AuditCard = () => (
+  <div className="relative w-full h-full min-h-[280px] rounded-[50px] overflow-hidden">
+    <img
+      src="https://i.imgur.com/Tie7h5W.jpg"
+      alt="Audit visual"
+      className="w-full h-full object-cover object-center"
+    />
+  </div>
+);
+
+
+
+
+const IslandsCard = () => (
+  <div className="relative w-full h-full min-h-[260px] rounded-[50px] overflow-hidden">
+    <img
+      src="https://i.imgur.com/uNdbi2u.jpg"
+      alt="As 4 Ilhas"
+      className="w-full h-full object-cover object-center"
+    />
+  </div>
+);
+
+const ImplementationCard = () => (
+  <div className="relative w-full h-full min-h-[260px] rounded-[50px] overflow-hidden">
+    <img
+      src="https://i.imgur.com/ymPJyYV.jpg"
+      alt="Pré-Implementação visual"
+      className="w-full h-full object-cover object-center"
+    />
+  </div>
+);
+
+const LaunchCard = () => (
+  <div className="relative w-full h-full min-h-[260px] rounded-[50px] overflow-hidden">
+    <img
+      src="https://i.imgur.com/BCe8x2N.jpg"
+      alt="Lançamento"
+      className="w-full h-full object-cover object-center"
+    />
+  </div>
+);
+
+const visualCards = [AuditCard, IslandsCard, ImplementationCard, LaunchCard];
+
+// ─── Main Component ────────────────────────────────────────────────────────────
 
 const Process: React.FC = () => {
   const { t } = useLanguage();
+  const [isPortfolioLockedOpen, setIsPortfolioLockedOpen] = useState(false);
+
+  const handlePortfolioClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsPortfolioLockedOpen(true);
+  };
 
   const steps = t('process.steps').map((step: any, index: number) => ({
     ...step,
     id: `0${index + 1}`,
-    icon: [Search, PenTool, Code2, Rocket][index]
-  }));
-
-  const ecosystemConfig = [
-    { mainIcon: Target, bgIcons: [Mail, Calendar, MessageSquare, Phone, Users, CheckCircle], color: "from-blue-500 to-indigo-500" },
-    { mainIcon: Layout, bgIcons: [Image, Code2, MousePointer, Monitor, Smartphone, Layout], color: "from-brand-accent1 to-blue-400" },
-    { mainIcon: Settings, bgIcons: [Edit, Save, FileText, Lock, Eye, Settings], color: "from-emerald-500 to-teal-400" },
-    { mainIcon: Cpu, bgIcons: [GitBranch, Filter, Bell, Rocket, Search, Link], color: "from-purple-500 to-pink-500" }
-  ];
-
-  const features = t('process.features').map((feature: any, index: number) => ({
-    ...feature,
-    ...ecosystemConfig[index]
+    Visual: visualCards[index],
   }));
 
   return (
     <section id="proceso" className="relative py-20 sm:py-32 bg-white dark:bg-black overflow-hidden transition-colors duration-500">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-full bg-brand-accent1/5 blur-[80px] pointer-events-none"></div>
-      <div className="absolute top-1/4 right-0 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] bg-brand-accent2/10 blur-[100px] rounded-full pointer-events-none translate-x-1/2"></div>
-      <div className="absolute bottom-1/4 left-0 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] bg-blue-600/10 blur-[100px] rounded-full pointer-events-none -translate-x-1/2"></div>
+      {/* Subtle background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-accent2/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center mb-16 sm:mb-24 relative z-10">
-          <span className="text-brand-accent1 font-semibold tracking-wider uppercase text-xs sm:text-sm mb-4 block">{t('process.label')}</span>
-          <h2 className="text-3xl sm:text-5xl font-bold font-sans tracking-tight antialiased text-gray-900 dark:text-white mb-6 transition-colors">
-            {t('process.title')} <span className="text-brand-accent1">{t('process.titleHighlight')}</span>
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Header */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white tracking-tight mb-6">
+            {t('process.title')}{' '}
+            <span className="text-brand-accent2">{t('process.titleHighlight')}</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg transition-colors px-4 lg:whitespace-nowrap">{t('process.subtitle')}</p>
+          <p className="text-gray-500 dark:text-gray-400 text-lg sm:text-xl leading-relaxed max-w-none mx-auto">
+            {t('process.subtitle')}
+          </p>
         </div>
 
-        <div className="relative mb-24 sm:mb-32 z-10">
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-brand-accent1/30 to-transparent -translate-x-1/2"></div>
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-brand-accent1/20 blur-sm -translate-x-1/2"></div>
-
-          <div className="space-y-12 md:space-y-24">
-            {steps.map((step: any, index: number) => (
-              <div key={step.id} className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-16 ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
-                <div className="flex-1 w-full md:text-right group">
-                  <div className={`flex flex-col ${index % 2 === 0 ? 'md:items-end' : 'md:items-start'} items-start`}>
-                    <div className={`text-6xl sm:text-[120px] leading-none font-bold text-gray-100 dark:text-white/[0.03] absolute -top-8 right-4 sm:-top-10 ${index % 2 === 0 ? 'md:right-auto md:left-full md:-ml-20' : 'md:left-auto md:right-full md:-mr-20'} select-none pointer-events-none transition-all duration-500 group-hover:text-gray-300 dark:group-hover:text-white/10 group-hover:scale-110`}>
-                      {step.id}
-                    </div>
-                    <div className="relative z-10 p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-white/5 bg-brand-secondary/30 dark:bg-white/[0.02] shadow-lg dark:shadow-none backdrop-blur-sm hover:border-brand-accent1/30 transition-all duration-300 w-full max-w-lg overflow-hidden">
-                      {/* Corner Neon Effect */}
-                      <div className="absolute inset-0 rounded-2xl pointer-events-none overflow-hidden">
-                        {/* Top Left Corner */}
-                        <div className="absolute top-0 left-0 w-24 h-[1.5px] bg-gradient-to-r from-brand-accent1 via-brand-accent1/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                        <div className="absolute top-0 left-0 w-[1.5px] h-24 bg-gradient-to-b from-brand-accent1 via-brand-accent1/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-
-                        {/* Bottom Right Corner */}
-                        <div className="absolute bottom-0 right-0 w-24 h-[1.5px] bg-gradient-to-l from-brand-accent1 via-brand-accent1/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                        <div className="absolute bottom-0 right-0 w-[1.5px] h-24 bg-gradient-to-t from-brand-accent1 via-brand-accent1/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-
-                        {/* Corner Sparkles */}
-                        <div className="absolute top-0 left-0 w-1.5 h-1.5 bg-brand-accent1 rounded-full blur-[1.5px] opacity-0 group-hover:opacity-100 transition-all duration-500 shadow-[0_0_8px_#1F6FEB]"></div>
-                        <div className="absolute bottom-0 right-0 w-1.5 h-1.5 bg-brand-accent1 rounded-full blur-[1.5px] opacity-0 group-hover:opacity-100 transition-all duration-500 shadow-[0_0_8px_#1F6FEB]"></div>
-                      </div>
-                      <div className="absolute bottom-8 right-8 text-brand-accent1 opacity-40 group-hover:opacity-100 transition-opacity z-10">
-                        <step.icon size={28} />
-                      </div>
-                      <div className="mb-4">
-                        <h3 className="text-3xl font-bold text-gray-900 dark:text-white group-hover:text-brand-accent1 group-hover:drop-shadow-[0_0_10px_rgba(31,111,235,0.3)] transition-all duration-500 text-left">{step.title}</h3>
-                      </div>
-                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6 transition-colors text-left">{step.description}</p>
-                      <ul className="space-y-2 text-left">
-                        {step.points.map((point: string, idx: number) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-gray-500 dark:text-gray-300 transition-colors">
-                            <CheckCircle size={14} className="text-brand-accent2 flex-shrink-0 mt-0.5" />
-                            <span>{point}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div className="hidden md:flex relative items-center justify-center w-8 h-8 flex-shrink-0 z-20">
-                  <div className="w-3 h-3 bg-brand-accent1 rounded-full shadow-[0_0_15px_rgba(31,111,235,0.6)]"></div>
-                  <div className="absolute w-8 h-8 rounded-full border border-brand-accent1/30 animate-pulse-slow"></div>
-                </div>
-                <div className="hidden md:block flex-1">
-                  <div className={`w-full h-full min-h-[200px] flex items-center ${index % 2 === 0 ? 'justify-start pl-10' : 'justify-end pr-10'}`}>
-                    <div className="h-px w-20 bg-gradient-to-r from-brand-accent1/30 to-transparent"></div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="relative z-10">
-          <div className="text-center mb-12 sm:mb-16">
-            <span className="text-brand-accent1 font-semibold tracking-wider uppercase text-xs sm:text-sm mb-4 block">
-              {t('process.featuresLabel')}
-            </span>
-            <h3 className="text-3xl sm:text-5xl font-bold font-sans tracking-tight antialiased text-gray-900 dark:text-white mb-6 transition-colors px-4">
-              {t('process.featuresTitle').split(' ').slice(0, -1).join(' ')} <span className="text-brand-accent1">{t('process.featuresTitle').split(' ').pop()}</span>
-            </h3>
-            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg transition-colors px-4 max-w-full mx-auto md:whitespace-nowrap">
-              {t('process.featuresSubtitle')}
-            </p>
+        {/* Steps */}
+        <div className="relative">
+          {/* Center vertical guide line — hidden on mobile */}
+          <div className="hidden sm:flex absolute left-1/2 top-0 bottom-0 -translate-x-1/2 flex-col items-center pointer-events-none z-10">
+            <div className="w-px flex-1 bg-gradient-to-b from-transparent via-gray-300 dark:via-white/10 to-transparent" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-            {features.map((feature: any, index: number) => {
-              const MainIcon = feature.mainIcon;
+          <div className="space-y-12 sm:space-y-24">
+            {steps.map((step: any, index: number) => {
+              const isEven = index % 2 === 0;
+              const Visual = step.Visual;
+
+              const textBlock = (
+                <div className="flex flex-col justify-center h-full">
+                  {/* Big watermark number */}
+                  <span
+                    className="font-poppins font-bold leading-none select-none mb-4 text-white"
+                    style={{
+                      fontSize: 'clamp(48px, 15vw, 100px)',
+                      filter: 'drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.35))'
+                    }}
+                  >
+                    {step.id}
+                  </span>
+                  <h3 className="font-poppins text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+                    {step.title}
+                  </h3>
+                  <p className="font-poppins text-gray-500 dark:text-gray-400 text-base leading-relaxed sm:max-w-sm">
+                    {step.description}
+                  </p>
+                </div>
+              );
+
+              const visualBlock = (
+                <motion.div
+                  className="rounded-[30px] sm:rounded-[50px] overflow-hidden border border-gray-200 dark:border-white/10 shadow-sm h-full"
+                  whileHover={{
+                    scale: 1.015,
+                    y: -3,
+                    boxShadow: '0 12px 28px rgba(0,0,0,0.08)',
+                  }}
+                  transition={{ duration: 0.5, ease: 'easeOut' }}
+                >
+                  <Visual />
+                </motion.div>
+              );
+
               return (
-                <div key={index} className="group relative flex flex-col sm:flex-row overflow-hidden rounded-3xl bg-brand-secondary/30 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 hover:border-brand-accent1/30 hover:bg-white dark:hover:bg-white/[0.05] transition-all duration-500 shadow-xl min-h-[220px]">
-                  {/* Corner Neon Effect */}
-                  <div className="absolute inset-0 rounded-3xl pointer-events-none overflow-hidden">
-                    <div className="absolute top-0 left-0 w-24 h-[1.5px] bg-gradient-to-r from-brand-accent1 via-brand-accent1/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                    <div className="absolute top-0 left-0 w-[1.5px] h-24 bg-gradient-to-b from-brand-accent1 via-brand-accent1/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <motion.div
+                  key={step.id}
+                  initial={{ opacity: 0, scale: 0.82, y: 48, rotateX: 10 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0, rotateX: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    duration: 0.75,
+                    ease: [0.22, 1, 0.36, 1],
+                    delay: index * 0.08,
+                  }}
+                  style={{ transformPerspective: 1000 }}
+                >
+                  {/* Mobile layout: stacked (visual top, text bottom) */}
+                  <div className="flex flex-col gap-6 sm:hidden">
+                    <div className="rounded-[30px] overflow-hidden border border-gray-200 dark:border-white/10 shadow-sm">
+                      <Visual />
+                    </div>
+                    <div className="px-2">{textBlock}</div>
                   </div>
 
-                  {/* Left Side: Content */}
-                  <div className="flex-1 p-8 relative z-20 flex flex-col justify-center">
-                    <h4 className="text-[24px] font-bold text-gray-900 dark:text-white mb-3 leading-tight group-hover:text-brand-accent1 group-hover:drop-shadow-[0_0_10px_rgba(31,111,235,0.3)] transition-all duration-500">
-                      {feature.title}
-                    </h4>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed max-w-[280px]">
-                      {feature.description}
-                    </p>
-                  </div>
-
-                  {/* Right Side: Visual Icon Ecosystem */}
-                  <div className="relative w-full sm:w-48 h-40 sm:h-auto flex-shrink-0">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-
-                    {/* Background Icons Grid */}
-                    <div className="absolute inset-0 p-6 grid grid-cols-3 gap-4 opacity-10 dark:opacity-20 pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500">
-                      {feature.bgIcons.slice(0, 6).map((Icon: any, i: number) => (
-                        <div key={i} className="flex items-center justify-center">
-                          <Icon size={18} strokeWidth={1} className="text-gray-900 dark:text-white" />
-                        </div>
-                      ))}
+                  {/* Desktop layout: alternating 3-column grid */}
+                  <div className="relative hidden sm:grid grid-cols-[1fr_40px_1fr] items-start gap-0">
+                    {/* Left column */}
+                    <div className="pr-12 flex justify-start">
+                      {isEven ? textBlock : visualBlock}
                     </div>
 
-                    {/* Main Floating Icon */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="relative group-hover:scale-110 transition-transform duration-500 ease-out flex items-center justify-center">
-                        <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500`}></div>
-                        <div className="relative flex items-center justify-center z-10 text-gray-900 dark:text-white transition-colors">
-                          <MainIcon size={40} strokeWidth={1} className="drop-shadow-[0_0_15px_rgba(31,111,235,0.3)]" />
-                        </div>
-                      </div>
+                    {/* Center dot */}
+                    <div className="flex flex-col items-center justify-center relative z-20 self-center">
+                      <div className="w-3.5 h-3.5 rounded-full bg-black dark:bg-white border-2 border-white dark:border-black" />
+                    </div>
+
+                    {/* Right column */}
+                    <div className="pl-12">
+                      {isEven ? visualBlock : textBlock}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
-
-          <div className="mt-12 sm:mt-16 flex justify-center relative z-20 px-4">
-            <button onClick={() => window.open("https://calendly.com/contacto-kngrowth/30min", "_blank")} className="font-poppins w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-brand-accent1 hover:bg-[#1559C0] text-white rounded-full font-semibold transition-all duration-300 shadow-[0_10px_40px_-10px_rgba(31,111,235,0.4)] hover:shadow-[0_20px_60px_-15px_rgba(31,111,235,0.6)] hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base">
-              {t('process.cta')}
-            </button>
-          </div>
         </div>
+        {/* Portfolio CTA */}
+        <div className="mt-24 text-center">
+          <a
+            href="#"
+            onClick={handlePortfolioClick}
+            className="group relative inline-flex items-center rounded-full bg-gray-100 dark:bg-white/10 backdrop-blur-md p-1.5 pr-10 transition-all duration-500 hover:bg-gray-200 dark:hover:bg-white/20 hover:-translate-y-1 hover:shadow-xl active:scale-95 border border-gray-200 dark:border-white/5"
+          >
+            <div className="bg-white px-10 py-4 rounded-full shadow-lg text-[#111] font-bold border border-gray-100 transition-transform duration-500 ease-in-out group-hover:translate-x-5 relative z-10">
+              <span className="tracking-tight">{t('services.cta_portfolio')}</span>
+            </div>
+            <div className="absolute right-6 transition-all duration-500 group-hover:translate-x-2 group-hover:opacity-0">
+              <ArrowRight size={22} className="text-[#111] dark:text-white" />
+            </div>
+          </a>
+        </div>
+
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-accent1/30 shadow-[0_0_15px_rgba(31,111,235,0.5)] z-50 md:hidden"></div>
+
+      <PortfolioLockedModal isOpen={isPortfolioLockedOpen} onClose={() => setIsPortfolioLockedOpen(false)} />
     </section>
   );
 };

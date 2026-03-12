@@ -75,7 +75,7 @@ const Stats: React.FC = () => {
 
         <div className="flex justify-center relative z-10 px-4">
           <button onClick={() => window.open("https://calendly.com/contacto-kngrowth/30min", "_blank")} className="font-poppins w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-brand-accent1 hover:bg-[#1559C0] text-white rounded-full font-semibold transition-all duration-300 shadow-[0_10px_40px_-10px_rgba(31,111,235,0.4)] hover:shadow-[0_20px_60px_-15px_rgba(31,111,235,0.6)] hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base">
-            {t('hero.ctaPrimary')}
+            {t('stats.cta')}
           </button>
         </div>
       </div>

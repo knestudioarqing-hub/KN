@@ -34,12 +34,12 @@ const translations: Translations = {
       pill: 'Exclusive for private clinics and health professionals',
       title1: 'There is nothing that generates more authority',
       title2: 'than RESULTS',
-      subtitle: 'We create digital authority for private clinics that want to lead their market, attracting qualified patients and increasing booking predictability.',
+      subtitle: '<strong>Custom-built</strong> websites for healthcare professionals who are building their authority.',
       ctaPrimary: 'I want to generate results',
       ctaSecondary: 'Watch Demo Reel',
       trusted: 'Trusted by 50+ clinics and health professionals',
       floating_booking: 'Assessment Scheduled',
-      floating_time: 'Today, 11:00 AM',
+      floating_time: 'Dr. Arthur M. - Today, 11:00 AM',
       floating_checkout: 'NEW APPOINTMENT',
       floating_sale: 'Gabriel Souza - Today, 10:15 AM'
     },
@@ -62,25 +62,25 @@ const translations: Translations = {
       vs_last: 'vs last month'
     },
     services: {
-      title: 'Without strategy, there is no impact',
-      titleHighlight: 'and without impact, there are no sales',
-      subtitle: 'We create acquisition systems, focused on qualification for your company and scalable sales growth.',
+      title: 'Everything your website needs to convert,',
+      titleHighlight: 'all in one place.',
+      subtitle: 'Design, development and copy working together so your patient feels trust before even meeting you.',
       more: 'Learn more',
       cta_portfolio: 'View Portfolio',
       items: [
         {
-          title: "High Impact Website",
-          description: "Optimized for conversion. We transform cold traffic into qualified customers through persuasive copywriting and strategic design.",
+          title: "High-impact design",
+          description: "Every visual element crafted to convey <strong>authority</strong> and <strong>trust</strong> before the patient reads a single word.",
           tags: []
         },
         {
-          title: "Strategic Capture and Qualification",
-          description: "Build a digital authority that generates results. A complete ecosystem that your company needs to structure a high-conversion sales funnel.",
+          title: "Custom-built code",
+          description: "No Wix or WordPress. Your site is built <strong>from scratch</strong> — fast, secure and <strong>100% proprietary</strong>, with no dependency on third-party platforms.",
           tags: []
         },
         {
-          title: "Full Pipeline",
-          description: "We integrate automations that connect every stage of your sales process. The generated data allows you to scale your business with predictability and strategy.",
+          title: "Copy that converts",
+          description: "The <strong>right words</strong> to turn visitors into <strong>patients</strong>. Every sentence written to answer the question the patient has <strong>before booking</strong>.",
           tags: []
         },
         {
@@ -92,28 +92,28 @@ const translations: Translations = {
     },
     process: {
       label: 'Methodology',
-      title: 'From Idea to',
-      titleHighlight: 'Result',
-      subtitle: 'An iterative and transparent process designed to maximize results and minimize friction.',
+      title: 'From diagnosis to',
+      titleHighlight: 'launch',
+      subtitle: 'Every stage has your approval. You follow everything, no surprises and no rework.',
       steps: [
         {
           title: 'Meeting & Audit',
-          description: 'We will conduct an initial audit of your situation, providing a PDF report so you know exactly where you stand and how we will proceed.',
+          description: 'We will conduct a complete audit of your digital presence and provide a PDF report with everything that needs to be done. No guesswork, no surprises.',
           points: ['UX/UI Audit', 'Funnel Audit', 'Audience Audit']
         },
         {
           title: 'The 4 Islands Method',
-          description: 'We apply our method moving from island to island only when the ship\'s captain (you) gives the OK. This prevents planning divergences avoiding surprises.',
+          description: 'Our method divides the project into 4 stages with your approval at each one. You always know what is being done and have full control of the process.',
           points: ['Premium Visual Design', 'Interactive Prototyping', 'Persuasive Copywriting']
         },
         {
           title: 'Pre-Implementation',
-          description: 'Once the 4 Islands are approved, we move to intensive implementation and integration of all functionalities.',
+          description: 'With everything approved, we enter execution mode. Every detail is implemented with precision so the final result is exactly what you imagined.',
           points: ['Next.js / React', 'Load speed < 1s', 'Technical SEO']
         },
         {
           title: 'Launch',
-          description: 'We prepare everything for this rocket launch: domain, hosting, integrations... everything 100% functional.',
+          description: 'We take care of everything: domain, hosting, integrations. You just need to push the button and see your site live, 100% functional.',
           points: ['Analytics Setup', 'Post-Launch Support', 'A/B Testing']
         }
       ],
@@ -169,7 +169,6 @@ const translations: Translations = {
       title: 'KN Growth Team',
       filters: ['All', 'Automations', 'Design', 'Strategy'],
       members: [
-        { name: 'Carlos Coloma', role: 'CTO', img: 'https://i.imgur.com/sfFgwDa.png' },
         { name: 'Gianfranco N.', role: 'CEO KN Growth', img: 'https://i.imgur.com/KZ051q2.png' },
         { name: 'Leandro V.', role: 'Software Developer', img: 'https://i.imgur.com/vsiDMpt.png' }
       ]
@@ -189,6 +188,16 @@ const translations: Translations = {
       greeting3: "Welcome to KN Growth",
       ctaLeft: "Schedule a video call with the KN Growth team",
       ctaRight: "It's 100% free and they\nwill guide you step by step"
+    },
+    problema: {
+      tag: 'The Problem',
+      titulo: 'You dedicate years to building your career.',
+      tituloEm: 'Your website should do the same for your patient.',
+      texto1: 'Most healthcare professionals enter the digital world with a generic site, built on Wix or WordPress, that talks about credentials, specialties, and years of experience.',
+      texto2: 'But the patient who lands on that page',
+      texto2Bold: 'does not want to know who you are.',
+      texto2After: 'They want to feel they can trust you before they even meet you.',
+      destaque: 'A website that does not convey that trust does not convert. Simple as that.'
     }
   },
   pt: {
@@ -198,7 +207,7 @@ const translations: Translations = {
       process: 'Processo',
       contact: 'Contato',
       portfolio: 'Portfólio',
-      cta: 'Quero gerar resultados',
+      cta: 'Quero meu site único',
       themePopup: {
         title: 'Mudar para Modo Escuro?',
         text: 'Gostaria de experimentar a versão em modo escuro?',
@@ -216,12 +225,12 @@ const translations: Translations = {
       pill: 'Exclusivo para clínicas privadas e profissionais de saúde',
       title1: 'Não existe nada que gere mais',
       title2: 'autoridade do que RESULTADOS',
-      subtitle: 'Criamos autoridade digital para clínicas privadas que querem liderar seu mercado, atraindo pacientes qualificados e aumentando previsibilidade de agendamentos.',
-      ctaPrimary: 'Quero gerar resultados',
+      subtitle: 'Sites desenvolvidos <strong>sob medida</strong> para profissionais da saúde que estão construindo sua autoridade.',
+      ctaPrimary: 'Quero meu site sob medida',
       ctaSecondary: 'Ver Demo Reel',
       trusted: 'Confiança de +50 clínicas e profissionais de saúde',
       floating_booking: 'Avaliação Agendada',
-      floating_time: 'Hoje, 11:00',
+      floating_time: 'Dr. Arthur M. - Hoje, 11:00',
       floating_checkout: 'NOVO AGENDAMENTO',
       floating_sale: 'Gabriel Souza - Hoje, 10:15'
     },
@@ -244,25 +253,25 @@ const translations: Translations = {
       vs_last: 'vs mês anterior'
     },
     services: {
-      title: 'Sem estratégia, não há impacto',
-      titleHighlight: 'e sem impacto, não há vendas',
-      subtitle: 'Criamos sistemas de captação, focados na qualificação para a sua empresa e aumento escalável de vendas.',
+      title: 'Tudo que seu site precisa para converter,',
+      titleHighlight: 'em um só lugar.',
+      subtitle: 'Design, desenvolvimento e copy trabalhando juntos para que seu paciente sinta confiança antes mesmo de te conhecer.',
       more: 'Saiba mais',
       cta_portfolio: 'Ver Portfólio',
       items: [
         {
-          title: "Site de alto impacto",
-          description: "Otimizadas para conversão. Transformamos tráfego frio em clientes qualificados através de copywriting persuasivo e design estratégico.",
+          title: "Design de alto impacto",
+          description: "Cada elemento visual pensado para transmitir <strong>autoridade</strong> e <strong>confiança</strong> antes mesmo do paciente ler uma palavra.",
           tags: []
         },
         {
-          title: "Captação e qualificação estratégica",
-          description: "Construa uma autoridade digital que gera resultados. Um ecossistema completo que sua empresa precisa para estruturar um funil de vendas com conversão.",
+          title: "Código sob medida",
+          description: "Nada de Wix ou WordPress. Seu site é construído <strong>do zero</strong>, rápido, seguro e <strong>100% proprietário</strong> — sem dependência de plataformas terceiras.",
           tags: []
         },
         {
-          title: "Balde cheio",
-          description: "Integramos automações que conectam cada etapa do seu processo de vendas. Os dados gerados permitem escalar o seu negócio com previsibilidade e estratégia.",
+          title: "Copy que converte",
+          description: "As <strong>palavras certas</strong> para transformar visitantes em <strong>pacientes</strong>. Cada frase escrita para responder a dúvida que o paciente tem <strong>antes de agendar</strong>.",
           tags: []
         },
         {
@@ -274,28 +283,28 @@ const translations: Translations = {
     },
     process: {
       label: 'Metodologia',
-      title: 'Da Ideia ao',
-      titleHighlight: 'Resultado',
-      subtitle: 'Um processo iterativo e transparente projetado para maximizar resultados e minimizar atritos.',
+      title: 'Do diagnóstico ao',
+      titleHighlight: 'lançamento',
+      subtitle: 'Cada etapa tem sua aprovação. Você acompanha tudo, sem surpresas e sem retrabalho.',
       steps: [
         {
           title: 'Reunião e Auditoria',
-          description: 'Faremos uma auditoria da sua situação inicial, através de um relatório em PDF, para que você saiba onde está e como procederemos.',
+          description: 'Faremos uma auditoria completa da sua presença digital e te entregaremos um relatório em PDF com tudo o que precisa ser feito. Sem achismos, sem surpresas.',
           points: ['Auditoria UX/UI', 'Auditoria de funil', 'Auditoria de público']
         },
         {
           title: 'As 4 Ilhas',
-          description: 'Aplicaremos o nosso método das 4 ilhas. Só avançaremos de uma ilha para a outra quando o capitão do barco (você) nos der o OK. Isso evita divergências e surpresas.',
+          description: 'Nosso método divide o projeto em 4 etapas com sua aprovação em cada uma. Você sempre sabe o que está sendo feito e tem controle total do processo.',
           points: ['Design Visual Premium', 'Prototipagem Interativa', 'Copywriting Persuasivo']
         },
         {
           title: 'Pré-Implementação',
-          description: 'Uma vez aprovadas as 4 ilhas, avançaremos para a implementação intensiva e integração das funcionalidades.',
+          description: 'Com tudo aprovado, entramos em modo de execução. Cada detalhe é implementado con precisão para que o resultado final seja exatamente o que você imaginou.',
           points: ['Next.js / React', 'Velocidade de carga < 1s', 'SEO Técnico']
         },
         {
           title: 'Lançamento',
-          description: 'Preparamos tudo para o lançamento deste foguete: domínio, hospedagem, integrações... tudo 100% funcionando.',
+          description: 'Cuidamos de tudo: domínio, hospedagem, integrações. Você só precisa apertar o botão e ver seu site no ar, 100% funcionando.',
           points: ['Configuração de Analytics', 'Suporte Pós-Lançamento', 'A/B Testing']
         }
       ],
@@ -351,7 +360,6 @@ const translations: Translations = {
       title: 'Equipe KN Growth',
       filters: ['Tudo', 'Automações', 'Design', 'Estratégia'],
       members: [
-        { name: 'Carlos Coloma', role: 'CTO', img: 'https://i.imgur.com/sfFgwDa.png' },
         { name: 'Gianfranco N.', role: 'CEO KN Growth', img: 'https://i.imgur.com/KZ051q2.png' },
         { name: 'Leandro V.', role: 'Software Developer', img: 'https://i.imgur.com/vsiDMpt.png' }
       ]
@@ -371,6 +379,16 @@ const translations: Translations = {
       greeting3: "Bem-vindo à KN Growth",
       ctaLeft: "Agende uma videochamada com a equipe da KN Growth",
       ctaRight: "É 100% gratuito e eles\nvão te guiar passo a passo"
+    },
+    problema: {
+      tag: 'O problema',
+      titulo: 'Você se dedica anos para construir sua carreira.',
+      tituloEm: 'Seu site deveria fazer o mesmo pelo seu paciente.',
+      texto1: 'A maioria dos profissionais da saúde chega no digital com um site genérico, criado em Wix ou WordPress, que fala sobre formação, especialidades e anos de experiência.',
+      texto2: 'Mas o paciente que chega nessa página',
+      texto2Bold: 'não quer saber quem você é.',
+      texto2After: 'Ele quer sentir que pode confiar em você antes mesmo de te conhecer.',
+      destaque: 'Um site que não transmite essa confiança não converte. Simples assim.'
     }
   },
   es: {
@@ -380,7 +398,7 @@ const translations: Translations = {
       process: 'Proceso',
       contact: 'Contacto',
       portfolio: 'Portafolio',
-      cta: 'Quiero generar resultados',
+      cta: 'Quiero mi sitio único',
       themePopup: {
         title: '¿Cambiar a Modo Oscuro?',
         text: '¿Te gustaría experimentar la versión en modo oscuro?',
@@ -398,12 +416,12 @@ const translations: Translations = {
       pill: 'Exclusivo para clínicas privadas y profesionales de salud',
       title1: 'No existe nada que genere más',
       title2: 'autoridad que RESULTADOS',
-      subtitle: 'Creamos autoridad digital para clínicas privadas que quieren liderar su mercado, atrayendo pacientes cualificados y aumentando la previsibilidad de sus citas.',
-      ctaPrimary: 'Quiero generar resultados',
+      subtitle: 'Sitios desarrollados <strong>a medida</strong> para profesionales de la salud que están construyendo su autoridad.',
+      ctaPrimary: 'Quiero mi sitio a medida',
       ctaSecondary: 'Ver Demo Reel',
       trusted: 'Con la confianza de +50 clínicas y profesionales de salud',
       floating_booking: 'Evaluación Agendada',
-      floating_time: 'Hoy, 11:00',
+      floating_time: 'Dr. Arthur M. - Hoy, 11:00',
       floating_checkout: 'NUEVA CITA',
       floating_sale: 'Gabriel Souza - Hoy, 10:15'
     },
@@ -426,25 +444,25 @@ const translations: Translations = {
       vs_last: 'vs mes anterior'
     },
     services: {
-      title: 'Sin estrategia, no hay impacto',
-      titleHighlight: 'y sin impacto, no hay ventas',
-      subtitle: 'Creamos sistemas de captación, enfocados en la cualificación para su empresa y aumento escalable de ventas.',
+      title: 'Todo lo que tu sitio necesita para convertir,',
+      titleHighlight: 'en un solo lugar.',
+      subtitle: 'Diseño, desarrollo y copy trabajando juntos para que tu paciente sienta confianza antes de conocerte.',
       more: 'Saber más',
       cta_portfolio: 'Ver Portafolio',
       items: [
         {
-          title: "Sitio de Alto Impacto",
-          description: "Optimizadas para conversión. Transformamos tráfico frío en clientes calificados a través de copywriting persuasivo y diseño estratégico.",
+          title: "Diseño de alto impacto",
+          description: "Cada elemento visual pensado para transmitir <strong>autoridad</strong> y <strong>confianza</strong> antes de que el paciente lea una sola palabra.",
           tags: []
         },
         {
-          title: "Captación y Calificación Estratégica",
-          description: "Construye una autoridad digital que genera resultados. Un ecosistema completo que tu empresa necesita para estructurar un embudo de ventas con conversión.",
+          title: "Código a medida",
+          description: "Nada de Wix ni WordPress. Tu sitio se construye <strong>desde cero</strong> — rápido, seguro y <strong>100% propio</strong>, sin dependencia de plataformas de terceros.",
           tags: []
         },
         {
-          title: "Pipeline Lleno",
-          description: "Integramos automatizaciones que conectan cada etapa de tu proceso de ventas. Los datos generados permiten escalar tu negocio con previsibilidad y estrategia.",
+          title: "Copy que convierte",
+          description: "Las <strong>palabras correctas</strong> para transformar visitantes en <strong>pacientes</strong>. Cada frase escrita para responder la duda que el paciente tiene <strong>antes de agendar</strong>.",
           tags: []
         },
         {
@@ -456,28 +474,28 @@ const translations: Translations = {
     },
     process: {
       label: 'Metodología',
-      title: 'De la Idea al',
-      titleHighlight: 'Resultado',
-      subtitle: 'Un proceso iterativo y transparente diseñado para maximizar resultados y minimizar la fricción.',
+      title: 'Del diagnóstico al',
+      titleHighlight: 'lanzamiento',
+      subtitle: 'Cada etapa tiene su aprobación. Acompañas todo, sin sorpresas y sin retrabajo.',
       steps: [
         {
           title: 'Reunión y Auditoría',
-          description: 'Haremos una auditoría de tu situación inicial, mediante un informe PDF para que estés al tanto de dónde te encuentras y cómo procederemos.',
+          description: 'Haremos una auditoría completa de tu presencia digital y te entregaremos un informe en PDF con todo lo que necesita hacerse. Sin suposiciones, sin sorpresas.',
           points: ['Auditoría UX/UI', 'Auditoría de embudo', 'Auditoría de público']
         },
         {
           title: 'Las 4 Islas',
-          description: 'Aplicaremos nuestro método de las 4 islas. Solo avanzaremos cuando el capitán del barco (tú) nos dé el OK. Esto evita divergencias y da certeza del producto final.',
+          description: 'Nuestro método divide el proyecto en 4 etapas con tu aprobación en cada una. Siempre sabrás qué se está haciendo y tendrás control total del proceso.',
           points: ['Diseño Visual Premium', 'Prototipado Interactivo', 'Copywriting Persuasivo']
         },
         {
           title: 'Pre-Implementación',
-          description: 'Una vez aprobadas las 4 islas, pasaremos a la implementación intensiva e integración de las funcionalidades.',
+          description: 'Con todo aprobado, entramos en modo de ejecución. Cada detalle se implementa con precisión para que el resultado final sea exactamente el que imaginaste.',
           points: ['Next.js / React', 'Velocidad de carga < 1s', 'SEO Técnico']
         },
         {
           title: 'Lanzamiento',
-          description: 'Preparamos todo para el lanzamiento de este cohete: dominio, hosting, integraciones... todo 100% funcionando.',
+          description: 'Nos encargamos de todo: dominio, hosting, integraciones. Solo tienes que pulsar el botón y ver tu sitio al aire, 100% funcionando.',
           points: ['Configuración de Analytics', 'Soporte Post-Lanzamiento', 'A/B Testing']
         }
       ],
@@ -533,7 +551,6 @@ const translations: Translations = {
       title: 'Equipo KN Growth',
       filters: ['Todo', 'Automatizaciones', 'Diseño', 'Estrategia'],
       members: [
-        { name: 'Carlos Coloma', role: 'CTO', img: 'https://i.imgur.com/sfFgwDa.png' },
         { name: 'Gianfranco N.', role: 'CEO KN Growth', img: 'https://i.imgur.com/KZ051q2.png' },
         { name: 'Leandro V.', role: 'Software Developer', img: 'https://i.imgur.com/vsiDMpt.png' }
       ]
@@ -553,6 +570,16 @@ const translations: Translations = {
       greeting3: "Bienvenido a KN Growth",
       ctaLeft: "Agende una videollamada con el equipo de KN Growth",
       ctaRight: "Es 100% gratis y\nte guiarán paso a paso"
+    },
+    problema: {
+      tag: 'El problema',
+      titulo: 'Te dedicas años a construir tu carrera.',
+      tituloEm: 'Tu sitio debería hacer lo mismo por tu paciente.',
+      texto1: 'La mayoría de los profesionales de la salud llegan al mundo digital con un sitio genérico, creado en Wix o WordPress, que habla sobre formación, especialidades y años de experiencia.',
+      texto2: 'Pero el paciente que llega a esa página',
+      texto2Bold: 'no quiere saber quién eres.',
+      texto2After: 'Quiere sentir que puede confiar en ti antes de siquiera conocerte.',
+      destaque: 'Un sitio que no transmite esa confianza no convierte. Así de simple.'
     }
   }
 };
