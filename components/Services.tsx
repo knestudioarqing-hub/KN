@@ -37,12 +37,14 @@ const ServiceCard: React.FC<{ title: string; description: string; index: number 
           <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#FEBC2E]" />
           <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#28C840]" />
         </div>
-        <img
-          src={placeholderImages[index]}
-          alt={title}
-          className="w-full h-auto object-contain grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
-          style={{ maxHeight: '180px' }}
-        />
+        <div className={`flex items-center justify-center ${index === 2 ? 'p-6' : 'p-0'}`}>
+          <img
+            src={placeholderImages[index]}
+            alt={title}
+            className="w-full h-auto object-contain grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
+            style={{ maxHeight: '180px' }}
+          />
+        </div>
       </div>
 
       {/* Hover glow */}

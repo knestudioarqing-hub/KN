@@ -35,18 +35,7 @@ const Team: React.FC = () => {
                         {t('team.subtitle')}
                     </p>
 
-                    <div className="flex items-center gap-4 text-xs md:text-sm font-bold overflow-x-auto pb-4 md:pb-0 w-full no-scrollbar scroll-smooth px-4 md:px-0">
-                        <div className="flex items-center gap-4 mx-auto min-w-max">
-                            {t('team.filters').map((filter: string, i: number) => (
-                                <React.Fragment key={i}>
-                                    <button className={`hover:text-[#22c55e] transition-all whitespace-nowrap uppercase tracking-widest ${i === 0 ? 'text-[#22c55e]' : 'text-gray-400 dark:text-gray-500'}`}>
-                                        {filter}
-                                    </button>
-                                    {i < t('team.filters').length - 1 && <div className="w-6 h-[1px] bg-gray-200 dark:bg-gray-800 flex-shrink-0"></div>}
-                                </React.Fragment>
-                            ))}
-                        </div>
-                    </div>
+
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto">

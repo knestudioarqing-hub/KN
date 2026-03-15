@@ -13,9 +13,9 @@ const Hero: React.FC = () => {
       style={{ backgroundColor: '#F4F7F9' }}
     >
       {/* ── FIGMA BACKGROUND IMAGE ── covers full hero */}
-      {/* Light mode: show Figma-composed image */}
+      {/* Light mode desktop: Figma-composed landscape image */}
       <div
-        className="absolute inset-0 z-0 dark:hidden"
+        className="absolute inset-0 z-0 dark:hidden hidden md:block"
         style={{
           backgroundImage: 'url(https://i.imgur.com/0kT8MIc.jpg)',
           backgroundSize: 'cover',
@@ -24,14 +24,39 @@ const Hero: React.FC = () => {
         }}
       />
 
-      {/* Dark mode: same image + dark overlay to adapt */}
-      <div className="absolute inset-0 z-0 hidden dark:block" style={{ backgroundColor: '#031515' }}>
+      {/* Light mode mobile: portrait image 1080x1920 */}
+      <div
+        className="absolute inset-0 z-0 dark:hidden md:hidden"
+        style={{
+          backgroundImage: 'url(https://i.imgur.com/B2dqxQc.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+
+      {/* Dark mode desktop: landscape image + dark overlay */}
+      <div className="absolute inset-0 z-0 hidden dark:md:block" style={{ backgroundColor: '#031515' }}>
         <div
           className="absolute inset-0"
           style={{
             backgroundImage: 'url(https://i.imgur.com/0kT8MIc.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.18,
+          }}
+        />
+      </div>
+
+      {/* Dark mode mobile: portrait image + dark overlay */}
+      <div className="absolute inset-0 z-0 hidden dark:block dark:md:hidden" style={{ backgroundColor: '#031515' }}>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url(https://i.imgur.com/B2dqxQc.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center top',
             backgroundRepeat: 'no-repeat',
             opacity: 0.18,
           }}
@@ -85,7 +110,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Hero Content — Left aligned */}
-      <div className="relative z-10 w-full px-6 sm:px-16 lg:px-24 xl:px-32 flex flex-col items-start justify-center pt-[80px] sm:pt-[50px]">
+      <div className="relative z-10 w-full px-6 sm:px-16 lg:px-24 xl:px-32 flex flex-col items-start justify-center pt-[24px] sm:pt-[50px]">
 
         {/* Name Label */}
         <p
@@ -122,10 +147,10 @@ const Hero: React.FC = () => {
         {/* CTA Button */}
         <button
           onClick={() => window.open("https://calendly.com/contacto-kngrowth/30min", "_blank")}
-          className="font-poppins py-3.5 text-white rounded-full font-semibold transition-all duration-300 hover:scale-[1.04] active:scale-95 text-base"
+          className="font-poppins py-3.5 text-white rounded-full font-semibold transition-all duration-300 hover:scale-[1.04] active:scale-95 text-base whitespace-nowrap"
           style={{
-            paddingLeft: '34px',
-            paddingRight: '34px',
+            paddingLeft: '28px',
+            paddingRight: '28px',
             background: 'linear-gradient(135deg, #34d47a 0%, #2BB673 45%, #1a9e5c 100%)',
             boxShadow: '0 8px 30px -6px rgba(43,182,115,0.6), inset 0 1px 0 rgba(255,255,255,0.18)',
           }}
