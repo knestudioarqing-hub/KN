@@ -110,18 +110,18 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Hero Content — Left aligned */}
-      <div className="relative z-10 w-full px-6 sm:px-16 lg:px-24 xl:px-32 flex flex-col items-start pt-7 pb-10 md:py-0 md:justify-center bg-white/95 md:bg-transparent rounded-t-[36px] md:rounded-none">
+      <div className="relative z-10 w-full px-6 sm:px-16 lg:px-24 xl:px-32 flex flex-col items-start pt-5 pb-7 md:py-0 md:justify-center bg-white/95 md:bg-transparent rounded-t-[36px] md:rounded-none">
 
         {/* Name Label */}
         <p
-          className="font-poppins dark:text-gray-300 mb-[14px] tracking-wide"
+          className="font-poppins dark:text-gray-300 mb-[8px] md:mb-[14px] tracking-wide"
           style={{ fontSize: 'clamp(13px, 3.5vw, 16px)', fontWeight: 300, color: '#3D3D3D' }}
         >
           Gianfranco N. | CEO KN Growth
         </p>
 
         {/* H1 */}
-        <h1 className="font-poppins dark:text-white leading-tight mb-[15px]" style={{ fontSize: 'clamp(30px, 8vw, 50px)', color: '#171717', textShadow: '0px 4px 4px rgba(0, 0, 0, 0.15)' }}>
+        <h1 className="font-poppins dark:text-white leading-tight mb-[8px] md:mb-[15px]" style={{ fontSize: 'clamp(30px, 8vw, 50px)', color: '#171717', textShadow: '0px 4px 4px rgba(0, 0, 0, 0.15)' }}>
           <span style={{ fontWeight: 400 }}>{t('hero.title1')}</span>
           <br />
           <span style={{
@@ -138,7 +138,7 @@ const Hero: React.FC = () => {
 
         {/* H2 */}
         <p
-          className="font-poppins dark:text-gray-300 mb-[35px] max-w-xl"
+          className="font-poppins dark:text-gray-300 mb-[18px] md:mb-[35px] max-w-xl"
           style={{ fontSize: 'clamp(15px, 4vw, 20px)', fontWeight: 400, lineHeight: '1.6', color: '#171717' }}
         >
           <span dangerouslySetInnerHTML={{ __html: t('hero.subtitle') }} />
