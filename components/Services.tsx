@@ -7,7 +7,7 @@ const ServiceCard: React.FC<{ title: string; description: string; index: number 
   const placeholderImages = [
     "https://i.imgur.com/zO6mVMb.jpg",
     "https://i.imgur.com/dgcLMys.jpg",
-    "https://i.imgur.com/rB8YDZY.jpg"
+    "https://i.imgur.com/GgzTo03.jpg"
   ];
 
   return (
@@ -40,8 +40,8 @@ const ServiceCard: React.FC<{ title: string; description: string; index: number 
         <img
           src={placeholderImages[index]}
           alt={title}
-          className="w-full object-contain bg-white grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
-          style={{ height: '160px' }}
+          className="w-full h-auto object-contain grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
+          style={{ maxHeight: '180px' }}
         />
       </div>
 

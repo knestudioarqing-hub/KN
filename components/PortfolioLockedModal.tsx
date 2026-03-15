@@ -37,7 +37,7 @@ const PortfolioLockedModal: React.FC<PortfolioLockedModalProps> = ({ isOpen, onC
             >
                 {/* Background ambient lighting */}
                 <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50"></div>
-                <div className="absolute top-[-50%] left-[-20%] w-[140%] h-[140%] bg-gradient-to-b from-brand-orange/5 to-transparent blur-3xl pointer-events-none rounded-full radial-gradient"></div>
+                <div className="absolute top-[-50%] left-[-20%] w-[140%] h-[140%] bg-gradient-to-b from-[#22c55e]/5 to-transparent blur-3xl pointer-events-none rounded-full radial-gradient"></div>
 
                 {/* Close Button */}
                 <button
@@ -53,27 +53,27 @@ const PortfolioLockedModal: React.FC<PortfolioLockedModalProps> = ({ isOpen, onC
                     {/* Premium Icon Container */}
                     <div className="relative mb-8 group">
                         {/* Spinning faint ring */}
-                        <div className="absolute inset-[-12px] border border-brand-orange/20 rounded-full w-24 h-24 sm:w-28 sm:h-28 animate-[spin_10s_linear_infinite] opacity-30 pointer-events-none"></div>
-                        <div className="absolute inset-[-4px] border border-brand-orange/40 rounded-full w-20 h-20 sm:w-24 sm:h-24 animate-[spin_15s_linear_infinite_reverse] opacity-50 pointer-events-none border-dashed"></div>
+                        <div className="absolute inset-[-12px] border border-[#22c55e]/20 rounded-full w-24 h-24 sm:w-28 sm:h-28 animate-[spin_10s_linear_infinite] opacity-30 pointer-events-none"></div>
+                        <div className="absolute inset-[-4px] border border-[#22c55e]/40 rounded-full w-20 h-20 sm:w-24 sm:h-24 animate-[spin_15s_linear_infinite_reverse] opacity-50 pointer-events-none border-dashed"></div>
 
                         {/* Glow */}
-                        <div className="absolute inset-0 bg-brand-orange/30 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        <div className="absolute inset-0 bg-[#22c55e]/30 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
                         {/* Icon Background */}
-                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-[#1a1a1a] to-black border border-white/10 flex items-center justify-center shadow-2xl relative overflow-hidden backdrop-blur-xl group-hover:border-brand-orange/30 transition-colors duration-500">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-[#1a1a1a] to-black border border-white/10 flex items-center justify-center shadow-2xl relative overflow-hidden backdrop-blur-xl group-hover:border-[#22c55e]/30 transition-colors duration-500">
                             {/* Shine effect */}
                             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <Lock size={28} className="text-white drop-shadow-[0_0_15px_rgba(255,85,0,0.6)]" />
+                            <Lock size={28} className="text-white drop-shadow-[0_0_15px_rgba(34,197,94,0.6)]" />
                         </div>
 
                         {/* Small badge */}
                         <div className="absolute -bottom-2 -right-2 bg-[#0a0a0a] rounded-full p-1.5 border border-white/10 shadow-lg">
-                            <ShieldCheck size={14} className="text-brand-orange" />
+                            <ShieldCheck size={14} style={{ color: '#22c55e' }} />
                         </div>
                     </div>
 
                     <div className="space-y-4 max-w-sm mx-auto">
-                        <span className="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-brand-orange uppercase backdrop-blur-md">
+                        <span className="inline-block py-1 px-3 rounded-full bg-white/5 border border-[#22c55e]/30 text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase backdrop-blur-md" style={{ color: '#22c55e' }}>
                             {t('nav.portfolioLocked.access')}
                         </span>
 
@@ -91,7 +91,10 @@ const PortfolioLockedModal: React.FC<PortfolioLockedModalProps> = ({ isOpen, onC
 
                     <button
                         onClick={handleBooking}
-                        className="w-full py-4 bg-white text-black hover:bg-brand-orange hover:text-white rounded-xl font-bold text-sm sm:text-base tracking-wide transition-all duration-300 shadow-[0_0_30px_-5px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_-5px_rgba(255,85,0,0.5)] flex items-center justify-center gap-3 group relative overflow-hidden"
+                        className="w-full py-4 bg-white text-black rounded-xl font-bold text-sm sm:text-base tracking-wide transition-all duration-300 shadow-[0_0_30px_-5px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_-5px_rgba(34,197,94,0.5)] flex items-center justify-center gap-3 group relative overflow-hidden"
+                        style={{}}
+                        onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = '#22c55e'; (e.currentTarget as HTMLButtonElement).style.color = '#fff'; }}
+                        onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = '#fff'; (e.currentTarget as HTMLButtonElement).style.color = '#000'; }}
                     >
                         {/* Button content */}
                         <span className="relative z-10 flex items-center gap-2">

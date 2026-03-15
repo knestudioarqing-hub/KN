@@ -10,24 +10,30 @@ const MobileShowcase: React.FC = () => {
             id: 'left',
             image: "https://i.imgur.com/1bXvduM.jpg",
             alt: "Project Left",
-            initial: { x: -150, y: -100, rotate: 0, opacity: 0, scale: 0.9 },
-            whileInView: { x: '-65%', y: '-25%', rotate: 0, opacity: 1, scale: 1.15 },
+            variants: {
+                desktop: { x: '-65%', y: '-25%', rotate: 0, opacity: 1, scale: 1.15 },
+                mobile: { x: 0, y: 0, rotate: -2, opacity: 1, scale: 1 }
+            },
             zIndex: 10
         },
         {
             id: 'right',
-            image: "https://i.imgur.com/q7Fqzxm.jpg",
+            image: "https://i.imgur.com/7Wp94S7.jpg",
             alt: "Project Right",
-            initial: { x: 150, y: -100, rotate: 0, opacity: 0, scale: 0.9 },
-            whileInView: { x: '65%', y: '-25%', rotate: 0, opacity: 1, scale: 1.3 },
+            variants: {
+                desktop: { x: '65%', y: '-25%', rotate: 0, opacity: 1, scale: 1.15 },
+                mobile: { x: 0, y: 40, rotate: 2, opacity: 1, scale: 1 }
+            },
             zIndex: 10
         },
         {
             id: 'center',
             image: "https://i.imgur.com/9HqmXeL.jpg",
             alt: "Project Center",
-            initial: { y: 150, rotate: 0, opacity: 0, scale: 0.9 },
-            whileInView: { y: '30%', rotate: 0, opacity: 1, scale: 1 },
+            variants: {
+                desktop: { x: 0, y: '30%', rotate: 0, opacity: 1, scale: 1 },
+                mobile: { x: 0, y: 80, rotate: 0, opacity: 1, scale: 1.05 }
+            },
             zIndex: 20
         }
     ];
@@ -48,37 +54,40 @@ const MobileShowcase: React.FC = () => {
                 </div>
 
                 {/* Stacked Cards Container */}
-                <div className="relative h-[300px] sm:h-[500px] md:h-[600px] flex items-center justify-center">
+                <div className="relative h-[450px] sm:h-[500px] md:h-[600px] flex items-center justify-center">
 
                     {/* Background Glow */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-brand-accent1/5 blur-[120px] rounded-full pointer-events-none" />
 
-                    <div className="relative w-full max-w-5xl flex items-center justify-center translate-y-[-10%] sm:translate-y-0">
-                        {showcaseProjects.map((project) => (
+                    <div className="relative w-full max-w-5xl flex items-center justify-center translate-y-[-15%] sm:translate-y-0">
+                        {showcaseProjects.map((project: any) => (
                             <motion.img
                                 key={project.id}
                                 src={project.image}
                                 alt={project.alt}
                                 loading="lazy"
                                 decoding="async"
-                                initial={project.initial}
-                                whileInView={project.whileInView}
-                                whileHover={{ scale: (project.whileInView as any).scale * 1.06, y: ((project.whileInView as any).y ?? 0) }}
-                                viewport={{ once: true, amount: 0.3 }}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={typeof window !== 'undefined' && window.innerWidth < 640 ? project.variants.mobile : project.variants.desktop}
+                                whileHover={{
+                                    scale: (typeof window !== 'undefined' && window.innerWidth < 640 ? project.variants.mobile.scale : project.variants.desktop.scale) * 1.05,
+                                    zIndex: 50
+                                }}
+                                viewport={{ once: true, amount: 0.2 }}
                                 transition={{
                                     duration: 0.8,
                                     ease: [0.16, 1, 0.3, 1],
                                     delay: project.id === 'center' ? 0.2 : 0
                                 }}
-                                className="absolute w-[75%] sm:w-[65%] h-auto select-none cursor-pointer"
+                                className="absolute w-[85%] sm:w-[65%] h-auto select-none cursor-pointer"
                                 style={{
                                     zIndex: project.zIndex,
-                                    WebkitMaskImage: project.id === 'center'
+                                    WebkitMaskImage: (typeof window !== 'undefined' && window.innerWidth < 640) ? 'none' : (project.id === 'center'
                                         ? 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 25%, rgba(0,0,0,1) 50%)'
-                                        : 'none',
-                                    maskImage: project.id === 'center'
+                                        : 'none'),
+                                    maskImage: (typeof window !== 'undefined' && window.innerWidth < 640) ? 'none' : (project.id === 'center'
                                         ? 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 25%, rgba(0,0,0,1) 50%)'
-                                        : 'none'
+                                        : 'none')
                                 }}
                             />
                         ))}
