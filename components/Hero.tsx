@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
 
   return (
     <div
-      className="relative min-h-screen overflow-hidden transition-colors duration-500 flex flex-col justify-center rounded-b-[50px] md:rounded-b-[90px] z-10 pb-8"
+      className="relative min-h-screen overflow-hidden transition-colors duration-500 flex flex-col justify-end md:justify-center rounded-b-[50px] md:rounded-b-[90px] z-10"
       style={{ backgroundColor: '#F4F7F9' }}
     >
       {/* ── FIGMA BACKGROUND IMAGE ── covers full hero */}
@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
       <div
         className="absolute inset-0 z-0 dark:hidden md:hidden"
         style={{
-          backgroundImage: 'url(https://i.imgur.com/B2dqxQc.jpg)',
+          backgroundImage: 'url(https://i.imgur.com/8jha9TW.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat',
@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url(https://i.imgur.com/B2dqxQc.jpg)',
+            backgroundImage: 'url(https://i.imgur.com/8jha9TW.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center top',
             backgroundRepeat: 'no-repeat',
@@ -110,7 +110,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Hero Content — Left aligned */}
-      <div className="relative z-10 w-full px-6 sm:px-16 lg:px-24 xl:px-32 flex flex-col items-start justify-center pt-[24px] sm:pt-[50px]">
+      <div className="relative z-10 w-full px-6 sm:px-16 lg:px-24 xl:px-32 flex flex-col items-start pt-7 pb-10 md:py-0 md:justify-center bg-white/95 md:bg-transparent rounded-t-[36px] md:rounded-none">
 
         {/* Name Label */}
         <p
