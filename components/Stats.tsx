@@ -52,29 +52,28 @@ const Stats: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative pt-16 pb-16 sm:pt-20 sm:pb-24 bg-white dark:bg-black border-t border-gray-200 dark:border-white/5 overflow-hidden transition-colors duration-500">
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-brand-accent1/50 to-transparent shadow-[0_0_30px_rgba(31,111,235,0.5)]"></div>
+    <section ref={sectionRef} className="relative pt-12 pb-12 sm:pt-20 sm:pb-24 bg-white dark:bg-black border-t border-gray-200 dark:border-white/5 overflow-hidden transition-colors duration-500">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-[#22c55e]/40 to-transparent shadow-[0_0_30px_rgba(34,197,94,0.4)]"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-white/10 mb-16">
           {stats.map((stat) => (
             <div key={stat.id} className="flex flex-col items-center text-center px-4 pt-8 md:pt-0">
-              <div className="flex items-center gap-2 mb-4 text-brand-accent1/80">
+              <div className="flex items-center gap-2 mb-4" style={{ color: '#22c55e' }}>
                 <stat.icon size={20} />
                 <span className="text-sm font-semibold uppercase tracking-wider">{stat.label}</span>
               </div>
               <div className="relative mb-2">
                 <span className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white tracking-tight transition-colors">{stat.value}{stat.suffix}</span>
-                <span className="absolute left-0 top-0 text-5xl sm:text-6xl lg:text-7xl font-bold text-brand-accent1/10 blur-xl select-none pointer-events-none -z-10">{stat.value}{stat.suffix}</span>
+                <span className="absolute left-0 top-0 text-5xl sm:text-6xl lg:text-7xl font-bold blur-xl select-none pointer-events-none -z-10" style={{ color: 'rgba(34,197,94,0.12)' }}>{stat.value}{stat.suffix}</span>
               </div>
               <p className="text-gray-600 dark:text-gray-500 font-medium transition-colors text-sm sm:text-base">{stat.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="flex justify-center relative z-10 px-4">
-          <button onClick={() => window.open("https://calendly.com/contacto-kngrowth/30min", "_blank")} className="font-poppins w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-brand-accent1 hover:bg-[#1559C0] text-white rounded-full font-semibold transition-all duration-300 shadow-[0_10px_40px_-10px_rgba(31,111,235,0.4)] hover:shadow-[0_20px_60px_-15px_rgba(31,111,235,0.6)] hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base">
+        <div className="flex justify-center relative z-10 px-4 mt-6 sm:mt-0">
+          <button onClick={() => window.open("https://calendly.com/contacto-kngrowth/30min", "_blank")} className="font-poppins w-full sm:w-auto px-8 py-3.5 sm:py-4 text-white rounded-full font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base" style={{ background: 'linear-gradient(135deg, #34d47a 0%, #22c55e 45%, #16a34a 100%)', boxShadow: '0 10px 40px -10px rgba(34,197,94,0.5)' }}>
             {t('stats.cta')}
           </button>
         </div>

@@ -11,7 +11,7 @@ const MobileShowcase: React.FC = () => {
             image: "https://i.imgur.com/1bXvduM.jpg",
             alt: "Project Left",
             initial: { x: -150, y: -100, rotate: 0, opacity: 0, scale: 0.9 },
-            whileInView: { x: '-45%', y: '-25%', rotate: 0, opacity: 1, scale: 1.05 },
+            whileInView: { x: '-65%', y: '-25%', rotate: 0, opacity: 1, scale: 1.15 },
             zIndex: 10
         },
         {
@@ -19,7 +19,7 @@ const MobileShowcase: React.FC = () => {
             image: "https://i.imgur.com/q7Fqzxm.jpg",
             alt: "Project Right",
             initial: { x: 150, y: -100, rotate: 0, opacity: 0, scale: 0.9 },
-            whileInView: { x: '45%', y: '-25%', rotate: 0, opacity: 1, scale: 1.1 },
+            whileInView: { x: '65%', y: '-25%', rotate: 0, opacity: 1, scale: 1.3 },
             zIndex: 10
         },
         {
@@ -33,15 +33,16 @@ const MobileShowcase: React.FC = () => {
     ];
 
     return (
-        <section id="portfolio" className="relative py-24 sm:py-32 bg-white dark:bg-black overflow-hidden transition-colors duration-500">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <section id="portfolio" className="relative py-16 sm:py-32 bg-white dark:bg-black overflow-hidden transition-colors duration-500">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Header */}
-                <div className="text-center mb-16 sm:mb-24 relative z-40">
-                    <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white tracking-tight mb-4">
-                        {t('mobileShowcase.title')} <span className="text-brand-accent1">{t('mobileShowcase.titleHighlight')}</span>
+                <div className="text-center mb-10 sm:mb-24 relative z-40">
+                    <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 dark:text-white tracking-tight mb-4">
+                        {t('mobileShowcase.title')}{' '}
+                        <span style={{ color: '#22c55e' }}>{t('mobileShowcase.titleHighlight')}</span>
                     </h2>
-                    <p className="text-gray-500 dark:text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto">
+                    <p className="text-gray-500 dark:text-gray-400 text-sm sm:text-xl max-w-2xl mx-auto px-4">
                         {t('mobileShowcase.label')}
                     </p>
                 </div>
@@ -58,15 +59,18 @@ const MobileShowcase: React.FC = () => {
                                 key={project.id}
                                 src={project.image}
                                 alt={project.alt}
+                                loading="lazy"
+                                decoding="async"
                                 initial={project.initial}
                                 whileInView={project.whileInView}
+                                whileHover={{ scale: (project.whileInView as any).scale * 1.06, y: ((project.whileInView as any).y ?? 0) }}
                                 viewport={{ once: true, amount: 0.3 }}
                                 transition={{
                                     duration: 0.8,
                                     ease: [0.16, 1, 0.3, 1],
                                     delay: project.id === 'center' ? 0.2 : 0
                                 }}
-                                className="absolute w-[75%] sm:w-[65%] h-auto select-none pointer-events-none"
+                                className="absolute w-[75%] sm:w-[65%] h-auto select-none cursor-pointer"
                                 style={{
                                     zIndex: project.zIndex,
                                     WebkitMaskImage: project.id === 'center'

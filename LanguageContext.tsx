@@ -16,7 +16,7 @@ const translations: Translations = {
       process: 'Process',
       contact: 'Contact',
       portfolio: 'Portfolio',
-      cta: 'I want to generate results',
+      cta: 'I want a website for my clinic',
       themePopup: {
         title: 'Switch to Dark Mode?',
         text: 'Would you like to experience the dark mode version?',
@@ -32,10 +32,10 @@ const translations: Translations = {
     },
     hero: {
       pill: 'Exclusive for private clinics and health professionals',
-      title1: 'There is nothing that generates more authority',
-      title2: 'than RESULTS',
+      title1: 'You are a reference in what you do.',
+      title2: 'Your website should be too.',
       subtitle: '<strong>Custom-built</strong> websites for healthcare professionals who are building their authority.',
-      ctaPrimary: 'I want to generate results',
+      ctaPrimary: 'I want a website for my clinic',
       ctaSecondary: 'Watch Demo Reel',
       trusted: 'Trusted by 50+ clinics and health professionals',
       floating_booking: 'Assessment Scheduled',
@@ -138,7 +138,7 @@ const translations: Translations = {
           description: 'We integrate your company\'s daily tools into the new conversion system, without loss of data or information.'
         }
       ],
-      cta: "I want to generate results"
+      cta: "I want a website for my clinic"
     },
     testimonials: {
       title: 'What our',
@@ -163,10 +163,11 @@ const translations: Translations = {
       projects: { label: 'Successful Projects', desc: 'Landing pages & web systems' },
       countries: { label: 'Countries Served', desc: 'Global remote presence' },
       rating: { label: 'Client Satisfaction', desc: 'Based on verified reviews' },
-      cta: "I want to generate results"
+      cta: "I want a website for my clinic"
     },
     team: {
       title: 'KN Growth Team',
+      subtitle: 'Who will build your website',
       filters: ['All', 'Automations', 'Design', 'Strategy'],
       members: [
         { name: 'Gianfranco N.', role: 'CEO KN Growth', img: 'https://i.imgur.com/KZ051q2.png' },
@@ -198,6 +199,35 @@ const translations: Translations = {
       texto2Bold: 'does not want to know who you are.',
       texto2After: 'They want to feel they can trust you before they even meet you.',
       destaque: 'A website that does not convey that trust does not convert. Simple as that.'
+    },
+    faq: {
+      tag: 'Frequently Asked Questions',
+      title: 'Everything you need to know',
+      titleEm: 'before getting started.',
+      subtitle: 'We answer the questions every healthcare professional asks before investing in their own website.',
+      highlight: 'Still have questions? Talk to us before deciding. No commitment.',
+      items: [
+        {
+          question: 'How long does the website take to be ready?',
+          answer: 'The complete process takes <strong>between 5 and 10 business days</strong>, depending on the complexity of the project. We work in focused stages — strategy, design and development — so everything is aligned and ready to go live without delays.'
+        },
+        {
+          question: 'Do I need to understand technology to work with you?',
+          answer: 'No. You focus on what you know — taking care of your patients. <strong>We take care of everything:</strong> domain, hosting, development and maintenance. You just need to approve the result.'
+        },
+        {
+          question: 'Why not use Wix or WordPress?',
+          answer: 'Ready-made platforms deliver generic, slow and third-party-dependent websites. Your site is built <strong>from scratch, with proprietary code</strong> — faster, more secure and 100% yours. No platform subscriptions, no template limitations.'
+        },
+        {
+          question: 'What if I don\'t like the result?',
+          answer: 'The process is built to avoid that. Before a single line of code, we align strategy, references and expectations. During development, you follow and approve each stage. <strong>Adjustments are part of the process</strong> — not a surprise.'
+        },
+        {
+          question: 'Will my website appear on Google?',
+          answer: 'All delivered websites come configured with <strong>basic technical SEO</strong> — meta tags, loading speed, semantic structure. For advanced ranking strategies, we offer complementary services.'
+        }
+      ]
     }
   },
   pt: {
@@ -207,7 +237,7 @@ const translations: Translations = {
       process: 'Processo',
       contact: 'Contato',
       portfolio: 'Portfólio',
-      cta: 'Quero meu site único',
+      cta: 'Quero um site para minha clínica',
       themePopup: {
         title: 'Mudar para Modo Escuro?',
         text: 'Gostaria de experimentar a versão em modo escuro?',
@@ -223,10 +253,10 @@ const translations: Translations = {
     },
     hero: {
       pill: 'Exclusivo para clínicas privadas e profissionais de saúde',
-      title1: 'Não existe nada que gere mais',
-      title2: 'autoridade do que RESULTADOS',
+      title1: 'Você é referência no que faz.',
+      title2: 'Seu site deveria ser também.',
       subtitle: 'Sites desenvolvidos <strong>sob medida</strong> para profissionais da saúde que estão construindo sua autoridade.',
-      ctaPrimary: 'Quero meu site sob medida',
+      ctaPrimary: 'Quero um site para minha clínica',
       ctaSecondary: 'Ver Demo Reel',
       trusted: 'Confiança de +50 clínicas e profissionais de saúde',
       floating_booking: 'Avaliação Agendada',
@@ -329,7 +359,7 @@ const translations: Translations = {
           description: 'Integramos as ferramentas de uso diário da sua empresa ao novo sistema de conversão, sem perda de dados ou informações.'
         }
       ],
-      cta: "Quero gerar resultados"
+      cta: "Quero um site para minha clínica"
     },
     testimonials: {
       title: 'O que dizem nossos',
@@ -354,10 +384,11 @@ const translations: Translations = {
       projects: { label: 'Projetos de Sucesso', desc: 'Landing pages e sistemas web' },
       countries: { label: 'Países Atendidos', desc: 'Presença global remota' },
       rating: { label: 'Satisfação do Cliente', desc: 'Baseado em avaliações verificadas' },
-      cta: "Quero gerar resultados"
+      cta: "Quero um site para minha clínica"
     },
     team: {
       title: 'Equipe KN Growth',
+      subtitle: 'Quem vai construir o seu site',
       filters: ['Tudo', 'Automações', 'Design', 'Estratégia'],
       members: [
         { name: 'Gianfranco N.', role: 'CEO KN Growth', img: 'https://i.imgur.com/KZ051q2.png' },
@@ -368,9 +399,9 @@ const translations: Translations = {
       copyright: '© 2024 - 2026. Todos direitos reservados a KN Growth'
     },
     mobileShowcase: {
-      label: 'Trabalhos Recentes',
-      title: 'Projetado para',
-      titleHighlight: 'Conversão Web',
+      label: 'Cada projeto construído do zero, pensado para converter visitantes em pacientes.',
+      title: 'Resultados que',
+      titleHighlight: 'falam por si mesmos',
       scrollInstructions: 'Use o scroll para ver mais'
     },
     straton: {
@@ -389,6 +420,35 @@ const translations: Translations = {
       texto2Bold: 'não quer saber quem você é.',
       texto2After: 'Ele quer sentir que pode confiar em você antes mesmo de te conhecer.',
       destaque: 'Um site que não transmite essa confiança não converte. Simples assim.'
+    },
+    faq: {
+      tag: 'Dúvidas frequentes',
+      title: 'Tudo que você precisa saber',
+      titleEm: 'antes de começar.',
+      subtitle: 'Respondemos as perguntas que todo profissional de saúde faz antes de investir no próprio site.',
+      highlight: 'Ainda tem dúvida? Fala com a gente antes de decidir. Sem compromisso.',
+      items: [
+        {
+          question: 'Quanto tempo leva para o site ficar pronto?',
+          answer: 'O processo completo leva <strong>entre 5 e 10 dias úteis</strong>, dependendo da complexidade do projeto. Trabalhamos em etapas focadas — estratégia, design e desenvolvimento — para que tudo esteja alinhado e pronto para ir ao ar sem atrasos.'
+        },
+        {
+          question: 'Preciso entender de tecnologia para trabalhar com vocês?',
+          answer: 'Não. Você foca no que sabe fazer — cuidar dos seus pacientes. <strong>Nós cuidamos de tudo:</strong> domínio, hospedagem, desenvolvimento e manutenção. Você só precisa aprovar o resultado.'
+        },
+        {
+          question: 'Por que não usar Wix ou WordPress?',
+          answer: 'Plataformas prontas entregam sites genéricos, lentos e dependentes de terceiros. Seu site é construído <strong>do zero, com código próprio</strong> — mais rápido, mais seguro e 100% seu. Sem mensalidades de plataforma, sem limitações de template.'
+        },
+        {
+          question: 'E se eu não gostar do resultado?',
+          answer: 'O processo é construído para evitar isso. Antes de qualquer linha de código, alinhamos estratégia, referências e expectativas. Durante o desenvolvimento, você acompanha e aprova cada etapa. <strong>Ajustes fazem parte do processo</strong> — não são surpresa.'
+        },
+        {
+          question: 'O site vai aparecer no Google?',
+          answer: 'Todos os sites entregues já saem configurados com <strong>SEO técnico básico</strong> — meta tags, velocidade de carregamento, estrutura semântica. Para estratégias avançadas de ranqueamento, oferecemos serviços complementares.'
+        }
+      ]
     }
   },
   es: {
@@ -398,7 +458,7 @@ const translations: Translations = {
       process: 'Proceso',
       contact: 'Contacto',
       portfolio: 'Portafolio',
-      cta: 'Quiero mi sitio único',
+      cta: 'Quiero una web para mi clínica',
       themePopup: {
         title: '¿Cambiar a Modo Oscuro?',
         text: '¿Te gustaría experimentar la versión en modo oscuro?',
@@ -414,10 +474,10 @@ const translations: Translations = {
     },
     hero: {
       pill: 'Exclusivo para clínicas privadas y profesionales de salud',
-      title1: 'No existe nada que genere más',
-      title2: 'autoridad que RESULTADOS',
+      title1: 'Eres una referencia en lo que haces.',
+      title2: 'Tu sitio debería serlo también.',
       subtitle: 'Sitios desarrollados <strong>a medida</strong> para profesionales de la salud que están construyendo su autoridad.',
-      ctaPrimary: 'Quiero mi sitio a medida',
+      ctaPrimary: 'Quiero una web para mi clínica',
       ctaSecondary: 'Ver Demo Reel',
       trusted: 'Con la confianza de +50 clínicas y profesionales de salud',
       floating_booking: 'Evaluación Agendada',
@@ -520,7 +580,7 @@ const translations: Translations = {
           description: 'Integramos las herramientas de uso diario de tu empresa al nuevo sistema de conversión, sin pérdida de datos ni información.'
         }
       ],
-      cta: "Quiero generar resultados"
+      cta: "Quiero una web para mi clínica"
     },
     testimonials: {
       title: 'Lo que dicen nuestros',
@@ -545,10 +605,11 @@ const translations: Translations = {
       projects: { label: 'Proyectos Exitosos', desc: 'Landing pages y sistemas web' },
       countries: { label: 'Países Atendidos', desc: 'Presencia global remota' },
       rating: { label: 'Satisfacción del Cliente', desc: 'Basado en reseñas verificadas' },
-      cta: "Quiero generar resultados"
+      cta: "Quiero una web para mi clínica"
     },
     team: {
       title: 'Equipo KN Growth',
+      subtitle: 'Quiénes van a construir tu sitio',
       filters: ['Todo', 'Automatizaciones', 'Diseño', 'Estrategia'],
       members: [
         { name: 'Gianfranco N.', role: 'CEO KN Growth', img: 'https://i.imgur.com/KZ051q2.png' },
@@ -580,6 +641,35 @@ const translations: Translations = {
       texto2Bold: 'no quiere saber quién eres.',
       texto2After: 'Quiere sentir que puede confiar en ti antes de siquiera conocerte.',
       destaque: 'Un sitio que no transmite esa confianza no convierte. Así de simple.'
+    },
+    faq: {
+      tag: 'Preguntas frecuentes',
+      title: 'Todo lo que necesitas saber',
+      titleEm: 'antes de empezar.',
+      subtitle: 'Respondemos las preguntas que todo profesional de la salud hace antes de invertir en su propio sitio.',
+      highlight: '¿Todavía tienes dudas? Habla con nosotros antes de decidir. Sin compromiso.',
+      items: [
+        {
+          question: '¿Cuánto tiempo tarda en estar listo el sitio?',
+          answer: 'El proceso completo toma <strong>entre 5 y 10 días hábiles</strong>, dependiendo de la complejidad del proyecto. Trabajamos en etapas enfocadas — estrategia, diseño y desarrollo — para que todo esté alineado y listo para salir al aire sin demoras.'
+        },
+        {
+          question: '¿Necesito entender de tecnología para trabajar con ustedes?',
+          answer: 'No. Tú te enfocas en lo que sabes hacer — atender a tus pacientes. <strong>Nosotros nos encargamos de todo:</strong> dominio, hosting, desarrollo y mantenimiento. Solo necesitas aprobar el resultado.'
+        },
+        {
+          question: '¿Por qué no usar Wix o WordPress?',
+          answer: 'Las plataformas listas entregan sitios genéricos, lentos y dependientes de terceros. Tu sitio se construye <strong>desde cero, con código propio</strong> — más rápido, más seguro y 100% tuyo. Sin suscripciones de plataforma, sin limitaciones de plantilla.'
+        },
+        {
+          question: '¿Y si no me gusta el resultado?',
+          answer: 'El proceso está diseñado para evitar eso. Antes de cualquier línea de código, alineamos estrategia, referencias y expectativas. Durante el desarrollo, acompañas y apruebas cada etapa. <strong>Los ajustes son parte del proceso</strong> — no una sorpresa.'
+        },
+        {
+          question: '¿Mi sitio aparecerá en Google?',
+          answer: 'Todos los sitios entregados ya salen configurados con <strong>SEO técnico básico</strong> — meta tags, velocidad de carga, estructura semántica. Para estrategias avanzadas de posicionamiento, ofrecemos servicios complementarios.'
+        }
+      ]
     }
   }
 };

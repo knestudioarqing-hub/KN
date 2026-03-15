@@ -6,8 +6,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="relative bg-white dark:bg-black py-16 sm:py-24 overflow-hidden transition-colors duration-500">
-      {/* Background Noise overlay to match Stats section */}
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
+      {/* Background Noise — inline, no HTTP request */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
         <p className="text-xs text-center text-gray-500 dark:text-gray-400 mb-8 sm:mb-12 font-medium tracking-wide transition-colors">

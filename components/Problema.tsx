@@ -197,11 +197,26 @@ const Problema: React.FC = () => {
         @media (max-width: 900px) {
           .problema-grid {
             grid-template-columns: 1fr !important;
-            padding: 56px 24px !important;
-            gap: 28px !important;
+            padding: 48px 20px 40px !important;
+            gap: 24px !important;
           }
           .problema-divisor {
             display: none !important;
+          }
+          .problema-grid h2 {
+            font-size: clamp(24px, 6vw, 36px) !important;
+            letter-spacing: -0.5px !important;
+          }
+          .problema-grid p {
+            font-size: 15px !important;
+          }
+          .problema-tag {
+            margin-bottom: 20px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .problema-grid {
+            padding: 40px 16px 32px !important;
           }
         }
       `}</style>

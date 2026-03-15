@@ -69,19 +69,19 @@ const Process: React.FC = () => {
   }));
 
   return (
-    <section id="proceso" className="relative py-20 sm:py-32 bg-white dark:bg-black overflow-hidden transition-colors duration-500">
+    <section id="proceso" className="relative py-14 sm:py-32 bg-white dark:bg-black overflow-hidden transition-colors duration-500">
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-accent2/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white tracking-tight mb-6">
+        <div className="text-center mb-10 sm:mb-20">
+          <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 dark:text-white tracking-tight mb-4 sm:mb-6">
             {t('process.title')}{' '}
-            <span className="text-brand-accent2">{t('process.titleHighlight')}</span>
+            <span style={{ color: '#22c55e' }}>{t('process.titleHighlight')}</span>
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 text-lg sm:text-xl leading-relaxed max-w-none mx-auto">
+          <p className="text-gray-500 dark:text-gray-400 text-base sm:text-xl leading-relaxed max-w-none mx-auto">
             {t('process.subtitle')}
           </p>
         </div>

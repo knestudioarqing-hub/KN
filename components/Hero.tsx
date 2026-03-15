@@ -38,9 +38,16 @@ const Hero: React.FC = () => {
         />
       </div>
 
-      {/* Noise texture overlay */}
+      {/* Noise texture overlay — inline SVG, no HTTP request */}
       <div className="absolute inset-0 z-[1] pointer-events-none">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.06] brightness-100 contrast-150 mix-blend-overlay"></div>
+        <div
+          className="absolute inset-0 opacity-[0.06] brightness-100 contrast-150 mix-blend-overlay"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '128px 128px',
+          }}
+        />
         {/* Mobile separator glow */}
         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-accent1/30 shadow-[0_0_15px_rgba(31,111,235,0.5)] z-50 md:hidden"></div>
       </div>
@@ -90,7 +97,7 @@ const Hero: React.FC = () => {
 
         {/* H1 */}
         <h1 className="font-poppins dark:text-white leading-tight mb-[15px]" style={{ fontSize: 'clamp(30px, 8vw, 50px)', color: '#171717', textShadow: '0px 4px 4px rgba(0, 0, 0, 0.15)' }}>
-          <span style={{ fontWeight: 400 }}>Você é referência no que faz.</span>
+          <span style={{ fontWeight: 400 }}>{t('hero.title1')}</span>
           <br />
           <span style={{
             fontWeight: 600,
@@ -100,7 +107,7 @@ const Hero: React.FC = () => {
             display: 'inline-block',
             filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15))'
           }}>
-            Seu site deveria ser também
+            {t('hero.title2')}
           </span>
         </h1>
 

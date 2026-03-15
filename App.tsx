@@ -6,6 +6,7 @@ import Process from './components/Process';
 import Team from './components/Team';
 import Testimonials from './components/Testimonials';
 import Stats from './components/Stats';
+import FAQ from './components/FAQ';
 import MobileShowcase from './components/MobileShowcase';
 import Footer from './components/Footer';
 import Problema from './components/Problema';
@@ -39,10 +40,11 @@ const AppContent: React.FC = () => {
             <Hero />
             <Problema />
             <Services />
-            <Process />
             <MobileShowcase />
-            <Team />
             <Testimonials />
+            <Team />
+            <Process />
+            <FAQ />
             <Stats />
           </main>
           <Footer />

@@ -28,15 +28,18 @@ const Team: React.FC = () => {
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-20">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-colors">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight mb-3 transition-colors">
                         {t('team.title')}
                     </h2>
+                    <p className="text-gray-500 dark:text-gray-400 text-lg sm:text-xl mb-6 transition-colors">
+                        {t('team.subtitle')}
+                    </p>
 
                     <div className="flex items-center gap-4 text-xs md:text-sm font-bold overflow-x-auto pb-4 md:pb-0 w-full no-scrollbar scroll-smooth px-4 md:px-0">
                         <div className="flex items-center gap-4 mx-auto min-w-max">
                             {t('team.filters').map((filter: string, i: number) => (
                                 <React.Fragment key={i}>
-                                    <button className={`hover:text-brand-orange transition-all whitespace-nowrap uppercase tracking-widest ${i === 0 ? 'text-brand-orange' : 'text-gray-400 dark:text-gray-500'}`}>
+                                    <button className={`hover:text-[#22c55e] transition-all whitespace-nowrap uppercase tracking-widest ${i === 0 ? 'text-[#22c55e]' : 'text-gray-400 dark:text-gray-500'}`}>
                                         {filter}
                                     </button>
                                     {i < t('team.filters').length - 1 && <div className="w-6 h-[1px] bg-gray-200 dark:bg-gray-800 flex-shrink-0"></div>}
@@ -46,11 +49,11 @@ const Team: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto">
                     {t('team.members').map((member: any, idx: number) => (
                         <div
                             key={idx}
-                            className={`group relative rounded-3xl overflow-hidden aspect-[4/5] bg-[#0A0A0A] border border-gray-200 dark:border-white/10 hover:border-brand-orange/50 transition-all duration-500 shadow-xl ${member.role.includes('CEO') ? 'order-3 md:order-2' :
+                            className={`group relative rounded-3xl overflow-hidden aspect-[4/5] bg-[#0A0A0A] border border-gray-200 dark:border-white/10 hover:border-[#22c55e]/50 transition-all duration-500 shadow-xl ${member.role.includes('CEO') ? 'order-3 md:order-2' :
                                 idx === 0 ? 'order-1 md:order-1' : 'order-2 md:order-3'
                                 }`}
                         >
@@ -68,7 +71,7 @@ const Team: React.FC = () => {
                                     <h3 className="text-xl sm:text-2xl font-bold tracking-tight">{member.name}</h3>
                                 </div>
 
-                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brand-orange/20 backdrop-blur-xl border border-brand-orange/40 flex items-center justify-center text-white shadow-[0_8px_32px_rgba(255,85,0,0.2)] transform group-hover:rotate-45 transition-all duration-500 group-hover:bg-brand-orange/40">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#22c55e]/20 backdrop-blur-xl border border-[#22c55e]/40 flex items-center justify-center text-white shadow-[0_8px_32px_rgba(34,197,94,0.2)] transform group-hover:rotate-45 transition-all duration-500 group-hover:bg-[#22c55e]/40">
                                     <ArrowUpRight size={20} className="drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
                                 </div>
                             </div>
