@@ -26,7 +26,7 @@ const MobileShowcase: React.FC = () => {
         },
         {
             id: 'center',
-            image: "https://i.imgur.com/9HqmXeL.jpg",
+            image: "https://i.imgur.com/1xXk32C.jpg",
             alt: "Project Center",
             variants: {
                 desktop: { x: 0, y: '30%', rotate: 0, opacity: 1, scale: 1 },
@@ -98,6 +98,7 @@ const MobileShowcase: React.FC = () => {
                                     className="absolute w-[65%] h-auto select-none cursor-pointer"
                                     style={{
                                         zIndex: project.zIndex,
+                                        borderRadius: project.id === 'center' ? '16px' : undefined,
                                         WebkitMaskImage: project.id === 'center'
                                             ? 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 25%, rgba(0,0,0,1) 50%)'
                                             : 'none',
