@@ -70,12 +70,12 @@ const MobileShowcase: React.FC = () => {
 
                 {/* ── DESKTOP: layout superpuesto / abanico ── */}
                 <div className="hidden sm:block">
-                    <div className="relative h-[500px] md:h-[600px] flex items-center justify-center">
+                    <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[600px] flex items-center justify-center">
 
                         {/* Background Glow */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-brand-accent1/5 blur-[120px] rounded-full pointer-events-none" />
 
-                        <div className="relative w-full max-w-5xl flex items-center justify-center">
+                        <div className="relative w-full max-w-sm md:max-w-md lg:max-w-xl xl:max-w-3xl 2xl:max-w-4xl flex items-center justify-center">
                             {showcaseProjects.map((project: any) => (
                                 <motion.img
                                     key={project.id}
