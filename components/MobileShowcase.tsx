@@ -8,7 +8,7 @@ const MobileShowcase: React.FC = () => {
     const showcaseProjects = [
         {
             id: 'left',
-            image: "https://i.imgur.com/1bXvduM.jpg",
+            image: "https://i.imgur.com/t7W4iTU.png",
             alt: "Project Left",
             variants: {
                 desktop: { x: '-65%', y: '-25%', rotate: 0, opacity: 1, scale: 1.15 },
