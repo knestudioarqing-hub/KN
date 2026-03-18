@@ -77,17 +77,17 @@ const Team: React.FC = () => {
                         {t('team.skills').map((skill: any, idx: number) => {
                             const icons = [<Target key="1" className="w-7 h-7 text-white" />, <PenTool key="2" className="w-7 h-7 text-white" />, <Code key="3" className="w-7 h-7 text-white" />];
                             return (
-                                <div key={idx} className="relative flex flex-col items-center text-center">
+                                <div key={idx} className="group relative flex flex-col items-center text-center cursor-default">
                                     {/* Connecting line pointing right */}
                                     {idx < 2 && (
                                         <div className="hidden md:flex absolute top-[32px] items-center translate-y-[-50%] z-[-1]" style={{ left: 'calc(50% + 48px)', right: 'calc(-50% + 48px)' }}>
-                                            <div className="h-[2px] flex-grow bg-[#22c55e]/60"></div>
-                                            <div className="w-0 h-0 border-y-[5px] border-y-transparent border-l-[8px] border-l-[#22c55e]/60"></div>
+                                            <div className="h-[2px] flex-grow bg-[#22c55e]/60 transition-colors duration-500 group-hover:bg-[#22c55e]"></div>
+                                            <div className="w-0 h-0 border-y-[5px] border-y-transparent border-l-[8px] border-l-[#22c55e]/60 transition-colors duration-500 group-hover:border-l-[#22c55e]"></div>
                                         </div>
                                     )}
                                     
                                     <div 
-                                        className="w-16 h-16 rounded-full flex items-center justify-center mb-6 z-10 relative"
+                                        className="w-16 h-16 rounded-full flex items-center justify-center mb-6 z-10 relative transition-all duration-500 group-hover:-translate-y-2 group-hover:scale-[1.15]"
                                         style={{
                                             background: 'linear-gradient(135deg, #34d47a 0%, #2BB673 45%, #1a9e5c 100%)',
                                             boxShadow: '0 4px 20px -4px rgba(43,182,115,0.55), inset 0 1px 0 rgba(255,255,255,0.18)',
@@ -95,7 +95,7 @@ const Team: React.FC = () => {
                                     >
                                         {icons[idx]}
                                     </div>
-                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{skill.title}</h3>
+                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 transition-colors duration-300 group-hover:text-[#22c55e]">{skill.title}</h3>
                                     <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-[280px]">{skill.description}</p>
                                 </div>
                             )

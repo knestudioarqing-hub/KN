@@ -48,8 +48,9 @@
   }
   </script>
 
-  <!-- Preload critical Hero image (LCP) -->
-  <link rel="preload" as="image" href="https://i.imgur.com/0kT8MIc.jpg" fetchpriority="high" />
+  <!-- Preload critical Hero image (LCP) based on viewport -->
+  <link rel="preload" as="image" href="https://i.imgur.com/8jha9TW.jpg" media="(max-width: 767px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="https://i.imgur.com/0kT8MIc.jpg" media="(min-width: 768px)" fetchpriority="high" />
 
   <!-- DNS prefetch for external image hosts -->
   <link rel="dns-prefetch" href="https://i.imgur.com" />
