@@ -172,6 +172,20 @@ const translations: Translations = {
       members: [
         { name: 'Gianfranco N.', role: 'CEO KN Growth', img: 'https://i.imgur.com/KZ051q2.png' },
         { name: 'Leandro V.', role: 'Software Developer', img: 'https://i.imgur.com/vsiDMpt.png' }
+      ],
+      skills: [
+        {
+          title: "Strategic Positioning",
+          description: "We don't just build. We think about your entire business to maximize your authority."
+        },
+        {
+          title: "Premium UX/UI Design",
+          description: "Refined aesthetics exclusively designed to build instant trust with your patients."
+        },
+        {
+          title: "High-Performance Code",
+          description: "Custom-built development. Lightning-fast sites optimized for search engines."
+        }
       ]
     },
     footer: {
@@ -205,7 +219,7 @@ const translations: Translations = {
       title: 'Everything you need to know',
       titleEm: 'before getting started.',
       subtitle: 'We answer the questions every healthcare professional asks before investing in their own website.',
-      highlight: 'Still have questions? Talk to us before deciding. No commitment.',
+      highlight: 'Still have questions? Schedule a no-commitment call with our team.',
       items: [
         {
           question: 'How long does the website take to be ready?',
@@ -393,6 +407,20 @@ const translations: Translations = {
       members: [
         { name: 'Gianfranco N.', role: 'CEO KN Growth', img: 'https://i.imgur.com/KZ051q2.png' },
         { name: 'Leandro V.', role: 'Software Developer', img: 'https://i.imgur.com/vsiDMpt.png' }
+      ],
+      skills: [
+        {
+          title: "Posicionamento Estratégico",
+          description: "Não apenas criamos. Pensamos no seu negócio como um todo para maximizar sua autoridade."
+        },
+        {
+          title: "Design UX/UI Premium",
+          description: "Estética refinada e pensada exclusivamente para transmitir confiança ao seu paciente."
+        },
+        {
+          title: "Código de Alta Performance",
+          description: "Desenvolvimento sob medida. Site ultra rápido e otimizado para os motores de busca."
+        }
       ]
     },
     footer: {
@@ -426,7 +454,7 @@ const translations: Translations = {
       title: 'Tudo que você precisa saber',
       titleEm: 'antes de começar.',
       subtitle: 'Respondemos as perguntas que todo profissional de saúde faz antes de investir no próprio site.',
-      highlight: 'Ainda tem dúvida? Fala com a gente antes de decidir. Sem compromisso.',
+      highlight: 'Ainda tem dúvidas? Agende uma conversa sem compromisso com nossa equipe.',
       items: [
         {
           question: 'Quanto tempo leva para o site ficar pronto?',
@@ -614,6 +642,20 @@ const translations: Translations = {
       members: [
         { name: 'Gianfranco N.', role: 'CEO KN Growth', img: 'https://i.imgur.com/KZ051q2.png' },
         { name: 'Leandro V.', role: 'Software Developer', img: 'https://i.imgur.com/vsiDMpt.png' }
+      ],
+      skills: [
+        {
+          title: "Posicionamiento Estratégico",
+          description: "No solo creamos. Pensamos en tu negocio como un todo para maximizar tu autoridad."
+        },
+        {
+          title: "Diseño UX/UI Premium",
+          description: "Estética refinada y diseñada exclusivamente para transmitir confianza a tu paciente."
+        },
+        {
+          title: "Código de Alta Performance",
+          description: "Desarrollo a medida. Sitio ultra rápido y optimizado para los motores de búsqueda."
+        }
       ]
     },
     footer: {
@@ -647,7 +689,7 @@ const translations: Translations = {
       title: 'Todo lo que necesitas saber',
       titleEm: 'antes de empezar.',
       subtitle: 'Respondemos las preguntas que todo profesional de la salud hace antes de invertir en su propio sitio.',
-      highlight: '¿Todavía tienes dudas? Habla con nosotros antes de decidir. Sin compromiso.',
+      highlight: '¿Todavía tienes dudas? Agenda una llamada sin compromiso con nuestro equipo.',
       items: [
         {
           question: '¿Cuánto tiempo tarda en estar listo el sitio?',

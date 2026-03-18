@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Target, PenTool, Code } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 
 const Team: React.FC = () => {
@@ -69,6 +69,38 @@ const Team: React.FC = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 pointer-events-none"></div>
                         </div>
                     ))}
+                </div>
+                
+                {/* 3 Skill Bullets Layout */}
+                <div className="mt-20 sm:mt-28 max-w-5xl mx-auto w-full">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4 relative z-10 w-full">
+                        {t('team.skills').map((skill: any, idx: number) => {
+                            const icons = [<Target key="1" className="w-7 h-7 text-white" />, <PenTool key="2" className="w-7 h-7 text-white" />, <Code key="3" className="w-7 h-7 text-white" />];
+                            return (
+                                <div key={idx} className="relative flex flex-col items-center text-center">
+                                    {/* Connecting line pointing right */}
+                                    {idx < 2 && (
+                                        <div className="hidden md:flex absolute top-[32px] items-center translate-y-[-50%] z-[-1]" style={{ left: 'calc(50% + 48px)', right: 'calc(-50% + 48px)' }}>
+                                            <div className="h-[2px] flex-grow bg-[#22c55e]/60"></div>
+                                            <div className="w-0 h-0 border-y-[5px] border-y-transparent border-l-[8px] border-l-[#22c55e]/60"></div>
+                                        </div>
+                                    )}
+                                    
+                                    <div 
+                                        className="w-16 h-16 rounded-full flex items-center justify-center mb-6 z-10 relative"
+                                        style={{
+                                            background: 'linear-gradient(135deg, #34d47a 0%, #2BB673 45%, #1a9e5c 100%)',
+                                            boxShadow: '0 4px 20px -4px rgba(43,182,115,0.55), inset 0 1px 0 rgba(255,255,255,0.18)',
+                                        }}
+                                    >
+                                        {icons[idx]}
+                                    </div>
+                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{skill.title}</h3>
+                                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-[280px]">{skill.description}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
         </section>
